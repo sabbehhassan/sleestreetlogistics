@@ -76,7 +76,7 @@ export default function TruckingAgreement({
 
                 <div>
                   <h3 className="text-xl font-bold text-[#02053D]">
-                    LOBLAW TRANSPORT US INC
+                    LOBLAW TRANSPORT US
                   </h3>
 
                   <p className="text-sm text-gray-500">
@@ -99,13 +99,13 @@ export default function TruckingAgreement({
                 <div className="flex items-start gap-3">
                   <Globe size={18} className="mt-1 text-[#02053D]" />
                   <span className="text-blue-600">
-                    loblawtransportusinc.com
+                    loblawtransportus.com
                   </span>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="mt-1 text-[#02053D]" />
-                  <span>info@loblawtransportusinc.com</span>
+                  <span>info@loblawtransportus.com</span>
                 </div>
               </div>
             </div>

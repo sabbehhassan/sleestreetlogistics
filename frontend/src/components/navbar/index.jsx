@@ -1,8 +1,8 @@
 
 import { useState } from "react";
+import { FiClock, FiMail } from "react-icons/fi";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
-import { FiClock, FiMail } from "react-icons/fi";
 import logo from "../../assets/logo.png";
 import CarrierAgreementModal from "../CarrierAgreementModal";
 
@@ -30,12 +30,12 @@ const Navbar = () => {
 
               <div className="flex items-center gap-2 hover:text-[#0B7BEA] transition">
                 <FiMail className="text-[#0B7BEA]" />
-                <span>info@loblawtransportusinc.com</span>
+                <span>info@loblawtransportus.com</span>
               </div>
 
               <div className="flex items-center gap-2 hover:text-[#0B7BEA] transition">
                 <FiMail className="text-[#0B7BEA]" />
-                <span>Alfred@loblawtransportusinc.com</span>
+                <span>Alfred@loblawtransportus.com</span>
               </div>
 
             </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
               <Link to="/" className="flex items-center">
                 <img
                   src={logo}
-                  alt="LOBLAW TRANSPORT US INC"
+                  alt="LOBLAW TRANSPORT US"
                   className="w-40 object-contain"
                 />
               </Link>
@@ -89,12 +89,12 @@ const Navbar = () => {
 
               {/* Desktop Button */}
               <div className="hidden lg:block">
-                <button
-                  onClick={() => setOpenAgreement(true)}
+                <Link
+                  to="/carrier-agreement"
                   className="bg-gradient-to-r from-[#0B7BEA] to-[#0863c0] hover:scale-105 text-white px-7 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Carrier Setup | Agreement
-                </button>
+                </Link>
               </div>
 
               {/* Mobile Toggle */}
@@ -138,15 +138,13 @@ const Navbar = () => {
                   );
                 })}
 
-                <button
-                  onClick={() => {
-                    setOpenAgreement(true);
-                    setMenuOpen(false);
-                  }}
-                  className="w-full bg-gradient-to-r from-[#0B7BEA] to-[#0863c0] text-white py-3 rounded-2xl font-semibold shadow-lg mt-4"
+                <Link
+                  to="/carrier-agreement"
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full bg-gradient-to-r from-[#0B7BEA] to-[#0863c0] text-white py-3 rounded-2xl font-semibold shadow-lg mt-4 text-center block"
                 >
                   Carrier Setup | Agreement
-                </button>
+                </Link>
 
               </div>
             </div>

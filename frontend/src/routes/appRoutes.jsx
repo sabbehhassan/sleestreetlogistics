@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact"; 
 import Services from "../pages/Services";
+import CarrierAgreementPage from "../components/CarrierAgreementModal/CarrierAgreementPage";
 
 
 // Wrap layout with ScrollToTop
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
-      }
+      },
+      {
+        path: "carrier-agreement",
+        element: <CarrierAgreementPage />,
+      },
     ],
   },
 ]);

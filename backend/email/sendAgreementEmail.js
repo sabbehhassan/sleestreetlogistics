@@ -12,7 +12,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
   });
 
   const mailOptions = {
-    from: `LOBLAW TRANSPORT US INC <${process.env.EMAIL_USER}>`,
+    from: `LOBLAW TRANSPORT US <${process.env.EMAIL_USER}>`,
     to: userEmail,
     cc: "iamsabbeh@gmail.com",
     subject: "Your Carrier Agreement Has Been Submitted Successfully",
@@ -24,7 +24,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
         <!-- Header -->
         <div style="background:#0b1f5f;padding:45px 30px;text-align:center;">
           <h1 style="margin:0;color:#ffffff;font-size:30px;">
-            LOBLAW TRANSPORT US INC
+            LOBLAW TRANSPORT US
           </h1>
 
           <p style="color:#dbe4ff;font-size:15px;margin-top:12px;">
@@ -40,7 +40,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
           </p>
 
           <p style="font-size:15px;color:#555;line-height:1.9;">
-            Thank you for choosing <strong>LOBLAW TRANSPORT US INC</strong>.
+            Thank you for choosing <strong>LOBLAW TRANSPORT US</strong>.
             Your agreement has been successfully received and is currently under review.
           </p>
 
@@ -140,16 +140,16 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
 
           <p style="font-size:15px;color:#555;margin-top:30px;">
             Best Regards,<br>
-            <strong>LOBLAW TRANSPORT US INC Team</strong>
+            <strong>LOBLAW TRANSPORT US Team</strong>
           </p>
         </div>
 
         <!-- Footer -->
         <div style="background:#f5f6fa;padding:25px;text-align:center;font-size:13px;color:#666;">
-          LOBLAW TRANSPORT US INC<br>
+          LOBLAW TRANSPORT US<br>
           320 N MERIDIAN ST. 3RD FLOOR SUITE 309 INDIANAPOLIS, IN 46204<br>
-          info@loblawtransportusinc.com<br>
-          Alfred@loblawtransportusinc.com
+          info@loblawtransportus.com<br>
+          Alfred@loblawtransportus.com
         </div>
 
       </div>

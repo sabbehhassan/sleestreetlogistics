@@ -28,12 +28,12 @@ const Footer = () => {
 
             <img
               src={logo}
-              alt="LOBLAW TRANSPORT US INC"
+                 alt="LOBLAW TRANSPORT US"
               className="w-44 mb-4"
             />
 
             <p className="text-gray-300 text-sm leading-7 max-w-[260px]">
-              LOBLAW TRANSPORT US INC delivers dependable logistics and freight
+                 LOBLAW TRANSPORT US delivers dependable logistics and freight
               services designed to keep shipments moving efficiently, securely,
               and always on schedule.
             </p>
@@ -130,9 +130,9 @@ const Footer = () => {
                 </div>
 
                 <p className="text-gray-300 text-sm leading-7 break-all">
-                  info@loblawtransportusinc.com
+                     info@loblawtransportus.com
                   <br />
-                  Alfred@loblawtransportusinc.com
+                     Alfred@loblawtransportus.com
                 </p>
 
               </div>
@@ -147,7 +147,7 @@ const Footer = () => {
         <div className="pt-8 text-center">
 
           <p className="text-sm text-gray-400">
-            © 2018 LOBLAW TRANSPORT US INC. All Rights Reserved.
+               © 2018 LOBLAW TRANSPORT US. All Rights Reserved.
           </p>
 
         </div>

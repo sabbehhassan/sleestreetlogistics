@@ -136,6 +136,12 @@ module.exports = function agreementTemplate(formData) {
   color: #111827;
   font-weight: bold;
 }
+  .carrier-value {
+  display: block;
+  font-size: 15px;
+  color: #111827;
+  font-weight: 500;
+}
 
       /* FULL WIDTH */
       .full {
@@ -233,8 +239,8 @@ module.exports = function agreementTemplate(formData) {
     <div class="title">BROKER / CARRIER AGREEMENT</div>
 
     <div class="header-email">
-      info@loblawtransportusinc.com
-    </div>
+      info@loblawtransportus.com
+      </div>
   </div>
 
   <div class="logo-section">
@@ -258,7 +264,7 @@ module.exports = function agreementTemplate(formData) {
   <div class="info-box">
     <span class="info-label">Company</span>
     <span class="info-value">LOBLAW TRANSPORT US INC</span>
-  </div>
+    </div>
 
   <div class="info-box">
     <span class="info-label">MC</span>
@@ -272,25 +278,59 @@ module.exports = function agreementTemplate(formData) {
 
   <div class="info-box">
     <span class="info-label">Email</span>
-    <span class="info-value">info@loblawtransportusinc.com</span>
-  </div>
+    <span class="info-value">info@loblawtransportus.com</span>
+    </div>
 </div>
 
-      <!-- CARRIER -->
-      <div class="card">
-        <div class="section-title">Carrier Information</div>
-        <table>
-          <tr><td class="label">Name</td><td>${formData.carrierName}</td></tr>
-          <tr><td class="label">Company</td><td>${formData.companyName}</td></tr>
-          <tr><td class="label">MC/DOT</td><td>${formData.mcDot}</td></tr>
-          <tr><td class="label">Phone</td><td>${formData.phone}</td></tr>
-          <tr><td class="label">Driver</td><td>${formData.driverName}</td></tr>
-          <tr><td class="label">Driver Phone</td><td>${formData.driverPhone}</td></tr>
-          <tr><td class="label">License</td><td>${formData.licenseNumber}</td></tr>
-          <tr><td class="label">Type</td><td>${carrierTypeLabel}</td></tr>
-          <tr><td class="label">Date</td><td>${agreementDate}</td></tr>
-        </table>
-      </div>
+     <!-- CARRIER -->
+<div class="card">
+  <div class="section-title">Carrier Information</div>
+
+  <div class="info-box">
+    <span class="info-label">Name</span>
+    <span class="carrier-value">${formData.carrierName}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Company</span>
+    <span class="carrier-value">${formData.companyName}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">MC/DOT</span>
+    <span class="carrier-value">${formData.mcDot}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Phone</span>
+    <span class="carrier-value">${formData.phone}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Driver</span>
+    <span class="carrier-value">${formData.driverName}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Driver Phone</span>
+    <span class="carrier-value">${formData.driverPhone}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">License</span>
+    <span class="carrier-value">${formData.licenseNumber}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Type</span>
+    <span class="carrier-value">${carrierTypeLabel}</span>
+  </div>
+
+  <div class="info-box">
+    <span class="info-label">Date</span>
+    <span class="carrier-value">${agreementDate}</span>
+  </div>
+</div>
 
       <!-- SERVICES -->
       <div class="card full">
@@ -416,7 +456,7 @@ module.exports = function agreementTemplate(formData) {
       <div class="signature-body">
         <div class="signature-col">
           <b>BROKER</b><br/>
-          LOBLAW TRANSPORT US INC
+            LOBLAW TRANSPORT US
         </div>
         <div class="signature-col">
           <b>CARRIER</b><br/>
