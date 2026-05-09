@@ -42,7 +42,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-2 text-gray-300">
               <FiClock className="text-[#0B7BEA]" />
-              <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+              <span>Mon - Fri: 24 / 7</span>
             </div>
 
           </div>

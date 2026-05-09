@@ -275,15 +275,20 @@ export default function FinalSubmissionStep({
               transportation and not physically transporting freight.
             </p>
 
-            <h2 className="text-2xl font-bold text-[#02053D]">
-              Slot Fee (Refundable)
-            </h2>
 
-            <p>
-              Carrier shall pay a refundable security deposit of $485 via
-              instant payment. This fee will be refunded after the first
-              completed delivery.
-            </p>
+            {/* Show Slot Fee only for new carriers */}
+            {agreementData.carrierType !== "old" && (
+              <>
+                <h2 className="text-2xl font-bold text-[#02053D]">
+                  Slot Fee (Refundable)
+                </h2>
+                <p>
+                  Carrier shall pay a refundable security deposit of $485 via
+                  instant payment. This fee will be refunded after the first
+                  completed delivery.
+                </p>
+              </>
+            )}
 
             <h2 className="text-2xl font-bold text-[#02053D]">
               Carrier Obligations
@@ -291,9 +296,9 @@ export default function FinalSubmissionStep({
 
             <ul className="list-disc pl-6">
               <li>Carrier must check-in on time at shipper/receiver</li>
-              <li>Submit documents within 24–48 hours</li>
+              <li>Submit documents within 24 hours</li>
               <li>Notify broker after 60 minutes delay</li>
-              <li>Provide signed BOL within 48 hours</li>
+              <li>Provide signed BOL and confirmation after contract setup completed</li>
             </ul>
           </div>
 

@@ -68,32 +68,31 @@ const Industries = () => {
 
         </div>
 
-        {/* Moving Logos Section */}
-        <div className="mt-24 relative overflow-hidden">
 
-          {/* Left Fade */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#f7f9fc] to-transparent z-10"></div>
+        {/* Moving Logos Section - Responsive */}
+        <div className="mt-24 relative overflow-x-auto scrollbar-hide">
+          {/* Left Fade (hidden on mobile) */}
+          <div className="hidden sm:block absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#f7f9fc] to-transparent z-10"></div>
+          {/* Right Fade (hidden on mobile) */}
+          <div className="hidden sm:block absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#f7f9fc] to-transparent z-10"></div>
 
-          {/* Right Fade */}
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#f7f9fc] to-transparent z-10"></div>
-
-          <div className="flex w-max animate-marquee gap-8">
-
+          <div
+            className="flex gap-4 sm:gap-8 w-max sm:animate-marquee px-2"
+            style={{ minWidth: '100%' }}
+          >
             {[...partners, ...partners, ...partners].map((partner, index) => (
               <div
                 key={index}
-                className="min-w-[230px] bg-white rounded-[30px] p-8 flex items-center justify-center border border-[#edf2f7] shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="min-w-[120px] sm:min-w-[230px] bg-white rounded-[20px] sm:rounded-[30px] p-4 sm:p-8 flex items-center justify-center border border-[#edf2f7] shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <img
                   src={partner.image}
                   alt={partner.alt}
-                  className="h-[65px] object-contain"
+                  className="h-[40px] sm:h-[65px] object-contain max-w-[90px] sm:max-w-none"
                 />
               </div>
             ))}
-
           </div>
-
         </div>
 
         {/* Stats Section */}
@@ -159,9 +158,16 @@ const Industries = () => {
             transform: translateX(-50%);
           }
         }
-
         .animate-marquee {
           animation: marquee 20s linear infinite;
+        }
+        /* Hide scrollbar for horizontal scroll on mobile */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
 

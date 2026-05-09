@@ -256,7 +256,7 @@ export default function CarrierInformationStep({
             </div>
           </div>
 
-          {/* Only New Carrier */}
+          {/* Services Selection - Show fees for old carrier except Dedicated Lane Setup */}
           {agreementData.carrierType && (
             <div className="mt-10">
               <h2 className="text-2xl font-bold text-[#02053D] mb-6">
@@ -264,27 +264,33 @@ export default function CarrierInformationStep({
               </h2>
 
               <div className="space-y-4">
-                {services.map((service, index) => (
-                  <label
-                    key={index}
-                    className="flex items-start gap-4 border border-gray-200 rounded-2xl p-4 cursor-pointer"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={
-                        agreementData.selectedServices?.includes(service) ||
-                        false
-                      }
-                      onChange={() => toggleService(service)}
-                    />
-
-                    <span>
-                      {agreementData.carrierType === "old"
-                        ? service.split(" - $")[0] // ❌ remove price
-                        : service}{" "}
-                    </span>
-                  </label>
-                ))}
+                {services.map((service, index) => {
+                  const [serviceName, fee] = service.split(" - $");
+                  let displayText = service;
+                  if (agreementData.carrierType === "old") {
+                    if (serviceName.trim() === "Dedicated Lane Setup") {
+                      displayText = serviceName; // No fee for Dedicated Lane Setup for old carrier
+                    } else {
+                      displayText = service; // Show fee for all other services
+                    }
+                  }
+                  return (
+                    <label
+                      key={index}
+                      className="flex items-start gap-4 border border-gray-200 rounded-2xl p-4 cursor-pointer"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={
+                          agreementData.selectedServices?.includes(service) ||
+                          false
+                        }
+                        onChange={() => toggleService(service)}
+                      />
+                      <span>{displayText}</span>
+                    </label>
+                  );
+                })}
               </div>
             </div>
           )}
