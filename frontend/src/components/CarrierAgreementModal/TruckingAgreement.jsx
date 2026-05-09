@@ -1,5 +1,5 @@
 import DispatchStep from "./DispatchStep";
-import { Building2, Phone, Globe, Mail, Truck } from "lucide-react";
+import { Building2, Globe, Mail, Truck } from "lucide-react";
 
 const today = new Date().toLocaleDateString("en-CA");
 
@@ -92,14 +92,9 @@ export default function TruckingAgreement({
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone size={18} className="mt-1 text-[#02053D]" />
-                  <span>+1 (201)578-9531</span>
-                </div>
-
-                <div className="flex items-start gap-3">
                   <Globe size={18} className="mt-1 text-[#02053D]" />
                   <span className="text-blue-600">
-                    loblawtransportus.com
+                    loblawtransportus-9acv.vercel.app
                   </span>
                 </div>
 
