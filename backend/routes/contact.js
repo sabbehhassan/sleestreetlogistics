@@ -13,6 +13,19 @@ router.post("/", async (req, res) => {
         message: "All fields are required",
       });
     }
+    // Email validation
+    if (typeof email !== 'string' || !email.includes('@')) {
+      return res.status(400).json({
+        success: false,
+        message: "A valid email is required",
+      });
+    }
+    if (!process.env.EMAIL_USER || typeof process.env.EMAIL_USER !== 'string' || !process.env.EMAIL_USER.includes('@')) {
+      return res.status(500).json({
+        success: false,
+        message: "Admin recipient email (EMAIL_USER) is missing or invalid in environment variables.",
+      });
+    }
 
     // Hostinger SMTP Transporter
     const transporter = nodemailer.createTransport({

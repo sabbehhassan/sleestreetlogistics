@@ -7,6 +7,15 @@ const sendAgreementEmail = async (
 ) => {
 
   // =========================
+  // Validate recipient email
+  // =========================
+  if (!userEmail || typeof userEmail !== 'string' || !userEmail.includes('@')) {
+    throw new Error('Recipient email (userEmail) is missing or invalid.');
+  }
+  if (!process.env.EMAIL_USER || typeof process.env.EMAIL_USER !== 'string' || !process.env.EMAIL_USER.includes('@')) {
+    throw new Error('Admin recipient email (EMAIL_USER) is missing or invalid in environment variables.');
+  }
+  // =========================
   // HOSTINGER SMTP
   // =========================
   const transporter = nodemailer.createTransport({
