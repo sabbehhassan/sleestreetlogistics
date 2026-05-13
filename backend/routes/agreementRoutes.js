@@ -6,151 +6,251 @@ const sendAgreementEmail = async (
   formData
 ) => {
 
-  // =========================
-  // Validate recipient email
-  // =========================
-  if (!userEmail || typeof userEmail !== 'string' || !userEmail.includes('@')) {
-    throw new Error('Recipient email (userEmail) is missing or invalid.');
-  }
-  if (!process.env.EMAIL_USER || typeof process.env.EMAIL_USER !== 'string' || !process.env.EMAIL_USER.includes('@')) {
-    throw new Error('Admin recipient email (EMAIL_USER) is missing or invalid in environment variables.');
-  }
-  // =========================
-  // HOSTINGER SMTP
-  // =========================
-  const transporter = nodemailer.createTransport({
-    host: "smtp.hostinger.com",
-    port: 465,
-    secure: true,
+  try {
 
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+    // =========================================
+    // AUTO FIX EMAIL
+    // =========================================
+    const recipientEmail =
+      userEmail ||
+      formData?.email;
 
-  // =========================
-  // PDF ATTACHMENT
-  // =========================
-  const attachments = [
-    {
-      filename: "agreement.pdf",
-      path: pdfPath,
-    },
-  ];
+    console.log("USER EMAIL =>", recipientEmail);
 
-  // =====================================================
-  // STEP 1
-  // SEND MAIL TO USER
-  // =====================================================
-  await transporter.sendMail({
-    from: `"Prairie Lines Transportation" <${process.env.EMAIL_USER}>`,
+    // =========================================
+    // VALIDATE USER EMAIL
+    // =========================================
+    if (
+      !recipientEmail ||
+      typeof recipientEmail !== "string" ||
+      !recipientEmail.includes("@")
+    ) {
+      throw new Error(
+        "Recipient email is missing or invalid."
+      );
+    }
 
-    to: userEmail,
+    // =========================================
+    // VALIDATE ENV VARIABLES
+    // =========================================
+    if (
+      !process.env.EMAIL_USER ||
+      !process.env.EMAIL_PASS
+    ) {
+      throw new Error(
+        "EMAIL_USER or EMAIL_PASS missing in environment variables."
+      );
+    }
 
-    subject: "Your Agreement PDF",
+    console.log(
+      "EMAIL_USER =>",
+      process.env.EMAIL_USER
+    );
 
-    html: `
-      <div style="font-family: Arial, sans-serif; padding:20px;">
+    // =========================================
+    // HOSTINGER SMTP
+    // =========================================
+    const transporter = nodemailer.createTransport({
+      host: "smtp.hostinger.com",
+      port: 465,
+      secure: true,
 
-        <h2 style="color:#0B7BEA;">
-          Agreement Submitted Successfully
-        </h2>
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-        <p>
-          Hello ${formData.printName || formData.carrierName},
-        </p>
+    // =========================================
+    // VERIFY SMTP
+    // =========================================
+    await transporter.verify();
 
-        <p>
-          Thank you for submitting your agreement.
-        </p>
+    console.log("SMTP VERIFIED");
 
-        <p>
-          Your agreement PDF is attached with this email.
-        </p>
+    // =========================================
+    // PDF ATTACHMENT
+    // =========================================
+    const attachments = [];
 
-        <br />
+    if (pdfPath) {
+      attachments.push({
+        filename: "agreement.pdf",
+        path: pdfPath,
+      });
+    }
 
-        <p>
-          Regards,<br/>
-          Prairie Lines Transportation
-        </p>
+    // =====================================================
+    // STEP 1
+    // SEND MAIL TO USER
+    // =====================================================
+    const userMailOptions = {
+      from: process.env.EMAIL_USER,
 
-      </div>
-    `,
+      to: recipientEmail,
 
-    attachments,
-  });
+      subject: "Your Agreement PDF",
 
-  console.log("USER EMAIL SENT");
+      html: `
+        <div style="font-family: Arial, sans-serif; padding:20px;">
 
-  // =====================================================
-  // STEP 2
-  // SEND MAIL TO HOSTINGER MAILBOX
-  // =====================================================
-  await transporter.sendMail({
-    from: `"Prairie Lines Website" <${process.env.EMAIL_USER}>`,
+          <h2 style="color:#0B7BEA;">
+            Agreement Submitted Successfully
+          </h2>
 
-    to: process.env.EMAIL_USER,
-
-    replyTo: userEmail,
-
-    subject: `New Agreement Submitted - ${formData.companyName}`,
-
-    html: `
-      <div style="font-family: Arial, sans-serif; padding:20px;">
-
-        <h2 style="color:#0B7BEA;">
-          New Agreement Submitted
-        </h2>
-
-        <table style="width:100%; border-collapse: collapse;">
-
-          <tr>
-            <td style="padding:10px; font-weight:bold;">Carrier Name:</td>
-            <td style="padding:10px;">${formData.carrierName}</td>
-          </tr>
-
-          <tr>
-            <td style="padding:10px; font-weight:bold;">Company Name:</td>
-            <td style="padding:10px;">${formData.companyName}</td>
-          </tr>
-
-          <tr>
-            <td style="padding:10px; font-weight:bold;">Email:</td>
-            <td style="padding:10px;">${formData.email}</td>
-          </tr>
-
-          <tr>
-            <td style="padding:10px; font-weight:bold;">Phone:</td>
-            <td style="padding:10px;">${formData.phone}</td>
-          </tr>
-
-          <tr>
-            <td style="padding:10px; font-weight:bold;">MC/DOT:</td>
-            <td style="padding:10px;">${formData.mcDot}</td>
-          </tr>
-
-        </table>
-
-        <div style="
-          margin-top:20px;
-          padding:20px;
-          background:#f3f4f6;
-          border-radius:10px;
-        ">
           <p>
-            Agreement PDF attached below.
+            Hello ${
+              formData?.printName ||
+              formData?.carrierName ||
+              "User"
+            },
           </p>
+
+          <p>
+            Thank you for submitting your agreement.
+          </p>
+
+          <p>
+            Your agreement PDF is attached with this email.
+          </p>
+
+          <br />
+
+          <p>
+            Regards,<br/>
+            Prairie Lines Transportation
+          </p>
+
         </div>
+      `,
 
-      </div>
-    `,
+      attachments,
+    };
 
-    attachments,
-  });
+    const userMailResponse =
+      await transporter.sendMail(
+        userMailOptions
+      );
 
-  console.log("HOSTINGER MAILBOX EMAIL SENT");
+    console.log(
+      "USER EMAIL SENT =>",
+      userMailResponse.messageId
+    );
+
+    // =====================================================
+    // STEP 2
+    // SEND MAIL TO ADMIN / HOSTINGER MAILBOX
+    // =====================================================
+    const adminMailOptions = {
+      from: process.env.EMAIL_USER,
+
+      to: process.env.EMAIL_USER,
+
+      replyTo: recipientEmail,
+
+      subject: `New Agreement Submitted - ${
+        formData?.companyName || "Company"
+      }`,
+
+      html: `
+        <div style="font-family: Arial, sans-serif; padding:20px;">
+
+          <h2 style="color:#0B7BEA;">
+            New Agreement Submitted
+          </h2>
+
+          <table style="width:100%; border-collapse: collapse;">
+
+            <tr>
+              <td style="padding:10px; font-weight:bold;">
+                Carrier Name:
+              </td>
+
+              <td style="padding:10px;">
+                ${formData?.carrierName || "-"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px; font-weight:bold;">
+                Company Name:
+              </td>
+
+              <td style="padding:10px;">
+                ${formData?.companyName || "-"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px; font-weight:bold;">
+                Email:
+              </td>
+
+              <td style="padding:10px;">
+                ${recipientEmail}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px; font-weight:bold;">
+                Phone:
+              </td>
+
+              <td style="padding:10px;">
+                ${formData?.phone || "-"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:10px; font-weight:bold;">
+                MC/DOT:
+              </td>
+
+              <td style="padding:10px;">
+                ${formData?.mcDot || "-"}
+              </td>
+            </tr>
+
+          </table>
+
+          <div style="
+            margin-top:20px;
+            padding:20px;
+            background:#f3f4f6;
+            border-radius:10px;
+          ">
+            <p>
+              Agreement PDF attached below.
+            </p>
+          </div>
+
+        </div>
+      `,
+
+      attachments,
+    };
+
+    const adminMailResponse =
+      await transporter.sendMail(
+        adminMailOptions
+      );
+
+    console.log(
+      "ADMIN EMAIL SENT =>",
+      adminMailResponse.messageId
+    );
+
+    return true;
+
+  } catch (error) {
+
+    console.log(
+      "SEND AGREEMENT EMAIL ERROR =>",
+      error
+    );
+
+    throw error;
+  }
 };
 
 module.exports = sendAgreementEmail;
