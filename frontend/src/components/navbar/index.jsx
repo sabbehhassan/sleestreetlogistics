@@ -22,33 +22,33 @@ const Navbar = () => {
       <header className="fixed top-0 left-0 w-full z-50">
 
         {/* Top Bar */}
-        <div className="hidden lg:block bg-[#0F3D2E] border-b border-[#D4A017]/20 text-white">
+        <div className="hidden lg:block bg-[#2A203E] border-b border-[#D946EF]/20 text-white">
           <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center text-sm">
 
-            <div className="flex items-center gap-8 text-[#d8e3db]">
+            <div className="flex items-center gap-8 text-purple-100">
 
-              <div className="flex items-center gap-2 hover:text-[#D4A017] transition">
-                <FiMail className="text-[#D4A017]" />
-                <span>info@sleestreetlogistics.com</span>
+              <div className="flex items-center gap-2 hover:text-[#D946EF] transition-all duration-300">
+                <FiMail className="text-[#D946EF]" />
+                <span>info@sleestreetlogisticsllc.com</span>
               </div>
 
-              <div className="flex items-center gap-2 hover:text-[#D4A017] transition">
-                <FiMail className="text-[#D4A017]" />
-                <span>gysin@sleestreetlogistics.com</span>
+              <div className="flex items-center gap-2 hover:text-[#D946EF] transition-all duration-300">
+                <FiMail className="text-[#D946EF]" />
+                <span>gysin@sleestreetlogisticsllc.com</span>
               </div>
 
             </div>
 
-            <div className="flex items-center gap-2 text-[#d8e3db]">
-              <FiClock className="text-[#D4A017]" />
-              <span>Mon - Fri</span>
+            <div className="flex items-center gap-2 text-purple-100">
+              <FiClock className="text-[#D946EF]" />
+              <span>Mon - Fri | 8:00 AM - 6:00 PM</span>
             </div>
 
           </div>
         </div>
 
         {/* Main Navbar */}
-        <nav className="bg-[#F8F5EE]/95 backdrop-blur-xl shadow-lg border-b border-[#D4A017]/10">
+        <nav className="bg-white/95 backdrop-blur-xl border-b border-[#E9D5FF] shadow-xl shadow-purple-100/40">
           <div className="max-w-7xl mx-auto px-6">
 
             <div className="flex justify-between items-center h-[88px]">
@@ -57,13 +57,13 @@ const Navbar = () => {
               <Link to="/" className="flex items-center">
                 <img
                   src={logo}
-                  alt="SLEE STREET LOGISTICS"
-                  className="w-40 object-contain"
+                  alt="Slee Street Logistics LLC"
+                  className="h-16 w-auto object-contain"
                 />
               </Link>
 
               {/* Desktop Menu */}
-              <ul className="hidden lg:flex items-center gap-3 bg-[#EEF3E8] p-2 rounded-full border border-[#D4A017]/10 shadow-sm">
+              <ul className="hidden lg:flex items-center gap-2 bg-[#F7F3FF] p-2 rounded-full border border-[#E9D5FF] shadow-md">
 
                 {navLinks.map((item, index) => {
                   const isActive = location.pathname === item.path;
@@ -72,10 +72,10 @@ const Navbar = () => {
                     <li key={index}>
                       <Link
                         to={item.path}
-                        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                        className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
                           isActive
-                            ? "bg-[#2E6B3D] text-white shadow-md"
-                            : "text-[#0F3D2E] hover:bg-[#D4A017]/10 hover:text-[#2E6B3D]"
+                            ? "bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] text-white shadow-lg shadow-fuchsia-300/40"
+                            : "text-[#2A203E] hover:bg-[#F3F0FF] hover:text-[#7B3FF2]"
                         }`}
                       >
                         {item.name}
@@ -90,7 +90,7 @@ const Navbar = () => {
               <div className="hidden lg:block">
                 <button
                   onClick={() => setOpenAgreement(true)}
-                  className="bg-gradient-to-r from-[#2E6B3D] to-[#0F3D2E] hover:scale-105 text-white px-7 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] hover:scale-105 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_10px_35px_rgba(217,70,239,.35)]"
                 >
                   Carrier Setup | Agreement
                 </button>
@@ -100,22 +100,22 @@ const Navbar = () => {
               <div className="lg:hidden">
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className="w-11 h-11 rounded-xl bg-[#EEF3E8] flex items-center justify-center shadow-sm"
+                  className="w-11 h-11 rounded-xl bg-[#F7F3FF] flex items-center justify-center shadow-md"
                 >
                   {menuOpen ? (
-                    <HiX className="text-3xl text-[#0F3D2E]" />
+                    <HiX className="text-3xl text-[#7B3FF2]" />
                   ) : (
-                    <HiOutlineMenuAlt3 className="text-3xl text-[#0F3D2E]" />
+                    <HiOutlineMenuAlt3 className="text-3xl text-[#7B3FF2]" />
                   )}
                 </button>
               </div>
 
             </div>
-          </div>
 
-          {/* Mobile Menu */}
+          </div>
+                    {/* Mobile Menu */}
           {menuOpen && (
-            <div className="lg:hidden bg-[#F8F5EE] border-t shadow-xl animate-fadeDown">
+            <div className="lg:hidden bg-white border-t border-[#E9D5FF] shadow-2xl animate-fadeDown">
               <div className="px-6 py-6 space-y-4">
 
                 {navLinks.map((item, index) => {
@@ -126,10 +126,10 @@ const Navbar = () => {
                       key={index}
                       to={item.path}
                       onClick={() => setMenuOpen(false)}
-                      className={`block px-5 py-3 rounded-2xl text-sm font-semibold transition duration-300 ${
+                      className={`block px-5 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                         isActive
-                          ? "bg-[#2E6B3D] text-white"
-                          : "bg-[#EEF3E8] text-[#0F3D2E] hover:bg-[#D4A017]/10"
+                          ? "bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] text-white shadow-lg"
+                          : "bg-[#F7F3FF] text-[#2A203E] hover:bg-[#F3F0FF] hover:text-[#7B3FF2]"
                       }`}
                     >
                       {item.name}
@@ -142,7 +142,7 @@ const Navbar = () => {
                     setOpenAgreement(true);
                     setMenuOpen(false);
                   }}
-                  className="w-full bg-gradient-to-r from-[#2E6B3D] to-[#0F3D2E] text-white py-3 rounded-2xl font-semibold shadow-lg mt-4"
+                  className="w-full bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] text-white py-3 rounded-2xl font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300"
                 >
                   Carrier Setup | Agreement
                 </button>
