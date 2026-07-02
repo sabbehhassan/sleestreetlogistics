@@ -26,11 +26,13 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start md:-ml-4 -mt-4">
 
-            <img
-              src={logo}
-              alt="SLEE STREET LOGISTICS"
-              className="w-44 mb-4"
-            />
+            <div className="bg-white/10 rounded-2xl p-4 mb-4">
+              <img
+                src={logo}
+                alt="SLEE STREET LOGISTICS"
+                className="w-40"
+              />
+            </div>
 
             <p className="text-[#d7e3dc] text-sm leading-7 max-w-65">
               SLEE STREET LOGISTICS delivers dependable logistics and freight
