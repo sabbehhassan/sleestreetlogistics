@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FiClock, FiMail } from "react-icons/fi";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/SS logo.png";
 import CarrierAgreementModal from "../CarrierAgreementModal";
 
 const Navbar = () => {
