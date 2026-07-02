@@ -22,7 +22,7 @@ const Navbar = () => {
       <header className="fixed top-0 left-0 w-full z-50">
 
         {/* Top Bar */}
-        <div className="hidden lg:block bg-[#2A203E] border-b border-[#D946EF]/20 text-white">
+        <div className="hidden lg:block bg-[#1a1a4d] border-b border-[#ff1493]/20 text-white">
           <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center text-sm">
 
             <div className="flex items-center gap-8 text-purple-100">
@@ -40,7 +40,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-2 text-purple-100">
-              <FiClock className="text-[#D946EF]" />
+              <FiClock className="text-[#ff1493]" />
               <span>Mon - Fri | 8:00 AM - 6:00 PM</span>
             </div>
 
@@ -58,7 +58,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="Slee Street Logistics LLC"
-                  className="h-32 w-auto object-contain"
+                  className="h-24 w-auto object-contain"
                 />
               </Link>
 

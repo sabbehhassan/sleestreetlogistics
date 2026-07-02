@@ -35,6 +35,13 @@ app.get("/api/test", (req, res) => {
   });
 });
 
+// Start the server when running locally
+if (require.main === module) {
+  const port = process.env.PORT || 4000;
+  app.listen(port, () => {
+    console.log(`Backend running on http://localhost:${port}`);
+  });
+}
 
 // Export the app for Vercel serverless functions
 module.exports = app;

@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#0F3D2E] text-white overflow-hidden">
+    <footer className="relative bg-[#1a1a4d] text-white overflow-hidden">
 
       {/* Background Effects */}
       <div className="absolute top-0 left-0 w-87.5 h-87.5 bg-[#D4A017]/10 rounded-full blur-[120px]"></div>
@@ -60,7 +60,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={item.path}
-                    className="group flex items-center justify-center md:justify-start gap-3 hover:text-[#D4A017] transition duration-300"
+                    className="group flex items-center justify-center md:justify-start gap-3 hover:text-[#ff1493] transition duration-300"
                   >
                     <FaArrowRight className="text-[10px] group-hover:translate-x-1 transition duration-300" />
                     {item.name}
