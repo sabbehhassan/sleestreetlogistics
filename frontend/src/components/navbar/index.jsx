@@ -37,6 +37,8 @@ const Navbar = () => {
                 <span>gysin@sleestreetlogistics.com</span>
               </div>
 
+            </div>
+
             <div className="flex items-center gap-2 text-[#d8e3db]">
               <FiClock className="text-[#D4A017]" />
               <span>Mon - Fri</span>
