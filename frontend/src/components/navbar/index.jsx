@@ -29,14 +29,12 @@ const Navbar = () => {
 
               <div className="flex items-center gap-2 hover:text-[#D4A017] transition">
                 <FiMail className="text-[#D4A017]" />
-                <span>info@prairielinestransportation.com</span>
+                <span>info@sleestreetlogistics.com</span>
               </div>
 
               <div className="flex items-center gap-2 hover:text-[#D4A017] transition">
                 <FiMail className="text-[#D4A017]" />
-                <span>gysin@prairielinestransportation.com</span>
-              </div>
-
+                <span>gysin@sleestreetlogistics.com</span>
             </div>
 
             <div className="flex items-center gap-2 text-[#d8e3db]">
@@ -57,7 +55,7 @@ const Navbar = () => {
               <Link to="/" className="flex items-center">
                 <img
                   src={logo}
-                  alt="PRAIRIE LINES TRANSPORTATION INC"
+                  alt="SLEE STREET LOGISTICS"
                   className="w-40 object-contain"
                 />
               </Link>

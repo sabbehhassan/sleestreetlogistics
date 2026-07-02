@@ -64,8 +64,7 @@ const Contact = () => {
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
             <span className="inline-block bg-[#D4A017] text-[#0F3D2E] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
-              Contact Prairie Lines
-            </span>
+              Contact Slee Street Logistics
 
             <h1 className="text-white text-4xl md:text-6xl font-bold">
               Contact Us
@@ -106,9 +105,9 @@ const Contact = () => {
                   title: "Email",
                   value: (
                     <p>
-                      info@prairielinestransportation.com
+                      info@sleestreetlogistics.com
                       <br />
-                      gysin@prairielinestransportation.com
+                      gysin@sleestreetlogistics.com
                     </p>
                   ),
                 },

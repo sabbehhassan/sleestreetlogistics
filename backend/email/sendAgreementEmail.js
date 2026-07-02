@@ -16,9 +16,9 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
   });
 
   const mailOptions = {
-    from: `PRAIRIE LINES TRANSPORTATION INC <${process.env.EMAIL_USER}>`,
+    from: `SLEE STREET LOGISTICS <${process.env.EMAIL_USER}>`,
     to: userEmail,
-    cc: "gysin@prairielinestransportation.com",
+    cc: "gysin@sleestreetlogistics.com",
     subject: "Your Carrier Agreement Has Been Submitted Successfully",
 
     html: `
@@ -28,7 +28,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
         <!-- Header -->
         <div style="background:#0b1f5f;padding:45px 30px;text-align:center;">
           <h1 style="margin:0;color:#ffffff;font-size:30px;">
-            PRAIRIE LINES TRANSPORTATION INC
+            SLEE STREET LOGISTICS
           </h1>
 
           <p style="color:#dbe4ff;font-size:15px;margin-top:12px;">
@@ -44,7 +44,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
           </p>
 
           <p style="font-size:15px;color:#555;line-height:1.9;">
-            Thank you for choosing <strong>PRAIRIE LINES TRANSPORTATION INC</strong>.
+            Thank you for choosing <strong>SLEE STREET LOGISTICS</strong>.
             Your agreement has been successfully received and is currently under review.
           </p>
 
@@ -52,7 +52,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
           <div style="background:#f2f7ff;border-radius:12px;padding:20px;margin:30px 0;">
             <p style="margin:0;font-size:15px;color:#333;">
               📄 <strong>Reference ID:</strong>
-              PRAIRIE-${Date.now()}
+              SLEE-${Date.now()}
             </p>
 
             <p style="margin-top:10px;font-size:15px;color:#333;">
@@ -144,16 +144,16 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
 
           <p style="font-size:15px;color:#555;margin-top:30px;">
             Best Regards,<br>
-            <strong>PRAIRIE LINES TRANSPORTATION INC Team</strong>
+            <strong>SLEE STREET LOGISTICS Team</strong>
           </p>
         </div>
 
         <!-- Footer -->
         <div style="background:#f5f6fa;padding:25px;text-align:center;font-size:13px;color:#666;">
-          PRAIRIE LINES TRANSPORTATION INC<br>
+          SLEE STREET LOGISTICS<br>
           54 1/2 street south fargo, ND  58103<br>
-          info@prairielinestransportation.com<br>
-          gysin@prairielinestransportation.com
+          info@sleestreetlogistics.com<br>
+          gysin@sleestreetlogistics.com
         </div>
 
       </div>

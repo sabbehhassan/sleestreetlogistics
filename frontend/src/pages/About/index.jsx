@@ -101,7 +101,7 @@ const About = () => {
           </h2>
 
           <p className="text-[#5d6d63] mt-6 leading-8">
-            PRAIRIE LINES TRANSPORTATION INC connects businesses with dependable freight
+            SLEE STREET LOGISTICS connects businesses with dependable freight
             carriers and supply chain solutions.
           </p>
 

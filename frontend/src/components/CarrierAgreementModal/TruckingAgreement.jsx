@@ -76,7 +76,7 @@ export default function TruckingAgreement({
 
                 <div>
                   <h3 className="text-xl font-bold text-[#02053D]">
-                    PRAIRIE LINES TRANSPORTATION INC
+                    SLEE STREET LOGISTICS
                   </h3>
 
                   <p className="text-sm text-gray-500">
@@ -94,13 +94,13 @@ export default function TruckingAgreement({
                 <div className="flex items-start gap-3">
                   <Globe size={18} className="mt-1 text-[#02053D]" />
                   <span className="text-blue-600">
-                    www.prairielinestransportation.com
+                    www.sleestreetlogistics.com
                   </span>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="mt-1 text-[#02053D]" />
-                  <span>info@prairielinestransportation.com</span>
+                  <span>info@sleestreetlogistics.com</span>
                 </div>
               </div>
             </div>

@@ -45,7 +45,7 @@ module.exports = function agreementTemplate(formData) {
         left: 20%;
         width: 500px;
         height: 500px;
-        background: url("https://prairielinestransportation.vercel.app/logo.png") no-repeat center;
+        background: url("https://sleestreetlogistics.vercel.app/logo.png") no-repeat center;
         background-size: contain;
         opacity: 0.03;
         z-index: -1;
@@ -252,12 +252,12 @@ module.exports = function agreementTemplate(formData) {
       <div class="title">BROKER / CARRIER AGREEMENT</div>
 
       <div class="header-email">
-        info@prairielinestransportation.com
+        info@sleestreetlogistics.com
       </div>
     </div>
 
     <div class="logo-section">
-      <img src="https://prairielinestransportation.vercel.app/logo.png" class="logo"/>
+      <img src="https://sleestreetlogistics.vercel.app/logo.png" class="logo"/>
 
       <div class="company-address">
         54 1/2 street south fargo, ND 58103
@@ -277,7 +277,7 @@ module.exports = function agreementTemplate(formData) {
 
         <div class="info-box">
           <span class="info-label">Company</span>
-          <span class="info-value">PRAIRIE LINES TRANSPORTATION INC</span>
+          <span class="info-value">SLEE STREET LOGISTICS</span>
         </div>
 
         <div class="info-box">
@@ -292,7 +292,7 @@ module.exports = function agreementTemplate(formData) {
 
         <div class="info-box">
           <span class="info-label">Email</span>
-          <span class="info-value">info@prairielinestransportation.com</span>
+          <span class="info-value">info@sleestreetlogistics.com</span>
         </div>
 
       </div>
@@ -498,7 +498,7 @@ module.exports = function agreementTemplate(formData) {
 
         <div class="signature-col">
           <b>BROKER</b><br/>
-          PRAIRIE LINES TRANSPORTATION INC
+          SLEE STREET LOGISTICS
         </div>
 
         <div class="signature-col">
@@ -516,7 +516,7 @@ module.exports = function agreementTemplate(formData) {
   <div class="page-break"></div>
 
   <div class="certificate">
-    <img src="https://prairielinestransportation.vercel.app/certificate.png"/>
+    <img src="https://sleestreetlogistics.vercel.app/certificate.png"/>
   </div>
 
   </body>

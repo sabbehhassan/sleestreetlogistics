@@ -10,7 +10,7 @@ const reviews = [
     name: "John Doe",
     role: "Amazon Partner",
     review:
-      "We rely heavily on Amazon load deliveries, and Prairie Lines Transportation has never let us down. Every shipment is handled with precision.",
+      "We rely heavily on Amazon load deliveries, and Slee Street Logistics has never let us down. Every shipment is handled with precision.",
   },
   {
     name: "Alessandro Daluz",

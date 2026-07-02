@@ -28,12 +28,12 @@ const Footer = () => {
 
             <img
               src={logo}
-              alt="PRAIRIE LINES TRANSPORTATION INC"
+              alt="SLEE STREET LOGISTICS"
               className="w-44 mb-4"
             />
 
             <p className="text-[#d7e3dc] text-sm leading-7 max-w-65">
-              PRAIRIE LINES TRANSPORTATION INC delivers dependable logistics and freight
+              SLEE STREET LOGISTICS delivers dependable logistics and freight
               services designed to keep shipments moving efficiently, securely,
               and always on schedule.
             </p>
@@ -133,9 +133,9 @@ const Footer = () => {
                 </div>
 
                 <p className="text-[#d7e3dc] text-sm leading-7 break-all">
-                  info@prairielinestransportation.com
+                  info@sleestreetlogistics.com
                   <br />
-                  gysin@prairielinestransportation.com
+                  gysin@sleestreetlogistics.com
                 </p>
 
               </div>
@@ -150,7 +150,7 @@ const Footer = () => {
         <div className="pt-8 text-center">
 
           <p className="text-sm text-[#b7c7bf]">
-            © 2026 PRAIRIE LINES TRANSPORTATION INC. All Rights Reserved.
+            © 2026 SLEE STREET LOGISTICS. All Rights Reserved.
           </p>
 
         </div>
