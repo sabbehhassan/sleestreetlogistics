@@ -11,11 +11,11 @@ const Footer = () => {
     <footer className="relative bg-[#1a1a4d] text-white overflow-hidden">
 
       {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-87.5 h-87.5 bg-[#D4A017]/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 right-0 w-87.5 h-87.5 bg-[#2E6B3D]/20 rounded-full blur-[120px]"></div>
+      <div className="absolute top-0 left-0 w-87.5 h-87.5 bg-[#ff1493]/10 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 right-0 w-87.5 h-87.5 bg-[#1a1a4d]/20 rounded-full blur-[120px]"></div>
 
       {/* Top Border */}
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent"></div>
+      <div className="h-0.5 bg-gradient-to-r from-transparent via-[#ff1493] to-transparent"></div>
 
       {/* Footer Container */}
       <div className="relative max-w-7xl mx-auto px-6 pt-14 pb-6">
@@ -46,7 +46,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-8 relative inline-block text-white">
               Quick Links
 
-              <span className="absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 -bottom-2 w-12 h-0.5 bg-[#D4A017] rounded-full"></span>
+              <span className="absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 -bottom-2 w-12 h-0.5 bg-[#ff1493] rounded-full"></span>
             </h3>
 
             <ul className="space-y-4 text-[#d7e3dc]">
@@ -78,7 +78,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-8 relative inline-block text-white">
               Services
 
-              <span className="absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 -bottom-2 w-12 h-0.5 bg-[#D4A017] rounded-full"></span>
+              <span className="absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 -bottom-2 w-12 h-0.5 bg-[#ff1493] rounded-full"></span>
             </h3>
 
             <ul className="space-y-4 text-[#d7e3dc]">
@@ -91,7 +91,7 @@ const Footer = () => {
               ].map((service, index) => (
                 <li
                   key={index}
-                  className="hover:text-[#D4A017] transition duration-300 cursor-pointer"
+                  className="hover:text-[#ff1493] transition duration-300 cursor-pointer"
                 >
                   {service}
                 </li>
@@ -107,7 +107,7 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-8 relative inline-block text-white">
               Contact Info
 
-              <span className="absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 -bottom-2 w-12 h-0.5 bg-[#D4A017] rounded-full"></span>
+              <span className="absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 -bottom-2 w-12 h-0.5 bg-[#ff1493] rounded-full"></span>
             </h3>
 
             <div className="space-y-6 w-full">
@@ -115,7 +115,7 @@ const Footer = () => {
               {/* Address */}
               <div className="flex items-start justify-center md:justify-start gap-4 text-center md:text-left">
 
-                <div className="w-12 h-12 rounded-2xl bg-[#D4A017]/15 text-[#D4A017] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-[#ff1493]/15 text-[#ff1493] flex items-center justify-center shrink-0">
                   <FaMapMarkerAlt />
                 </div>
 
@@ -128,7 +128,7 @@ const Footer = () => {
               {/* Email */}
               <div className="flex items-start justify-center md:justify-start gap-4 text-center md:text-left">
 
-                <div className="w-12 h-12 rounded-2xl bg-[#D4A017]/15 text-[#D4A017] flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-[#ff1493]/15 text-[#ff1493] flex items-center justify-center shrink-0">
                   <FaEnvelope />
                 </div>
 

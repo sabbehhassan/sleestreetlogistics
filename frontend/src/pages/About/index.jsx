@@ -28,12 +28,12 @@ const About = () => {
           loading="lazy"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F3D2E]/90 to-[#0F3D2E]/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a4d]/90 to-[#1a1a4d]/60"></div>
 
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-6xl mx-auto px-6">
 
-            <span className="bg-[#D4A017] text-[#0F3D2E] px-5 py-2 rounded-full text-sm uppercase font-semibold shadow-lg">
+            <span className="bg-[#ff1493] text-[#1a1a4d] px-5 py-2 rounded-full text-sm uppercase font-semibold shadow-lg">
               About Our Company
             </span>
 
@@ -62,14 +62,14 @@ const About = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl shadow-xl p-8 text-center border border-[#D4A017]/10 hover:-translate-y-2 transition duration-500"
+              className="bg-white rounded-3xl shadow-xl p-8 text-center border border-[#ff1493]/10 hover:-translate-y-2 transition duration-500"
             >
 
-              <div className="w-[65px] h-[65px] mx-auto bg-gradient-to-br from-[#2E6B3D] to-[#0F3D2E] text-white flex items-center justify-center rounded-2xl shadow-lg">
+              <div className="w-[65px] h-[65px] mx-auto bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] text-white flex items-center justify-center rounded-2xl shadow-lg">
                 {item.icon}
               </div>
 
-              <h3 className="text-3xl font-bold mt-4 text-[#0F3D2E]">
+              <h3 className="text-3xl font-bold mt-4 text-[#1a1a4d]">
                 {item.number}
               </h3>
 
@@ -92,11 +92,11 @@ const About = () => {
 
         <div>
 
-          <span className="text-[#D4A017] uppercase text-sm font-semibold tracking-wide">
+          <span className="text-[#ff1493] uppercase text-sm font-semibold tracking-wide">
             Our Story
           </span>
 
-          <h2 className="text-4xl font-bold mt-3 text-[#0F3D2E] leading-tight">
+          <h2 className="text-4xl font-bold mt-3 text-[#1a1a4d] leading-tight">
             Building Trust Through Logistics Excellence
           </h2>
 
@@ -118,11 +118,11 @@ const About = () => {
 
         <div className="text-center mb-16">
 
-          <span className="bg-[#2E6B3D]/10 text-[#2E6B3D] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#2E6B3D]/10">
+          <span className="bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10">
             Why Choose Us
           </span>
 
-          <h2 className="text-4xl font-bold text-[#0F3D2E] mt-6">
+          <h2 className="text-4xl font-bold text-[#1a1a4d] mt-6">
             Why Choose Our Logistics Services
           </h2>
 
@@ -131,11 +131,11 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-10">
 
           {/* Feature 1 */}
-          <div className="bg-white p-8 rounded-3xl shadow-lg border border-[#D4A017]/10 hover:-translate-y-2 transition duration-500">
+          <div className="bg-white p-8 rounded-3xl shadow-lg border border-[#ff1493]/10 hover:-translate-y-2 transition duration-500">
 
-            <FaDollarSign className="text-[#2E6B3D] text-3xl mb-4" />
+            <FaDollarSign className="text-[#1a1a4d] text-3xl mb-4" />
 
-            <h3 className="text-xl font-bold mb-3 text-[#0F3D2E]">
+            <h3 className="text-xl font-bold mb-3 text-[#1a1a4d]">
               Competitive Pricing & Flexible Solutions
             </h3>
 
@@ -147,11 +147,11 @@ const About = () => {
           </div>
 
           {/* Feature 2 */}
-          <div className="bg-white p-8 rounded-3xl shadow-lg border border-[#D4A017]/10 hover:-translate-y-2 transition duration-500">
+          <div className="bg-white p-8 rounded-3xl shadow-lg border border-[#ff1493]/10 hover:-translate-y-2 transition duration-500">
 
-            <FaLock className="text-[#2E6B3D] text-3xl mb-4" />
+            <FaLock className="text-[#1a1a4d] text-3xl mb-4" />
 
-            <h3 className="text-xl font-bold mb-3 text-[#0F3D2E]">
+            <h3 className="text-xl font-bold mb-3 text-[#1a1a4d]">
               Advanced Security & Safety
             </h3>
 
@@ -170,11 +170,11 @@ const About = () => {
 
         <div>
 
-          <span className="text-[#D4A017] uppercase text-sm font-semibold tracking-wide">
+          <span className="text-[#ff1493] uppercase text-sm font-semibold tracking-wide">
             Mission & Vision
           </span>
 
-          <h2 className="text-4xl font-bold mt-3 text-[#0F3D2E] leading-tight">
+          <h2 className="text-4xl font-bold mt-3 text-[#1a1a4d] leading-tight">
             Delivering Smarter Logistics Worldwide
           </h2>
 
@@ -192,15 +192,15 @@ const About = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex gap-4 bg-white p-5 rounded-2xl shadow-lg border border-[#D4A017]/10"
+                className="flex gap-4 bg-white p-5 rounded-2xl shadow-lg border border-[#ff1493]/10"
               >
 
-                <div className="bg-gradient-to-br from-[#2E6B3D] to-[#0F3D2E] text-white p-3 rounded-xl shadow-md">
+                <div className="bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] text-white p-3 rounded-xl shadow-md">
                   {item.icon}
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-[#0F3D2E]">
+                  <h4 className="font-semibold text-[#1a1a4d]">
                     {item.title}
                   </h4>
 
@@ -227,7 +227,7 @@ const About = () => {
 
         <div className="max-w-5xl mx-auto px-6 text-center">
 
-          <h2 className="text-4xl font-bold mb-6 text-[#0F3D2E]">
+          <h2 className="text-4xl font-bold mb-6 text-[#1a1a4d]">
             Our Commitment to Quality
           </h2>
 
@@ -246,9 +246,9 @@ const About = () => {
       </div>
 
       {/* ================= CTA ================= */}
-      <div className="bg-gradient-to-r from-[#2E6B3D] to-[#0F3D2E] py-20 text-center text-white relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] py-20 text-center text-white relative overflow-hidden">
 
-        <div className="absolute inset-0 bg-[#D4A017]/5"></div>
+        <div className="absolute inset-0 bg-[#ff1493]/5"></div>
 
         <div className="relative">
 
@@ -261,7 +261,7 @@ const About = () => {
           </p>
 
           <Link to="/contact">
-            <button className="mt-8 bg-[#D4A017] hover:bg-[#e0ad1d] text-[#0F3D2E] px-7 py-3 rounded-xl flex items-center gap-2 mx-auto font-semibold transition duration-300 shadow-xl">
+            <button className="mt-8 bg-[#ff1493] hover:bg-[#e0ad1d] text-[#1a1a4d] px-7 py-3 rounded-xl flex items-center gap-2 mx-auto font-semibold transition duration-300 shadow-xl">
               Contact Us <FaArrowRight />
             </button>
           </Link>

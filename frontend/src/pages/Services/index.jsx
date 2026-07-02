@@ -57,7 +57,7 @@ const Services = () => {
 
             <div>
 
-              <span className="inline-block bg-[#D4A017] text-[#0F3D2E] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
+              <span className="inline-block bg-[#ff1493] text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
                 Logistics Expertise
               </span>
 
@@ -78,11 +78,11 @@ const Services = () => {
         {/* Intro */}
         <div className="max-w-6xl mx-auto px-6 py-20 text-center">
 
-          <h2 className="text-3xl md:text-5xl font-bold text-[#0F3D2E] leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#1a1a4d] leading-tight">
             Logistics Solutions Built For Modern Business
           </h2>
 
-          <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#2E6B3D] to-[#D4A017] mx-auto mt-6 rounded-full"></div>
+          <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] mx-auto mt-6 rounded-full"></div>
 
           <p className="text-[#5d6d63] text-base leading-8 max-w-3xl mx-auto mt-8">
             We provide comprehensive transportation and logistics services
@@ -94,7 +94,7 @@ const Services = () => {
         {/* Featured Service */}
         <div className="max-w-6xl mx-auto px-6 pb-20">
 
-          <div className="grid lg:grid-cols-2 gap-10 items-center bg-white rounded-[36px] shadow-xl overflow-hidden border border-[#D4A017]/10">
+          <div className="grid lg:grid-cols-2 gap-10 items-center bg-white rounded-[36px] shadow-xl overflow-hidden border border-[#ff1493]/10">
 
             <div className="relative overflow-hidden">
 
@@ -104,17 +104,17 @@ const Services = () => {
                 className="w-full h-[420px] object-cover hover:scale-105 transition duration-700"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F3D2E]/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a4d]/60 to-transparent"></div>
 
             </div>
 
             <div className="p-10">
 
-              <span className="text-[#D4A017] font-semibold uppercase tracking-wider text-sm">
+              <span className="text-[#ff1493] font-semibold uppercase tracking-wider text-sm">
                 Featured Service
               </span>
 
-              <h2 className="text-3xl font-bold text-[#0F3D2E] mt-3 leading-tight">
+              <h2 className="text-3xl font-bold text-[#1a1a4d] mt-3 leading-tight">
                 End-to-End Freight Transportation Services
               </h2>
 
@@ -126,9 +126,9 @@ const Services = () => {
 
               <div className="grid grid-cols-2 gap-4 mt-8">
 
-                <div className="bg-[#EEF3E8] rounded-2xl p-5 text-center border border-[#D4A017]/10">
+                <div className="bg-[#EEF3E8] rounded-2xl p-5 text-center border border-[#ff1493]/10">
 
-                  <h3 className="text-2xl font-bold text-[#2E6B3D]">
+                  <h3 className="text-2xl font-bold text-[#1a1a4d]">
                     24/7
                   </h3>
 
@@ -138,9 +138,9 @@ const Services = () => {
 
                 </div>
 
-                <div className="bg-[#EEF3E8] rounded-2xl p-5 text-center border border-[#D4A017]/10">
+                <div className="bg-[#EEF3E8] rounded-2xl p-5 text-center border border-[#ff1493]/10">
 
-                  <h3 className="text-2xl font-bold text-[#2E6B3D]">
+                  <h3 className="text-2xl font-bold text-[#1a1a4d]">
                     120+
                   </h3>
 
@@ -166,22 +166,22 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-[30px] p-8 shadow-md border border-[#D4A017]/10 hover:shadow-2xl hover:-translate-y-3 transition duration-500 relative overflow-hidden"
+                className="group bg-white rounded-[30px] p-8 shadow-md border border-[#ff1493]/10 hover:shadow-2xl hover:-translate-y-3 transition duration-500 relative overflow-hidden"
               >
 
                 {/* Top Accent */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E6B3D] to-[#D4A017]"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1a1a4d] to-[#ff1493]"></div>
 
                 {/* Glow */}
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#2E6B3D]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#1a1a4d]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
                 <div className="relative">
 
-                  <div className="w-[70px] h-[70px] rounded-2xl bg-gradient-to-br from-[#2E6B3D] to-[#0F3D2E] flex items-center justify-center text-white text-2xl shadow-lg group-hover:rotate-6 transition duration-500">
+                  <div className="w-[70px] h-[70px] rounded-2xl bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] flex items-center justify-center text-white text-2xl shadow-lg group-hover:rotate-6 transition duration-500">
                     {service.icon}
                   </div>
 
-                  <h3 className="text-2xl font-bold text-[#0F3D2E] mt-6">
+                  <h3 className="text-2xl font-bold text-[#1a1a4d] mt-6">
                     {service.title}
                   </h3>
 
@@ -189,7 +189,7 @@ const Services = () => {
                     {service.desc}
                   </p>
 
-                  <button className="mt-6 text-[#2E6B3D] text-sm font-semibold flex items-center gap-2 group-hover:gap-4 group-hover:text-[#D4A017] transition-all duration-300">
+                  <button className="mt-6 text-[#1a1a4d] text-sm font-semibold flex items-center gap-2 group-hover:gap-4 group-hover:text-[#ff1493] transition-all duration-300">
                     Explore Service
                     <FaArrowRight />
                   </button>

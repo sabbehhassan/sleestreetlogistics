@@ -23,7 +23,7 @@ export default function TruckingAgreement({
         <div className="max-h-[88vh] overflow-y-auto">
 
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#2E6B3D] to-[#2E6B3D] px-6 sm:px-10 py-8 text-white relative">
+          <div className="bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] px-6 sm:px-10 py-8 text-white relative">
 
             <button
               onClick={() => setStep(1)}

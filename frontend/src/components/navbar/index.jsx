@@ -27,13 +27,13 @@ const Navbar = () => {
 
             <div className="flex items-center gap-8 text-purple-100">
 
-              <div className="flex items-center gap-2 hover:text-[#D946EF] transition-all duration-300">
-                <FiMail className="text-[#D946EF]" />
+              <div className="flex items-center gap-2 hover:text-[#ff1493] transition-all duration-300">
+                <FiMail className="text-[#ff1493]" />
                 <span>info@sleestreetlogisticsllc.com</span>
               </div>
 
-              <div className="flex items-center gap-2 hover:text-[#D946EF] transition-all duration-300">
-                <FiMail className="text-[#D946EF]" />
+              <div className="flex items-center gap-2 hover:text-[#ff1493] transition-all duration-300">
+                <FiMail className="text-[#ff1493]" />
                 <span>gysin@sleestreetlogisticsllc.com</span>
               </div>
 
@@ -74,8 +74,8 @@ const Navbar = () => {
                         to={item.path}
                         className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
                           isActive
-                            ? "bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] text-white shadow-lg shadow-fuchsia-300/40"
-                            : "text-[#2A203E] hover:bg-[#F3F0FF] hover:text-[#7B3FF2]"
+                            ? "bg-gradient-to-r from-[#1a1a4d] via-[#1a1a4d] to-[#ff1493] text-white shadow-lg shadow-fuchsia-300/40"
+                            : "text-[#1a1a4d] hover:bg-[#F3F0FF] hover:text-[#1a1a4d]"
                         }`}
                       >
                         {item.name}
@@ -90,7 +90,7 @@ const Navbar = () => {
               <div className="hidden lg:block">
                 <button
                   onClick={() => setOpenAgreement(true)}
-                  className="bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] hover:scale-105 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_10px_35px_rgba(217,70,239,.35)]"
+                  className="bg-gradient-to-r from-[#1a1a4d] via-[#1a1a4d] to-[#ff1493] hover:scale-105 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_10px_35px_rgba(217,70,239,.35)]"
                 >
                   Carrier Setup | Agreement
                 </button>
@@ -103,9 +103,9 @@ const Navbar = () => {
                   className="w-11 h-11 rounded-xl bg-[#F7F3FF] flex items-center justify-center shadow-md"
                 >
                   {menuOpen ? (
-                    <HiX className="text-3xl text-[#7B3FF2]" />
+                    <HiX className="text-3xl text-[#1a1a4d]" />
                   ) : (
-                    <HiOutlineMenuAlt3 className="text-3xl text-[#7B3FF2]" />
+                    <HiOutlineMenuAlt3 className="text-3xl text-[#1a1a4d]" />
                   )}
                 </button>
               </div>
@@ -128,8 +128,8 @@ const Navbar = () => {
                       onClick={() => setMenuOpen(false)}
                       className={`block px-5 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                         isActive
-                          ? "bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] text-white shadow-lg"
-                          : "bg-[#F7F3FF] text-[#2A203E] hover:bg-[#F3F0FF] hover:text-[#7B3FF2]"
+                          ? "bg-gradient-to-r from-[#1a1a4d] via-[#1a1a4d] to-[#ff1493] text-white shadow-lg"
+                          : "bg-[#F7F3FF] text-[#1a1a4d] hover:bg-[#F3F0FF] hover:text-[#1a1a4d]"
                       }`}
                     >
                       {item.name}
@@ -142,7 +142,7 @@ const Navbar = () => {
                     setOpenAgreement(true);
                     setMenuOpen(false);
                   }}
-                  className="w-full bg-gradient-to-r from-[#7B3FF2] via-[#A855F7] to-[#D946EF] text-white py-3 rounded-2xl font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-[#1a1a4d] via-[#1a1a4d] to-[#ff1493] text-white py-3 rounded-2xl font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300"
                 >
                   Carrier Setup | Agreement
                 </button>

@@ -10,12 +10,12 @@ export default function InsuranceApplicationAssistance({
 }) {
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-[#0F3D2E] via-[#184735] to-[#0b241b] text-white overflow-hidden">
+    <section className="relative py-24 bg-gradient-to-br from-[#1a1a4d] via-[#184735] to-[#0b241b] text-white overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute w-[500px] h-[500px] bg-[#D4A017]/10 rounded-full blur-3xl top-[-120px] left-[-120px]"></div>
+      <div className="absolute w-[500px] h-[500px] bg-[#ff1493]/10 rounded-full blur-3xl top-[-120px] left-[-120px]"></div>
 
-      <div className="absolute w-[450px] h-[450px] bg-[#2E6B3D]/20 rounded-full blur-3xl bottom-[-120px] right-[-120px]"></div>
+      <div className="absolute w-[450px] h-[450px] bg-[#1a1a4d]/20 rounded-full blur-3xl bottom-[-120px] right-[-120px]"></div>
 
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -26,7 +26,7 @@ export default function InsuranceApplicationAssistance({
         <div className="text-center mb-20">
 
           {/* Badge */}
-          <span className="inline-block bg-[#D4A017] text-[#0F3D2E] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
+          <span className="inline-block bg-[#ff1493] text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
             Insurance Support
           </span>
 
@@ -34,7 +34,7 @@ export default function InsuranceApplicationAssistance({
             Insurance Application Assistance
           </h2>
 
-          <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#D4A017] to-[#f2d06b] rounded-full mx-auto mt-6"></div>
+          <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#ff1493] to-[#f2d06b] rounded-full mx-auto mt-6"></div>
 
           <p className="mt-8 text-[#d7e3dc] max-w-2xl mx-auto leading-8">
             Fast-track your trucking insurance with expert guidance,
@@ -78,10 +78,10 @@ export default function InsuranceApplicationAssistance({
               >
 
                 {/* Glow */}
-                <div className="absolute -right-10 -bottom-10 w-28 h-28 bg-[#D4A017]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="absolute -right-10 -bottom-10 w-28 h-28 bg-[#ff1493]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
                 {/* Icon */}
-                <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D4A017] to-[#b98708] flex items-center justify-center text-white shadow-xl shrink-0 group-hover:rotate-6 transition duration-500">
+                <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#ff1493] to-[#b98708] flex items-center justify-center text-white shadow-xl shrink-0 group-hover:rotate-6 transition duration-500">
                   {item.icon}
                 </div>
 
@@ -107,7 +107,7 @@ export default function InsuranceApplicationAssistance({
           <div className="relative">
 
             {/* Line */}
-            <div className="absolute left-[18px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#D4A017] via-[#ffffff40] to-transparent"></div>
+            <div className="absolute left-[18px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#ff1493] via-[#ffffff40] to-transparent"></div>
 
             <div className="space-y-10">
 
@@ -140,13 +140,13 @@ export default function InsuranceApplicationAssistance({
                 >
 
                   {/* Dot */}
-                  <div className="absolute left-0 top-1 w-9 h-9 rounded-full bg-gradient-to-br from-[#D4A017] to-[#b98708] border-4 border-[#0F3D2E] shadow-lg flex items-center justify-center text-[#0F3D2E] text-xs font-bold">
+                  <div className="absolute left-0 top-1 w-9 h-9 rounded-full bg-gradient-to-br from-[#ff1493] to-[#b98708] border-4 border-[#1a1a4d] shadow-lg flex items-center justify-center text-[#1a1a4d] text-xs font-bold">
                     {index + 1}
                   </div>
 
                   <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[24px] p-6 hover:bg-white/15 transition duration-300">
 
-                    <span className="text-[#D4A017] text-xs uppercase tracking-widest font-semibold">
+                    <span className="text-[#ff1493] text-xs uppercase tracking-widest font-semibold">
                       {item.step}
                     </span>
 
@@ -174,7 +174,7 @@ export default function InsuranceApplicationAssistance({
 
           <button
             onClick={() => setOpenAgreement(true)}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#D4A017] to-[#b98708] hover:scale-[1.02] text-[#0F3D2E] px-9 py-4 rounded-2xl font-bold transition-all duration-300 shadow-[0_12px_30px_rgba(212,160,23,0.35)]"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#ff1493] to-[#b98708] hover:scale-[1.02] text-[#1a1a4d] px-9 py-4 rounded-2xl font-bold transition-all duration-300 shadow-[0_12px_30px_rgba(212,160,23,0.35)]"
           >
             Apply For Insurance Assistance
           </button>

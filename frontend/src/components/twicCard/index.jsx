@@ -11,9 +11,9 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
     <section className="relative bg-gradient-to-b from-[#F8F5EE] to-[#EEF3E8] py-24 overflow-hidden">
 
       {/* Background Glow */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#D4A017]/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#ff1493]/10 rounded-full blur-3xl"></div>
 
-      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-[#2E6B3D]/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-[#1a1a4d]/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -21,15 +21,15 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
         <div className="text-center mb-16">
 
           {/* Badge */}
-          <span className="inline-block bg-[#2E6B3D]/10 text-[#2E6B3D] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#2E6B3D]/10 mb-6">
+          <span className="inline-block bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10 mb-6">
             Port Access Assistance
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0F3D2E] leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a4d] leading-tight">
             TWIC Card Assistance
           </h2>
 
-          <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#2E6B3D] to-[#D4A017] rounded-full mx-auto mt-6"></div>
+          <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] rounded-full mx-auto mt-6"></div>
 
           <p className="mt-8 text-[#5d6d63] max-w-2xl mx-auto leading-8">
             Get professional assistance in obtaining your TWIC card and unlock
@@ -66,17 +66,17 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
 
             <div
               key={index}
-              className="group relative bg-white rounded-[30px] p-8 shadow-lg border border-[#D4A017]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="group relative bg-white rounded-[30px] p-8 shadow-lg border border-[#ff1493]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
             >
 
               {/* Glow */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#2E6B3D]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#1a1a4d]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
               {/* Top Accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E6B3D] to-[#D4A017]"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1a1a4d] to-[#ff1493]"></div>
 
               {/* Icon */}
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2E6B3D] to-[#0F3D2E] flex items-center justify-center text-white shadow-xl group-hover:rotate-6 transition duration-500">
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] flex items-center justify-center text-white shadow-xl group-hover:rotate-6 transition duration-500">
 
                 {item.icon}
 
@@ -85,7 +85,7 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
               {/* Content */}
               <div className="relative">
 
-                <h3 className="text-xl font-bold text-[#0F3D2E] mt-6 leading-snug">
+                <h3 className="text-xl font-bold text-[#1a1a4d] mt-6 leading-snug">
                   {item.title}
                 </h3>
 
@@ -105,11 +105,11 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
 
           <div className="text-center mb-14">
 
-            <span className="inline-block bg-[#D4A017]/10 text-[#D4A017] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#D4A017]/10 mb-5">
+            <span className="inline-block bg-[#ff1493]/10 text-[#ff1493] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#ff1493]/10 mb-5">
               Simple Process
             </span>
 
-            <h3 className="text-4xl font-bold text-[#0F3D2E]">
+            <h3 className="text-4xl font-bold text-[#1a1a4d]">
               How It Works
             </h3>
 
@@ -142,19 +142,19 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
 
               <div
                 key={index}
-                className="relative bg-white rounded-[30px] p-8 border border-[#D4A017]/10 shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden text-center"
+                className="relative bg-white rounded-[30px] p-8 border border-[#ff1493]/10 shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden text-center"
               >
 
                 {/* Glow */}
-                <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#D4A017]/10 rounded-full blur-2xl"></div>
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#ff1493]/10 rounded-full blur-2xl"></div>
 
                 {/* Step Number */}
-                <div className="relative w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#D4A017] to-[#b98708] flex items-center justify-center text-[#0F3D2E] text-lg font-bold shadow-xl">
+                <div className="relative w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#ff1493] to-[#b98708] flex items-center justify-center text-[#1a1a4d] text-lg font-bold shadow-xl">
                   {item.step}
                 </div>
 
                 {/* Content */}
-                <h4 className="text-xl font-bold text-[#0F3D2E] mt-6">
+                <h4 className="text-xl font-bold text-[#1a1a4d] mt-6">
                   {item.title}
                 </h4>
 
@@ -170,14 +170,14 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 relative overflow-hidden rounded-[36px] bg-gradient-to-r from-[#2E6B3D] to-[#0F3D2E] p-12 text-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+        <div className="mt-20 relative overflow-hidden rounded-[36px] bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] p-12 text-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
 
           {/* Glow */}
-          <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#D4A017]/10 rounded-full blur-3xl"></div>
+          <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#ff1493]/10 rounded-full blur-3xl"></div>
 
           <div className="relative">
 
-            <span className="inline-block bg-[#D4A017] text-[#0F3D2E] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
+            <span className="inline-block bg-[#ff1493] text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
               Start Today
             </span>
 
@@ -192,7 +192,7 @@ export default function TwicCardAssistance({ setOpenAgreement }) {
 
             <button
               onClick={() => setOpenAgreement(true)}
-              className="mt-10 bg-gradient-to-r from-[#D4A017] to-[#b98708] hover:scale-[1.02] text-[#0F3D2E] px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-[0_12px_30px_rgba(212,160,23,0.35)]"
+              className="mt-10 bg-gradient-to-r from-[#ff1493] to-[#b98708] hover:scale-[1.02] text-[#1a1a4d] px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-[0_12px_30px_rgba(212,160,23,0.35)]"
             >
               Apply For TWIC Assistance
             </button>

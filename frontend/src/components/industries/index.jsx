@@ -45,19 +45,19 @@ const Industries = () => {
     <section className="relative bg-[#F8F5EE] py-28 overflow-hidden">
 
       {/* Background Blur Effects */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#2E6B3D]/10 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#D4A017]/10 rounded-full blur-[120px]"></div>
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#1a1a4d]/10 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#ff1493]/10 rounded-full blur-[120px]"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto">
 
-          <span className="inline-block bg-[#2E6B3D]/10 text-[#2E6B3D] px-6 py-2 rounded-full text-sm font-semibold uppercase tracking-[2px] border border-[#2E6B3D]/10">
+          <span className="inline-block bg-[#1a1a4d]/10 text-[#1a1a4d] px-6 py-2 rounded-full text-sm font-semibold uppercase tracking-[2px] border border-[#1a1a4d]/10">
             Trusted Logistics Network
           </span>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-[#0F3D2E] mt-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold text-[#1a1a4d] mt-6 leading-tight">
             Connecting Industry Leaders Through Modern Logistics
           </h2>
 
@@ -84,7 +84,7 @@ const Industries = () => {
             {[...partners, ...partners, ...partners].map((partner, index) => (
               <div
                 key={index}
-                className="min-w-[120px] sm:min-w-[230px] bg-white rounded-[20px] sm:rounded-[30px] p-4 sm:p-8 flex items-center justify-center border border-[#D4A017]/10 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="min-w-[120px] sm:min-w-[230px] bg-white rounded-[20px] sm:rounded-[30px] p-4 sm:p-8 flex items-center justify-center border border-[#ff1493]/10 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <img
                   src={partner.image}
@@ -101,11 +101,11 @@ const Industries = () => {
 
           <div className="text-center mb-16">
 
-            <span className="text-[#D4A017] uppercase tracking-[3px] font-semibold text-sm">
+            <span className="text-[#ff1493] uppercase tracking-[3px] font-semibold text-sm">
               Performance Metrics
             </span>
 
-            <h3 className="text-3xl md:text-5xl font-bold text-[#0F3D2E] mt-4">
+            <h3 className="text-3xl md:text-5xl font-bold text-[#1a1a4d] mt-4">
               Trusted Results That Speak For Us
             </h3>
 
@@ -116,22 +116,22 @@ const Industries = () => {
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-[35px] p-8 border border-[#D4A017]/10 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="group relative bg-white rounded-[35px] p-8 border border-[#ff1493]/10 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
               >
 
                 {/* Top Accent Line */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E6B3D] to-[#D4A017]"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1a1a4d] to-[#ff1493]"></div>
 
                 {/* Glow */}
-                <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-[#2E6B3D]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-[#1a1a4d]/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
                 {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-[#2E6B3D]/10 text-[#2E6B3D] flex items-center justify-center text-2xl group-hover:bg-[#2E6B3D] group-hover:text-white transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-[#1a1a4d]/10 text-[#1a1a4d] flex items-center justify-center text-2xl group-hover:bg-[#1a1a4d] group-hover:text-white transition-all duration-500">
                   {item.icon}
                 </div>
 
                 {/* Value */}
-                <h4 className="text-4xl font-bold text-[#0F3D2E] mt-8">
+                <h4 className="text-4xl font-bold text-[#1a1a4d] mt-8">
                   {item.value}
                 </h4>
 

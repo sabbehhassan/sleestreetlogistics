@@ -68,11 +68,11 @@ const Testimonials = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
 
-          <span className="bg-[#2E6B3D]/10 text-[#2E6B3D] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#2E6B3D]/10">
+          <span className="bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10">
             Client Feedback
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0F3D2E] mt-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a4d] mt-6 leading-tight">
             Trusted By Businesses Worldwide
           </h2>
 
@@ -89,21 +89,21 @@ const Testimonials = () => {
           {visibleReviews.map((review, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-[32px] p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-[#D4A017]/10"
+              className="group relative bg-white rounded-[32px] p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-[#ff1493]/10"
             >
 
               {/* Background Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2E6B3D]/5 to-[#D4A017]/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a4d]/5 to-[#ff1493]/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-[#2E6B3D]/10 text-6xl group-hover:text-[#D4A017]/20 transition duration-500">
+              <div className="absolute top-6 right-6 text-[#1a1a4d]/10 text-6xl group-hover:text-[#ff1493]/20 transition duration-500">
                 <FaQuoteLeft />
               </div>
 
               <div className="relative">
 
                 {/* Stars */}
-                <div className="flex gap-1 text-[#D4A017] mb-5">
+                <div className="flex gap-1 text-[#ff1493] mb-5">
                   {[...Array(5)].map((_, i) => (
                     <FaStar key={i} className="text-sm" />
                   ))}
@@ -123,12 +123,12 @@ const Testimonials = () => {
                   <div className="flex items-center gap-4">
 
                     {/* Avatar */}
-                    <div className="w-[55px] h-[55px] rounded-full bg-gradient-to-br from-[#2E6B3D] to-[#0F3D2E] text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                    <div className="w-[55px] h-[55px] rounded-full bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] text-white flex items-center justify-center font-bold text-lg shadow-lg">
                       {review.name.charAt(0)}
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-bold text-[#0F3D2E]">
+                      <h4 className="text-lg font-bold text-[#1a1a4d]">
                         {review.name}
                       </h4>
 
@@ -140,7 +140,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Arrow */}
-                  <div className="text-[#2E6B3D] text-lg group-hover:text-[#D4A017] group-hover:translate-x-1 transition duration-300">
+                  <div className="text-[#1a1a4d] text-lg group-hover:text-[#ff1493] group-hover:translate-x-1 transition duration-300">
                     <FaArrowRight />
                   </div>
 
@@ -149,7 +149,7 @@ const Testimonials = () => {
               </div>
 
               {/* Top Accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E6B3D] to-[#D4A017]"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1a1a4d] to-[#ff1493]"></div>
 
             </div>
           ))}

@@ -21,26 +21,26 @@ export default function RentedTrailerProgram({ setOpenAgreement }) {
           <div className="relative">
 
             {/* Glow */}
-            <div className="absolute -top-10 -left-10 w-52 h-52 bg-[#D4A017]/10 rounded-full blur-3xl"></div>
+            <div className="absolute -top-10 -left-10 w-52 h-52 bg-[#ff1493]/10 rounded-full blur-3xl"></div>
 
             <img
               src={trailerImg}
               alt="Trailer Rental"
-              className="relative rounded-[36px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] w-full h-[520px] object-cover border border-[#D4A017]/10"
+              className="relative rounded-[36px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] w-full h-[520px] object-cover border border-[#ff1493]/10"
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 rounded-[36px] bg-gradient-to-t from-[#0F3D2E]/20 to-transparent"></div>
+            <div className="absolute inset-0 rounded-[36px] bg-gradient-to-t from-[#1a1a4d]/20 to-transparent"></div>
 
             {/* Floating Card 1 */}
-            <div className="absolute -bottom-7 left-6 bg-white/95 backdrop-blur-xl border border-[#D4A017]/10 p-5 rounded-2xl shadow-xl flex items-center gap-4 hover:-translate-y-1 transition duration-300">
+            <div className="absolute -bottom-7 left-6 bg-white/95 backdrop-blur-xl border border-[#ff1493]/10 p-5 rounded-2xl shadow-xl flex items-center gap-4 hover:-translate-y-1 transition duration-300">
 
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2E6B3D] to-[#0F3D2E] flex items-center justify-center text-white shadow-lg">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] flex items-center justify-center text-white shadow-lg">
                 <Truck size={22} />
               </div>
 
               <div>
-                <h4 className="font-bold text-[#0F3D2E] text-sm">
+                <h4 className="font-bold text-[#1a1a4d] text-sm">
                   50+ Trailers
                 </h4>
 
@@ -52,14 +52,14 @@ export default function RentedTrailerProgram({ setOpenAgreement }) {
             </div>
 
             {/* Floating Card 2 */}
-            <div className="absolute -top-7 right-6 bg-white/95 backdrop-blur-xl border border-[#D4A017]/10 p-5 rounded-2xl shadow-xl flex items-center gap-4 hover:-translate-y-1 transition duration-300">
+            <div className="absolute -top-7 right-6 bg-white/95 backdrop-blur-xl border border-[#ff1493]/10 p-5 rounded-2xl shadow-xl flex items-center gap-4 hover:-translate-y-1 transition duration-300">
 
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D4A017] to-[#b98708] flex items-center justify-center text-white shadow-lg">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff1493] to-[#b98708] flex items-center justify-center text-white shadow-lg">
                 <DollarSign size={22} />
               </div>
 
               <div>
-                <h4 className="font-bold text-[#0F3D2E] text-sm">
+                <h4 className="font-bold text-[#1a1a4d] text-sm">
                   Affordable
                 </h4>
 
@@ -76,17 +76,17 @@ export default function RentedTrailerProgram({ setOpenAgreement }) {
           <div>
 
             {/* Badge */}
-            <span className="inline-block bg-[#2E6B3D]/10 text-[#2E6B3D] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#2E6B3D]/10 mb-6">
+            <span className="inline-block bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10 mb-6">
               Rental Solutions
             </span>
 
             {/* Title */}
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0F3D2E] leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a4d] leading-tight">
               Rented Trailer Program
             </h2>
 
             {/* Line */}
-            <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#2E6B3D] to-[#D4A017] rounded-full mt-6"></div>
+            <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] rounded-full mt-6"></div>
 
             {/* Description */}
             <p className="mt-8 text-[#5d6d63] leading-8 text-base">
@@ -123,21 +123,21 @@ export default function RentedTrailerProgram({ setOpenAgreement }) {
 
                 <div
                   key={index}
-                  className="group bg-white border border-[#D4A017]/10 rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 relative overflow-hidden"
+                  className="group bg-white border border-[#ff1493]/10 rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-start gap-4 relative overflow-hidden"
                 >
 
                   {/* Glow */}
-                  <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-[#2E6B3D]/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                  <div className="absolute -right-8 -bottom-8 w-24 h-24 bg-[#1a1a4d]/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
                   {/* Icon */}
-                  <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#2E6B3D] to-[#0F3D2E] flex items-center justify-center text-white shadow-lg shrink-0 group-hover:rotate-6 transition duration-500">
+                  <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] flex items-center justify-center text-white shadow-lg shrink-0 group-hover:rotate-6 transition duration-500">
                     {item.icon}
                   </div>
 
                   {/* Content */}
                   <div className="relative">
 
-                    <h4 className="font-bold text-[#0F3D2E] text-lg">
+                    <h4 className="font-bold text-[#1a1a4d] text-lg">
                       {item.title}
                     </h4>
 
@@ -157,7 +157,7 @@ export default function RentedTrailerProgram({ setOpenAgreement }) {
 
               <button
                 onClick={() => setOpenAgreement(true)}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2E6B3D] to-[#0F3D2E] hover:scale-[1.02] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-[0_12px_30px_rgba(46,107,61,0.25)]"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] hover:scale-[1.02] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-[0_12px_30px_rgba(46,107,61,0.25)]"
               >
 
                 Apply For Trailer Agreement
