@@ -58,7 +58,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="Slee Street Logistics LLC"
-                  className="h-16 w-auto object-contain"
+                  className="h-32 w-auto object-contain"
                 />
               </Link>
 
