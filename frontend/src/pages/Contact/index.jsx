@@ -65,6 +65,7 @@ const Contact = () => {
           <div>
             <span className="inline-block bg-[#D4A017] text-[#0F3D2E] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
               Contact Slee Street Logistics
+            </span>
 
             <h1 className="text-white text-4xl md:text-6xl font-bold">
               Contact Us
