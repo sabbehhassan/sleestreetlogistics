@@ -35,7 +35,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2 hover:text-[#D4A017] transition">
                 <FiMail className="text-[#D4A017]" />
                 <span>gysin@sleestreetlogistics.com</span>
-            </div>
+              </div>
 
             <div className="flex items-center gap-2 text-[#d8e3db]">
               <FiClock className="text-[#D4A017]" />
