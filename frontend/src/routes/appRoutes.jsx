@@ -18,6 +18,10 @@ const withScrollToTop = (element) => (
 
 const router = createBrowserRouter([
   {
+    path: "/carrier-agreement",
+    element: <CarrierAgreementPage />,
+  },
+  {
     path: "/",
     element: withScrollToTop(<Layout />),
     children: [
@@ -36,10 +40,6 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
-      },
-      {
-        path: "carrier-agreement",
-        element: <CarrierAgreementPage />,
       },
     ],
   },

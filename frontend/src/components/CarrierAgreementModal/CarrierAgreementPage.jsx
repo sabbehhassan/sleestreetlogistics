@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AgreementSelection from "./AgreementSelection";
 import TruckingAgreement from "./TruckingAgreement";
 import CarrierInformationStep from "./CarrierInformationStep";
@@ -7,6 +8,7 @@ import FinalSubmissionStep from "./FinalSubmissionStep";
 import AgreementSuccessStep from "./AgreementSuccessStep";
 
 export default function CarrierAgreementPage() {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [agreementData, setAgreementData] = useState({
     agreementType: "",
@@ -49,11 +51,13 @@ export default function CarrierAgreementPage() {
       routingNumber: "",
       date: "",
     });
+
+    navigate("/");
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black/10 p-4">
-      <div className="relative w-full max-w-5xl rounded-3xl bg-white shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/70 p-4 backdrop-blur-sm">
+      <div className="relative my-6 w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl">
         {step === 1 && (
           <AgreementSelection
             setStep={setStep}

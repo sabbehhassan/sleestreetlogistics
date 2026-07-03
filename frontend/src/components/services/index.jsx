@@ -31,83 +31,73 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section className="bg-gradient-to-b from-[#F8F5EE] to-[#EEF3E8] py-24 overflow-hidden">
+    <section
+      id="services"
+      className="relative overflow-hidden bg-gradient-to-b from-[#F7F4FF] to-[#EEE8FF] py-24 sm:py-28"
+    >
+      {/* Soft Background Effects */}
+      <div className="absolute left-[-170px] top-20 h-[340px] w-[340px] rounded-full bg-[#7A2CFF]/10 blur-[120px]" />
+      <div className="absolute bottom-0 right-[-160px] h-[340px] w-[340px] rounded-full bg-[#F02BCB]/10 blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-6">
-
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto">
-
-          <span className="bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-flex rounded-full border border-[#7A2CFF]/15 bg-white/70 px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#5B22C8] shadow-sm sm:text-sm">
             Logistics Expertise
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a4d] mt-6 leading-tight">
+          <h2 className="mt-6 text-3xl font-extrabold leading-tight text-[#08051A] sm:text-4xl md:text-5xl">
             Premium Freight & Transportation Services
           </h2>
 
-          <p className="text-[#5d6d63] text-base leading-8 mt-6">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#5A5370]">
             Delivering reliable logistics, transportation, and freight solutions
-            tailored for businesses worldwide.
+            tailored for businesses that expect speed, safety, and consistency.
           </p>
-
         </div>
 
         {/* Services Cards */}
-        <div className="grid lg:grid-cols-3 gap-10 mt-20">
-
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {servicesData.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-[32px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-[#ff1493]/10"
+              className="group relative overflow-hidden rounded-2xl border border-[#7A2CFF]/10 bg-white shadow-[0_16px_40px_rgba(8,5,26,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[#F02BCB]/25 hover:shadow-[0_22px_55px_rgba(122,44,255,0.14)]"
             >
+              {/* Top Accent */}
+              <div className="absolute left-0 top-0 z-20 h-1 w-full bg-gradient-to-r from-[#5B22C8] to-[#F02BCB]" />
 
               {/* Image */}
-              <div className="relative overflow-hidden">
-
+              <div className="relative h-[240px] overflow-hidden sm:h-[260px]">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-[260px] object-cover transition duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a4d]/70 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08051A]/80 via-[#08051A]/25 to-transparent" />
 
                 {/* Icon */}
-                <div className="absolute top-6 left-6 w-[70px] h-[70px] rounded-2xl bg-white/90 backdrop-blur-md flex items-center justify-center text-[#1a1a4d] text-2xl shadow-lg group-hover:bg-[#1a1a4d] group-hover:text-white group-hover:rotate-6 transition duration-500">
+                <div className="absolute left-5 top-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/90 text-2xl text-[#5B22C8] shadow-lg backdrop-blur-md transition-all duration-300 group-hover:bg-[#5B22C8] group-hover:text-white sm:h-16 sm:w-16">
                   {service.icon}
                 </div>
-
               </div>
 
               {/* Content */}
-              <div className="p-8">
-
-                <h3 className="text-2xl font-bold text-[#1a1a4d]">
+              <div className="relative p-7 sm:p-8">
+                <h3 className="text-2xl font-extrabold text-[#08051A]">
                   {service.title}
                 </h3>
 
-                <p className="text-[#5d6d63] text-sm leading-7 mt-4">
+                <p className="mt-4 text-sm leading-7 text-[#5A5370]">
                   {service.desc}
                 </p>
-
               </div>
 
-              {/* Top Accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1a1a4d] to-[#ff1493]"></div>
-
-              {/* Hover Border */}
-              <div className="absolute inset-0 rounded-[32px] border border-transparent group-hover:border-[#ff1493]/30 transition duration-500"></div>
-
-              {/* Glow Effect */}
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#1a1a4d]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
+              {/* Soft Glow */}
+              <div className="absolute -bottom-12 -right-12 h-36 w-36 rounded-full bg-[#F02BCB]/10 blur-2xl transition duration-300 group-hover:bg-[#7A2CFF]/15" />
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

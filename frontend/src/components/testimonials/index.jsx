@@ -61,101 +61,111 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-[#EEF3E8] to-[#F8F5EE] py-24 overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#EEE8FF] to-[#F7F4FF] py-24 sm:py-28">
+      {/* Soft Background Effects */}
+      <div className="absolute left-[-170px] top-16 h-[340px] w-[340px] rounded-full bg-[#7A2CFF]/10 blur-[120px]" />
+      <div className="absolute bottom-0 right-[-160px] h-[340px] w-[340px] rounded-full bg-[#F02BCB]/10 blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-6">
-
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto">
-
-          <span className="bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-flex rounded-full border border-[#7A2CFF]/15 bg-white/70 px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#5B22C8] shadow-sm sm:text-sm">
             Client Feedback
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a4d] mt-6 leading-tight">
+          <h2 className="mt-6 text-3xl font-extrabold leading-tight text-[#08051A] sm:text-4xl md:text-5xl">
             Trusted By Businesses Worldwide
           </h2>
 
-          <p className="text-[#5d6d63] text-base leading-8 mt-6">
-            Hear directly from our satisfied clients who trust us for freight,
-            transportation, and logistics excellence.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#5A5370]">
+            Hear directly from clients who trust Slee Street Logistics for
+            dependable freight, transportation, and logistics support.
           </p>
-
         </div>
 
         {/* Reviews */}
-        <div className="grid lg:grid-cols-2 gap-8 mt-20">
-
+        <div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
           {visibleReviews.map((review, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-[32px] p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-[#ff1493]/10"
+              className="group relative overflow-hidden rounded-2xl border border-[#7A2CFF]/10 bg-white p-7 shadow-[0_16px_40px_rgba(8,5,26,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[#F02BCB]/25 hover:shadow-[0_22px_55px_rgba(122,44,255,0.14)] sm:p-8"
             >
+              {/* Top Accent */}
+              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#5B22C8] to-[#F02BCB]" />
 
-              {/* Background Glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a4d]/5 to-[#ff1493]/5 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              {/* Soft Glow */}
+              <div className="absolute -bottom-12 -right-12 h-36 w-36 rounded-full bg-[#F02BCB]/10 blur-2xl transition duration-300 group-hover:bg-[#7A2CFF]/15" />
 
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-[#1a1a4d]/10 text-6xl group-hover:text-[#ff1493]/20 transition duration-500">
+              <div className="absolute right-6 top-7 text-5xl text-[#7A2CFF]/10 transition duration-300 group-hover:text-[#F02BCB]/15 sm:text-6xl">
                 <FaQuoteLeft />
               </div>
 
               <div className="relative">
-
                 {/* Stars */}
-                <div className="flex gap-1 text-[#ff1493] mb-5">
+                <div className="mb-5 flex gap-1 text-[#F02BCB]">
                   {[...Array(5)].map((_, i) => (
                     <FaStar key={i} className="text-sm" />
                   ))}
                 </div>
 
                 {/* Review */}
-                <p className="text-[#4f5f55] text-base leading-8">
+                <p className="max-w-xl text-base leading-8 text-[#4E4765]">
                   "{review.review}"
                 </p>
 
                 {/* Divider */}
-                <div className="w-full h-[1px] bg-[#dfe7dc] my-8"></div>
+                <div className="my-8 h-px w-full bg-[#7A2CFF]/10" />
 
                 {/* User */}
-                <div className="flex items-center justify-between">
-
-                  <div className="flex items-center gap-4">
-
-                    {/* Avatar */}
-                    <div className="w-[55px] h-[55px] rounded-full bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] text-white flex items-center justify-center font-bold text-lg shadow-lg">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex min-w-0 items-center gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#5B22C8] to-[#F02BCB] text-lg font-extrabold text-white shadow-lg shadow-[#7A2CFF]/20">
                       {review.name.charAt(0)}
                     </div>
 
-                    <div>
-                      <h4 className="text-lg font-bold text-[#1a1a4d]">
+                    <div className="min-w-0">
+                      <h4 className="truncate text-lg font-extrabold text-[#08051A]">
                         {review.name}
                       </h4>
 
-                      <p className="text-sm text-[#6d7a72]">
+                      <p className="truncate text-sm text-[#6B6380]">
                         {review.role}
                       </p>
                     </div>
-
                   </div>
 
-                  {/* Arrow */}
-                  <div className="text-[#1a1a4d] text-lg group-hover:text-[#ff1493] group-hover:translate-x-1 transition duration-300">
+                  <div className="shrink-0 text-lg text-[#5B22C8] transition duration-300 group-hover:translate-x-1 group-hover:text-[#F02BCB]">
                     <FaArrowRight />
                   </div>
-
                 </div>
-
               </div>
-
-              {/* Top Accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1a1a4d] to-[#ff1493]"></div>
-
             </div>
           ))}
-
         </div>
 
+        {/* Slider Dots */}
+        <div className="mt-10 flex justify-center gap-2">
+          {Array.from({ length: Math.ceil(reviews.length / 2) }).map(
+            (_, index) => {
+              const isActive = Math.floor(currentIndex / 2) === index;
+
+              return (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setCurrentIndex(index * 2)}
+                  aria-label={`Show testimonials ${index + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    isActive
+                      ? "w-8 bg-[#5B22C8]"
+                      : "w-2 bg-[#7A2CFF]/25 hover:bg-[#F02BCB]/60"
+                  }`}
+                />
+              );
+            }
+          )}
+        </div>
       </div>
     </section>
   );

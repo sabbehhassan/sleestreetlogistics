@@ -2,207 +2,156 @@ import {
   ShieldCheck,
   FileText,
   Clock,
-  Truck,
+  CheckCircle,
 } from "lucide-react";
 
-export default function TwicCardAssistance({ setOpenAgreement }) {
+export default function InsuranceApplicationAssistance({
+  setOpenAgreement,
+}) {
+  const features = [
+    {
+      icon: <ShieldCheck size={28} />,
+      title: "Coverage Selection",
+      desc: "Get help choosing liability, cargo, and physical damage coverage.",
+    },
+    {
+      icon: <FileText size={28} />,
+      title: "Paperwork Handling",
+      desc: "We manage documents and filing so you avoid costly mistakes.",
+    },
+    {
+      icon: <Clock size={28} />,
+      title: "Quick Approval",
+      desc: "Speed up your approval with our streamlined process.",
+    },
+    {
+      icon: <CheckCircle size={28} />,
+      title: "FMCSA Compliance",
+      desc: "Stay compliant and ready to operate without delays.",
+    },
+  ];
+
+  const steps = [
+    {
+      step: "Step 1",
+      title: "Consultation",
+      desc: "We understand your trucking needs and insurance requirements.",
+    },
+    {
+      step: "Step 2",
+      title: "Documentation",
+      desc: "Submit your business details and required documents.",
+    },
+    {
+      step: "Step 3",
+      title: "Application",
+      desc: "We file and manage your insurance application.",
+    },
+    {
+      step: "Step 4",
+      title: "Approval",
+      desc: "Get your certificate and start operating immediately.",
+    },
+  ];
 
   return (
-    <section className="relative bg-gradient-to-b from-[#F8F5EE] to-[#EEF3E8] py-24 overflow-hidden">
+    <section className="relative overflow-hidden bg-[#08051A] py-24 text-white sm:py-28">
+      {/* Background Effects */}
+      <div className="absolute left-[-180px] top-[-120px] h-[460px] w-[460px] rounded-full bg-[#7A2CFF]/20 blur-[130px]" />
+      <div className="absolute bottom-[-140px] right-[-160px] h-[460px] w-[460px] rounded-full bg-[#F02BCB]/16 blur-[130px]" />
 
-      {/* Background Glow */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#ff1493]/10 rounded-full blur-3xl"></div>
+      {/* Subtle Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:24px_24px]" />
 
-      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-[#1a1a4d]/10 rounded-full blur-3xl"></div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        {/* Heading */}
-        <div className="text-center mb-16">
-
-          {/* Badge */}
-          <span className="inline-block bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10 mb-6">
-            Port Access Assistance
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
+          <span className="inline-flex rounded-full border border-[#F02BCB]/35 bg-[#F02BCB]/15 px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#F4A7FF] shadow-sm sm:text-sm">
+            Insurance Support
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a4d] leading-tight">
-            TWIC Card Assistance
+          <h2 className="mt-6 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
+            Insurance Application Assistance
           </h2>
 
-          <div className="w-[120px] h-[4px] bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] rounded-full mx-auto mt-6"></div>
+          <div className="mx-auto mt-6 h-1 w-28 rounded-full bg-gradient-to-r from-[#7A2CFF] to-[#F02BCB]" />
 
-          <p className="mt-8 text-[#5d6d63] max-w-2xl mx-auto leading-8">
-            Get professional assistance in obtaining your TWIC card and unlock
-            access to high-paying port loads and secure maritime facilities.
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[#D9D2F0]">
+            Fast-track your trucking insurance with expert guidance, full
+            compliance, and hassle-free application support.
           </p>
-
         </div>
 
-        {/* Features */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          {[
-            {
-              icon: <ShieldCheck size={34} />,
-              title: "Secure Port Access",
-              desc: "Gain authorized access to ports and restricted maritime facilities without delays.",
-            },
-            {
-              icon: <FileText size={34} />,
-              title: "Application Assistance",
-              desc: "We guide you through the entire TWIC application process including enrollment and verification.",
-            },
-            {
-              icon: <Clock size={34} />,
-              title: "Fast Processing Guidance",
-              desc: "Avoid delays with expert support and get your TWIC card approved quickly.",
-            },
-            {
-              icon: <Truck size={34} />,
-              title: "More Load Opportunities",
-              desc: "Access premium-paying port freight and increase your earning potential.",
-            },
-          ].map((item, index) => (
-
-            <div
-              key={index}
-              className="group relative bg-white rounded-[30px] p-8 shadow-lg border border-[#ff1493]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
-            >
-
-              {/* Glow */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#1a1a4d]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
-              {/* Top Accent */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1a1a4d] to-[#ff1493]"></div>
-
-              {/* Icon */}
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1a1a4d] to-[#1a1a4d] flex items-center justify-center text-white shadow-xl group-hover:rotate-6 transition duration-500">
-
-                {item.icon}
-
-              </div>
-
-              {/* Content */}
-              <div className="relative">
-
-                <h3 className="text-xl font-bold text-[#1a1a4d] mt-6 leading-snug">
-                  {item.title}
-                </h3>
-
-                <p className="text-[#6d7a72] leading-7 text-sm mt-4">
-                  {item.desc}
-                </p>
-
-              </div>
-
-            </div>
-          ))}
-
-        </div>
-
-        {/* Process Section */}
-        <div className="mt-24">
-
-          <div className="text-center mb-14">
-
-            <span className="inline-block bg-[#ff1493]/10 text-[#ff1493] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#ff1493]/10 mb-5">
-              Simple Process
-            </span>
-
-            <h3 className="text-4xl font-bold text-[#1a1a4d]">
-              How It Works
-            </h3>
-
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-
-            {[
-              {
-                step: "01",
-                title: "Apply",
-                desc: "Submit your application online or at an enrollment center.",
-              },
-              {
-                step: "02",
-                title: "Verification",
-                desc: "Provide documents, fingerprints, and background verification.",
-              },
-              {
-                step: "03",
-                title: "Approval",
-                desc: "TSA reviews your application and approves your credentials.",
-              },
-              {
-                step: "04",
-                title: "Get Your Card",
-                desc: "Receive your TWIC card and access secure facilities.",
-              },
-            ].map((item, index) => (
-
+        {/* Main Layout */}
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          {/* Features */}
+          <div className="space-y-5">
+            {features.map((item, index) => (
               <div
                 key={index}
-                className="relative bg-white rounded-[30px] p-8 border border-[#ff1493]/10 shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden text-center"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#F02BCB]/30 hover:bg-white/[0.1]"
               >
+                <div className="absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-[#F02BCB]/12 blur-2xl transition duration-300 group-hover:bg-[#7A2CFF]/18" />
 
-                {/* Glow */}
-                <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#ff1493]/10 rounded-full blur-2xl"></div>
+                <div className="relative flex gap-5">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7A2CFF] to-[#F02BCB] text-white shadow-xl shadow-[#F02BCB]/20 transition duration-300 group-hover:rotate-3">
+                    {item.icon}
+                  </div>
 
-                {/* Step Number */}
-                <div className="relative w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#ff1493] to-[#b98708] flex items-center justify-center text-[#1a1a4d] text-lg font-bold shadow-xl">
-                  {item.step}
+                  <div>
+                    <h3 className="text-xl font-extrabold text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-7 text-[#D9D2F0]">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Content */}
-                <h4 className="text-xl font-bold text-[#1a1a4d] mt-6">
-                  {item.title}
-                </h4>
-
-                <p className="text-[#6d7a72] text-sm mt-4 leading-7">
-                  {item.desc}
-                </p>
-
               </div>
             ))}
-
           </div>
 
+          {/* Timeline */}
+          <div className="relative">
+            <div className="absolute bottom-0 left-[18px] top-0 w-px bg-gradient-to-b from-[#F02BCB] via-white/20 to-transparent" />
+
+            <div className="space-y-8">
+              {steps.map((item, index) => (
+                <div key={index} className="relative pl-14">
+                  <div className="absolute left-0 top-1 flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#08051A] bg-gradient-to-br from-[#7A2CFF] to-[#F02BCB] text-xs font-extrabold text-white shadow-lg shadow-[#F02BCB]/20">
+                    {index + 1}
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.07] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.14)] backdrop-blur-xl transition duration-300 hover:border-[#F02BCB]/30 hover:bg-white/[0.1]">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#F4A7FF]">
+                      {item.step}
+                    </span>
+
+                    <h4 className="mt-2 text-xl font-extrabold text-white">
+                      {item.title}
+                    </h4>
+
+                    <p className="mt-3 text-sm leading-7 text-[#D9D2F0]">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-20 relative overflow-hidden rounded-[36px] bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] p-12 text-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
-
-          {/* Glow */}
-          <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#ff1493]/10 rounded-full blur-3xl"></div>
-
-          <div className="relative">
-
-            <span className="inline-block bg-[#ff1493] text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg mb-6">
-              Start Today
-            </span>
-
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Get Your TWIC Card?
-            </h3>
-
-            <p className="max-w-2xl mx-auto leading-8 text-[#d7e3dc]">
-              Let our team help you complete the process quickly
-              and start accessing premium freight opportunities.
-            </p>
-
-            <button
-              onClick={() => setOpenAgreement(true)}
-              className="mt-10 bg-gradient-to-r from-[#ff1493] to-[#b98708] hover:scale-[1.02] text-[#1a1a4d] px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-[0_12px_30px_rgba(212,160,23,0.35)]"
-            >
-              Apply For TWIC Assistance
-            </button>
-
-          </div>
-
+        <div className="mt-16 text-center sm:mt-20">
+          <button
+            onClick={() => setOpenAgreement(true)}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#7A2CFF] to-[#F02BCB] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white shadow-xl shadow-[#F02BCB]/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#F02BCB]/40 sm:px-9"
+          >
+            Apply For Insurance Assistance
+          </button>
         </div>
-
       </div>
-
     </section>
   );
 }
