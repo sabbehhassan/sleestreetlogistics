@@ -13,9 +13,12 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
 
   // Handle Input Change
   const handleChange = (e) => {
+    if (status) setStatus(null);
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -28,13 +31,19 @@ const Contact = () => {
 
     try {
       setLoading(true);
+      setStatus(null);
 
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/contact`,
         formData,
       );
 
-      alert(response.data.message);
+      setStatus({
+        type: "success",
+        message:
+          response.data?.message ||
+          "Your message has been sent successfully. Our team will contact you shortly.",
+      });
 
       setFormData({
         name: "",
@@ -45,7 +54,11 @@ const Contact = () => {
     } catch (error) {
       console.log(error);
 
-      alert(error.response?.data?.message || error.message);
+      setStatus({
+        type: "error",
+        message:
+          "Sorry, your message could not be sent right now. Please contact us directly by email.",
+      });
     } finally {
       setLoading(false);
     }
@@ -57,9 +70,9 @@ const Contact = () => {
       title: "Email",
       value: (
         <>
-          info@sleestreetlogistics.com
+          contact@sleestreetlogisticsllc.com
           <br />
-          gysin@sleestreetlogistics.com
+          michael@sleestreetlogisticsllc.com
         </>
       ),
     },
@@ -177,6 +190,18 @@ const Contact = () => {
               </p>
 
               <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+                {status && (
+                  <div
+                    className={`rounded-2xl border px-5 py-4 text-sm font-semibold leading-6 ${
+                      status.type === "success"
+                        ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                        : "border-[#F02BCB]/20 bg-[#F02BCB]/10 text-[#7A174F]"
+                    }`}
+                  >
+                    {status.message}
+                  </div>
+                )}
+
                 <input
                   type="text"
                   name="name"

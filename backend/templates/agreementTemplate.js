@@ -252,7 +252,7 @@ module.exports = function agreementTemplate(formData) {
       <div class="title">BROKER / CARRIER AGREEMENT</div>
 
       <div class="header-email">
-        info@sleestreetlogistics.com
+        contact@sleestreetlogisticsllc.com
       </div>
     </div>
 
@@ -292,7 +292,7 @@ module.exports = function agreementTemplate(formData) {
 
         <div class="info-box">
           <span class="info-label">Email</span>
-          <span class="info-value">info@sleestreetlogistics.com</span>
+          <span class="info-value">contact@sleestreetlogisticsllc.com</span>
         </div>
 
       </div>

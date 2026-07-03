@@ -114,9 +114,9 @@ const Footer = () => {
                 </div>
 
                 <p className="max-w-xs break-all text-sm leading-7 text-[#D9D2F0]">
-                  info@sleestreetlogistics.com
+                  contact@sleestreetlogisticsllc.com
                   <br />
-                  gysin@sleestreetlogistics.com
+                  michael@sleestreetlogisticsllc.com
                 </p>
               </div>
             </div>

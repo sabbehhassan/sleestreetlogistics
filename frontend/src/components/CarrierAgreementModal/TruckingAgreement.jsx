@@ -100,7 +100,7 @@ export default function TruckingAgreement({
 
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="mt-1 text-[#02053D]" />
-                  <span>info@sleestreetlogistics.com</span>
+                  <span>contact@sleestreetlogisticsllc.com</span>
                 </div>
               </div>
             </div>

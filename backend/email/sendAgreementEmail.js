@@ -18,7 +18,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
   const mailOptions = {
     from: `SLEE STREET LOGISTICS <${process.env.EMAIL_USER}>`,
     to: userEmail,
-    cc: "gysin@sleestreetlogistics.com",
+    cc: "michael@sleestreetlogisticsllc.com",
     subject: "Your Carrier Agreement Has Been Submitted Successfully",
 
     html: `
@@ -152,8 +152,8 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
         <div style="background:#f5f6fa;padding:25px;text-align:center;font-size:13px;color:#666;">
           SLEE STREET LOGISTICS<br>
           54 1/2 street south fargo, ND  58103<br>
-          info@sleestreetlogistics.com<br>
-          gysin@sleestreetlogistics.com
+          contact@sleestreetlogisticsllc.com<br>
+          michael@sleestreetlogisticsllc.com
         </div>
 
       </div>

@@ -8,10 +8,7 @@ router.post("/", async (req, res) => {
     console.log("BODY =>", req.body);
 
     console.log("EMAIL_USER =>", process.env.EMAIL_USER);
-    console.log(
-      "EMAIL_PASS =>",
-      process.env.EMAIL_PASS ? "Loaded" : "Missing"
-    );
+    console.log("EMAIL_PASS =>", process.env.EMAIL_PASS ? "Loaded" : "Missing");
 
     const { name, email, phone, message } = req.body;
 
@@ -42,14 +39,31 @@ router.post("/", async (req, res) => {
       });
     }
 
+    const smtpHost = process.env.SMTP_HOST || "smtp.hostinger.com";
+    const smtpPort = Number(process.env.SMTP_PORT || 465);
+    const smtpSecure =
+      process.env.SMTP_SECURE === undefined
+        ? smtpPort === 465
+        : process.env.SMTP_SECURE === "true";
+
+    console.log("SMTP =>", {
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
+      user: process.env.EMAIL_USER,
+    });
+
     // Create transporter
     const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com",
-      port: 465,
-      secure: true,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     });
 
@@ -58,7 +72,7 @@ router.post("/", async (req, res) => {
 
     // Mail options
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: `"Slee Street Logistics" <${process.env.EMAIL_USER}>`,
 
       to: process.env.EMAIL_USER,
 
@@ -120,9 +134,13 @@ router.post("/", async (req, res) => {
 
   console.error("ERROR RESPONSE =>", error.response);
 
+  const isAuthError = error.code === "EAUTH" || error.responseCode === 535;
+
   return res.status(500).json({
     success: false,
-    message: error.message || "Failed to send message",
+    message: isAuthError
+      ? "SMTP login failed. Please check email address, mailbox password, SMTP host, and port."
+      : error.message || "Failed to send message",
   });
 
 }
