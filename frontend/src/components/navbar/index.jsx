@@ -29,12 +29,12 @@ const Navbar = () => {
 
               <div className="flex items-center gap-2 hover:text-[#ff1493] transition-all duration-300">
                 <FiMail className="text-[#ff1493]" />
-                <span>info@sleestreetlogisticsllc.com</span>
+                <span>contact@sleestreetlogisticsllc.com</span>
               </div>
 
               <div className="flex items-center gap-2 hover:text-[#ff1493] transition-all duration-300">
                 <FiMail className="text-[#ff1493]" />
-                <span>gysin@sleestreetlogisticsllc.com</span>
+                <span>michael@sleestreetlogisticsllc.com</span>
               </div>
 
             </div>
