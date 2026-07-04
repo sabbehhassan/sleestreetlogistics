@@ -63,7 +63,7 @@ export default function FinalSubmissionStep({
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/agreement/submit-agreement`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/agreement/submit-agreement`,
         {
           method: "POST",
           headers: {
@@ -244,46 +244,46 @@ export default function FinalSubmissionStep({
             </div>
 
             {/* Bank Info */}
-{agreementData.paymentMethod !== "Cash On Delivery" && (
-  <>
-    {[
-      {
-        label: "Bank Name",
-        key: "bankName",
-        placeholder: "Bank Name",
-      },
-      {
-        label: "Account Number",
-        key: "accountNumber",
-        placeholder: "Account Number",
-      },
-      {
-        label: "Routing Number",
-        key: "routingNumber",
-        placeholder: "Routing Number",
-      },
-    ].map((field) => (
-      <div key={field.key}>
-        <label className="block mb-3 font-semibold text-[#1a1a4d]">
-          {field.label}
-        </label>
+            {agreementData.paymentMethod !== "Cash On Delivery" && (
+              <>
+                {[
+                  {
+                    label: "Bank Name",
+                    key: "bankName",
+                    placeholder: "Bank Name",
+                  },
+                  {
+                    label: "Account Number",
+                    key: "accountNumber",
+                    placeholder: "Account Number",
+                  },
+                  {
+                    label: "Routing Number",
+                    key: "routingNumber",
+                    placeholder: "Routing Number",
+                  },
+                ].map((field) => (
+                  <div key={field.key}>
+                    <label className="block mb-3 font-semibold text-[#1a1a4d]">
+                      {field.label}
+                    </label>
 
-        <input
-          type="text"
-          placeholder={field.placeholder}
-          value={agreementData[field.key] || ""}
-          onChange={(e) =>
-            setAgreementData({
-              ...agreementData,
-              [field.key]: e.target.value,
-            })
-          }
-          className="w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300"
-        />
-      </div>
-    ))}
-  </>
-)}
+                    <input
+                      type="text"
+                      placeholder={field.placeholder}
+                      value={agreementData[field.key] || ""}
+                      onChange={(e) =>
+                        setAgreementData({
+                          ...agreementData,
+                          [field.key]: e.target.value,
+                        })
+                      }
+                      className="w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300"
+                    />
+                  </div>
+                ))}
+              </>
+            )}
           </div>
 
           {/* TERMS */}
