@@ -34,7 +34,7 @@ const Contact = () => {
       setStatus(null);
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/contact`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
         formData,
       );
 
@@ -257,16 +257,16 @@ const Contact = () => {
         </div>
 
         {/* Map */}
-<div className="relative mt-16 overflow-hidden rounded-2xl border border-[#7A2CFF]/10 bg-white p-3 shadow-[0_22px_60px_rgba(8,5,26,0.12)]">
-  <iframe
-    title="SLEE STREET LOGISTICS Location"
-    src="https://www.google.com/maps?q=15+SLEE+ST+KENYON,+MN+55946&output=embed"
-    className="h-[360px] w-full rounded-xl border-0"
-    loading="lazy"
-    allowFullScreen
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
+        <div className="relative mt-16 overflow-hidden rounded-2xl border border-[#7A2CFF]/10 bg-white p-3 shadow-[0_22px_60px_rgba(8,5,26,0.12)]">
+          <iframe
+            title="SLEE STREET LOGISTICS Location"
+            src="https://www.google.com/maps?q=15+SLEE+ST+KENYON,+MN+55946&output=embed"
+            className="h-[360px] w-full rounded-xl border-0"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </section>
   );
