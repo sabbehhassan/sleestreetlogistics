@@ -104,7 +104,7 @@ const Footer = () => {
                 </div>
 
                 <p className="max-w-xs text-sm leading-7 text-[#D9D2F0]">
-                  54 1/2 Street South Fargo, ND 58103
+                  15 SLEE ST KENYON, MN  55946
                 </p>
               </div>
 

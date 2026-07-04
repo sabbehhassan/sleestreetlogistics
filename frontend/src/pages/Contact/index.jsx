@@ -79,7 +79,7 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
       title: "Address",
-      value: "54 1/2 Street South Fargo, ND 58103",
+      value: "PO BOX 53 KENYON, MN 55946",
     },
     {
       icon: <FaClock />,
@@ -257,14 +257,16 @@ const Contact = () => {
         </div>
 
         {/* Map */}
-        <div className="relative mt-16 overflow-hidden rounded-2xl border border-[#7A2CFF]/10 bg-white p-3 shadow-[0_22px_60px_rgba(8,5,26,0.12)]">
-          <iframe
-            title="map"
-            src="https://www.google.com/maps?q=54+1/2+street+south+fargo,+ND+58103&output=embed"
-            className="h-[360px] w-full rounded-xl border-0"
-            loading="lazy"
-          ></iframe>
-        </div>
+<div className="relative mt-16 overflow-hidden rounded-2xl border border-[#7A2CFF]/10 bg-white p-3 shadow-[0_22px_60px_rgba(8,5,26,0.12)]">
+  <iframe
+    title="SLEE STREET LOGISTICS Location"
+    src="https://www.google.com/maps?q=15+SLEE+ST+KENYON,+MN+55946&output=embed"
+    className="h-[360px] w-full rounded-xl border-0"
+    loading="lazy"
+    allowFullScreen
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
       </div>
     </section>
   );

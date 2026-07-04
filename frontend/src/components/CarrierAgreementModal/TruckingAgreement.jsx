@@ -88,7 +88,7 @@ export default function TruckingAgreement({
               <div className="grid sm:grid-cols-2 gap-4 text-sm sm:text-base text-gray-600">
                 <div className="flex items-start gap-3">
                   <Building2 size={18} className="mt-1 text-[#02053D]" />
-                  <span>54 1/2 street south fargo, ND  58103</span>
+                  <span>15 SLEE ST KENYON, MN  55946</span>
                 </div>
 
                 <div className="flex items-start gap-3">
