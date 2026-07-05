@@ -151,7 +151,7 @@ async function sendAgreementEmail(userEmail, pdfPath, formData) {
         <!-- Footer -->
         <div style="background:#f5f6fa;padding:25px;text-align:center;font-size:13px;color:#666;">
           SLEE STREET LOGISTICS<br>
-          54 1/2 street south fargo, ND  58103<br>
+          15 SLEE ST KENYON, MN  55946<br>
           contact@sleestreetlogisticsllc.com<br>
           michael@sleestreetlogisticsllc.com
         </div>

@@ -212,7 +212,6 @@ export default function FinalSubmissionStep({
                   "Factoring",
                   "ACH Direct Deposit Method",
                   "Cash On Delivery",
-                  "2% for Quick Pay (Same Day)",
                   "No Fees for 24 Hours Deposit",
                 ].map((method) => (
                   <label
