@@ -1,9 +1,11 @@
-import fs from "fs";
-import path from "path";
-import puppeteer from "puppeteer-core";
-import chromium from "@sparticuz/chromium";
-import puppeteerPackage from "puppeteer";
-import carrierFormTemplate from "../templates/carrierFormTemplate.js";
+const fs = require("fs");
+const path = require("path");
+
+const puppeteer = require("puppeteer-core");
+const chromium = require("@sparticuz/chromium");
+const puppeteerPackage = require("puppeteer");
+
+const carrierFormTemplate = require("../templates/carrierFormTemplate");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -53,7 +55,7 @@ const generateCarrierFormPDF = async (formData) => {
     await browser.close();
 
     console.log("=====================================");
-    console.log("Carrier Form PDF Generated");
+    console.log("CARRIER FORM PDF GENERATED");
     console.log(pdfPath);
     console.log("=====================================");
 
@@ -69,4 +71,4 @@ const generateCarrierFormPDF = async (formData) => {
   }
 };
 
-export default generateCarrierFormPDF;
+module.exports = generateCarrierFormPDF;

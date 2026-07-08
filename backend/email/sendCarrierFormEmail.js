@@ -1,5 +1,5 @@
-import nodemailer from "nodemailer";
-import fs from "fs";
+const nodemailer = require("nodemailer");
+const fs = require("fs");
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
@@ -92,7 +92,7 @@ const sendCarrierFormEmail = async (carrierFormData, pdfPath) => {
 
     /*
     ========================================
-    APPLICANT CONFIRMATION EMAIL
+    APPLICANT EMAIL
     ========================================
     */
 
@@ -119,7 +119,7 @@ const sendCarrierFormEmail = async (carrierFormData, pdfPath) => {
           </p>
 
           <p>
-            Our team will carefully review your information and contact you shortly.
+            Our team will review your information and contact you shortly.
           </p>
 
           <br>
@@ -139,16 +139,6 @@ const sendCarrierFormEmail = async (carrierFormData, pdfPath) => {
       `,
     });
 
-    /*
-    ========================================
-    DELETE PDF
-    ========================================
-    */
-
-    if (pdfPath && fs.existsSync(pdfPath)) {
-      fs.unlinkSync(pdfPath);
-    }
-
     console.log("======================================");
     console.log("Carrier Form Emails Sent Successfully");
     console.log("======================================");
@@ -156,13 +146,8 @@ const sendCarrierFormEmail = async (carrierFormData, pdfPath) => {
     return true;
   } catch (error) {
     console.error("Carrier Form Email Error:", error);
-
-    if (pdfPath && fs.existsSync(pdfPath)) {
-      fs.unlinkSync(pdfPath);
-    }
-
     throw error;
   }
 };
 
-export default sendCarrierFormEmail;
+module.exports = sendCarrierFormEmail;
