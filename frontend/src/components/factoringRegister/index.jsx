@@ -1,12 +1,7 @@
-import {
-  FileText,
-  Truck,
-  CheckCircle,
-} from "lucide-react";
+import { Link } from "react-router-dom";
+import { FileText, Truck, CheckCircle } from "lucide-react";
 
-export default function FactoringRegistration({
-  setOpenAgreement,
-}) {
+export default function FactoringRegistration() {
   const steps = [
     {
       step: "1",
@@ -150,12 +145,12 @@ export default function FactoringRegistration({
 
         {/* CTA */}
         <div className="mt-16 text-center sm:mt-20">
-          <button
-            onClick={() => setOpenAgreement(true)}
+          <Link
+            to="/carrier-form"
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#7A2CFF] to-[#F02BCB] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white shadow-xl shadow-[#F02BCB]/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#F02BCB]/40 sm:px-9"
           >
-            Apply For Factoring Registration
-          </button>
+            Apply as Carrier
+          </Link>
         </div>
       </div>
     </section>

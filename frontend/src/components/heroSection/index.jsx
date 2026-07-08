@@ -1,6 +1,7 @@
 import heroBg from "../../assets/hero.png";
+import { Link } from "react-router-dom";
 
-const HeroSection = ({ setOpenAgreement }) => {
+const HeroSection = () => {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#08051A]">
       {/* Background Image */}
@@ -42,12 +43,12 @@ const HeroSection = ({ setOpenAgreement }) => {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <button
-                onClick={() => setOpenAgreement(true)}
-                className="rounded-full bg-gradient-to-r from-[#7A2CFF] to-[#F02BCB] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white shadow-2xl shadow-[#D92BC8]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#F02BCB]/50 sm:text-base"
+              <Link
+                to="/carrier-form"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#7A2CFF] to-[#F02BCB] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white shadow-2xl shadow-[#D92BC8]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#F02BCB]/50 sm:text-base"
               >
-                Get Started
-              </button>
+                Become a Carrier
+              </Link>
 
               <a
                 href="#services"

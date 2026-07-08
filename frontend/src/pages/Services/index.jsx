@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   FaTruckMoving,
   FaWarehouse,
@@ -14,7 +13,6 @@ import TwicCardAssistance from "../../components/twicCard";
 import InsuranceApplicationAssistance from "../../components/insuranceApplication";
 import FactoringRegistration from "../../components/factoringRegister";
 
-import AgreementModal from "../../components/CarrierAgreementModal";
 
 const services = [
   {
@@ -35,7 +33,6 @@ const services = [
 ];
 
 const Services = () => {
-  const [openAgreement, setOpenAgreement] = useState(false);
 
   return (
     <>
@@ -204,29 +201,15 @@ const Services = () => {
         </div>
 
         {/* Components */}
-        <RentedTrailerProgram
-          setOpenAgreement={setOpenAgreement}
-        />
+        <RentedTrailerProgram/>
 
-        <TwicCardAssistance
-          setOpenAgreement={setOpenAgreement}
-        />
+        <TwicCardAssistance/>
 
-        <InsuranceApplicationAssistance
-          setOpenAgreement={setOpenAgreement}
-        />
+        <InsuranceApplicationAssistance/>
 
-        <FactoringRegistration
-          setOpenAgreement={setOpenAgreement}
-        />
+        <FactoringRegistration />
 
       </section>
-
-      {/* AGREEMENT MODAL */}
-      <AgreementModal
-        isOpen={openAgreement}
-        onClose={() => setOpenAgreement(false)}
-      />
     </>
   );
 };

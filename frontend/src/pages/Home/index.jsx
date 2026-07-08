@@ -10,10 +10,10 @@ const Home = () => {
 
   return (
     <>
-      <HeroSection setOpenAgreement={setOpenAgreement} />
+      <HeroSection/>
 
       <Industries />
-      <Services setOpenAgreement={setOpenAgreement} />
+      <Services/>
       <Testimonials />
 
       <AgreementModal

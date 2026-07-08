@@ -5,9 +5,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 
-export default function InsuranceApplicationAssistance({
-  setOpenAgreement,
-}) {
+export default function InsuranceApplicationAssistance() {
   const features = [
     {
       icon: <ShieldCheck size={28} />,
@@ -140,16 +138,6 @@ export default function InsuranceApplicationAssistance({
               ))}
             </div>
           </div>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-16 text-center sm:mt-20">
-          <button
-            onClick={() => setOpenAgreement(true)}
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#7A2CFF] to-[#F02BCB] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white shadow-xl shadow-[#F02BCB]/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#F02BCB]/40 sm:px-9"
-          >
-            Apply For Insurance Assistance
-          </button>
         </div>
       </div>
     </section>
