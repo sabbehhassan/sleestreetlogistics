@@ -14,9 +14,9 @@ const transporter = nodemailer.createTransport({
 const sendCarrierFormEmail = async (carrierFormData, pdfPath) => {
   try {
     /*
-    =============================
+    ========================================
     COMPANY EMAIL
-    ================================
+    ========================================
     */
 
     await transporter.sendMail({
