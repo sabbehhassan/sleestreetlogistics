@@ -3,10 +3,10 @@ import Layout from "../layout/Layout";
 import ScrollToTop from "../components/scrollToTop";
 import Home from "../pages/Home";
 import About from "../pages/About";
-import Contact from "../pages/Contact"; 
+import Contact from "../pages/Contact";
 import Services from "../pages/Services";
 import CarrierAgreementPage from "../components/CarrierAgreementModal/CarrierAgreementPage";
-
+import CarrierForm from "../pages/carrierForm";
 
 // Wrap layout with ScrollToTop
 const withScrollToTop = (element) => (
@@ -21,6 +21,13 @@ const router = createBrowserRouter([
     path: "/carrier-agreement",
     element: <CarrierAgreementPage />,
   },
+
+  // New Carrier Application Form
+  {
+    path: "/carrier-form",
+    element: <CarrierForm />,
+  },
+
   {
     path: "/",
     element: withScrollToTop(<Layout />),
