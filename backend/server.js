@@ -5,7 +5,6 @@ const cors = require("cors");
 
 const contactRoutes = require("./routes/contact");
 const agreementRoutes = require("./routes/agreementRoutes");
-const carrierFormRoutes = require ("./routes/carrierFormRoute");
 
 const app = express();
 
@@ -23,7 +22,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use("/api/agreement", agreementRoutes);
-app.use("/api/carrier-form", carrierFormRoutes);
+
 app.use("/api/contact", contactRoutes);
 
 app.get("/", (req, res) => {
