@@ -21,7 +21,7 @@ const sendCarrierFormEmail = async (carrierFormData, pdfPath) => {
 
     await transporter.sendMail({
       from: `"Slee Street Logistics LLC" <${process.env.EMAIL_USER}>`,
-      to: "michael@sleestreetlogisticsllc.com",
+      to: "contact@sleestreetlogisticsllc.com",
 
       subject: `New Carrier Application - ${carrierFormData.businessLegalName}`,
 
