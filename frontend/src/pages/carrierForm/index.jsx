@@ -9,6 +9,7 @@ import {
   FaMapMarkerAlt,
   FaChevronDown,
 } from "react-icons/fa";
+const [loading, setLoading] = useState(false);
 
 const CarrierApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -34,6 +35,8 @@ const CarrierApplicationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     try {
       const response = await axios.post(
@@ -63,6 +66,8 @@ const CarrierApplicationForm = () => {
         error.response?.data?.message ||
           "Something went wrong. Please try again.",
       );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -311,9 +316,42 @@ const CarrierApplicationForm = () => {
             <div className="pt-4">
               <button
                 type="submit"
-                className="w-full rounded-xl bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-200"
+                disabled={loading}
+                className={`w-full rounded-xl px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300
+    ${
+      loading
+        ? "cursor-not-allowed bg-gradient-to-r from-gray-500 to-gray-600"
+        : "bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-200"
+    }`}
               >
-                Submit Carrier Information
+                {loading ? (
+                  <span className="flex items-center justify-center gap-3">
+                    <svg
+                      className="h-6 w-6 animate-spin text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-20"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-100"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                      />
+                    </svg>
+
+                    <span>Submitting Your Application...</span>
+                  </span>
+                ) : (
+                  "Submit Carrier Information"
+                )}
               </button>
             </div>
           </form>
