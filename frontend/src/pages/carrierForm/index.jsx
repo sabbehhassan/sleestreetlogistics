@@ -9,9 +9,10 @@ import {
   FaMapMarkerAlt,
   FaChevronDown,
 } from "react-icons/fa";
-const [loading, setLoading] = useState(false);
+
 
 const CarrierApplicationForm = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     businessLegalName: "",
     firstName: "",
