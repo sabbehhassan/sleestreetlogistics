@@ -43,7 +43,9 @@ const CarrierApplicationForm = () => {
         `${import.meta.env.VITE_BACKEND_URL}/api/carrier-form/submit-carrier-form`,
         formData,
       );
-
+      console.log("google conversion firing .....");
+      console.log(window.gtag);
+      
       if (response.data.success) {
         window.gtag?.("event", "conversion", {
           send_to: "AW-18299489375/bxZ3CKWc5M0cEN-Y8JVE",
