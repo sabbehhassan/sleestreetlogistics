@@ -10,7 +10,6 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 
-
 const CarrierApplicationForm = () => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -46,6 +45,12 @@ const CarrierApplicationForm = () => {
       );
 
       if (response.data.success) {
+        window.gtag?.("event", "conversion", {
+          send_to: "AW-18299489375/bxZ3CKWc5M0cEN-Y8JVE",
+          value: 1.0,
+          currency: "USD",
+        });
+
         alert("Carrier Application Submitted Successfully!");
 
         setFormData({
