@@ -7,6 +7,7 @@ import Contact from "../pages/Contact";
 import Services from "../pages/Services";
 import CarrierAgreementPage from "../components/CarrierAgreementModal/CarrierAgreementPage";
 import CarrierForm from "../pages/carrierForm";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 // Wrap layout with ScrollToTop
 const withScrollToTop = (element) => (
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
+      },
+      {
+        path: "privacy-policy",
+        element: <PrivacyPolicy />,
       },
     ],
   },
