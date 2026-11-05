@@ -79,10 +79,10 @@ const Navbar = () => {
               {/* Desktop Button */}
               <div className="hidden lg:block">
                 <Link
-                  to="/carrier-agreement"
+                  to="/carrier-form"
                   className="inline-flex items-center bg-gradient-to-r from-[#1a1a4d] via-[#1a1a4d] to-[#ff1493] hover:scale-105 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_10px_35px_rgba(217,70,239,.35)]"
                 >
-                  Apply as Carrier
+                  Carrier-Setup
                 </Link>
               </div>
 
@@ -125,11 +125,11 @@ const Navbar = () => {
                 })}
 
                 <Link
-                  to="/carrier-agreement"
+                  to="/carrier-form"
                   onClick={() => setMenuOpen(false)}
                   className="block w-full text-center bg-gradient-to-r from-[#1a1a4d] via-[#1a1a4d] to-[#ff1493] text-white py-3 rounded-2xl font-semibold shadow-lg hover:scale-[1.02] transition-all duration-300"
                 >
-                  Apply as Carrier
+                  Carrier-Setup
                 </Link>
               </div>
             </div>

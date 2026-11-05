@@ -44,7 +44,7 @@ const HeroSection = () => {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                to="/carrier-agreement"
+                to="/carrier-form"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#7A2CFF] to-[#F02BCB] px-8 py-4 text-sm font-extrabold uppercase tracking-wide text-white shadow-2xl shadow-[#D92BC8]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[#F02BCB]/50 sm:text-base"
               >
                 Become a Carrier
