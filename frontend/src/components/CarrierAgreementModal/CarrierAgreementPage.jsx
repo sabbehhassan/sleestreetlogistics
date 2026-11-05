@@ -35,7 +35,7 @@ export default function CarrierAgreementPage() {
     date: "",
   });
 
-  const handleClose = () => {
+  const resetAgreement = () => {
     setStep(1);
     setAgreementData({
       agreementType: "",
@@ -60,17 +60,16 @@ export default function CarrierAgreementPage() {
       routingNumber: "",
       date: "",
     });
-
-    navigate("/");
   };
 
+  const handleDone = () => navigate("/");
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/70 p-4 backdrop-blur-sm">
-      <div className="relative my-6 w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl">
+    <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl">
         {step === 1 && (
           <AgreementSelection
             setStep={setStep}
-            onClose={handleClose}
             agreementData={agreementData}
             setAgreementData={setAgreementData}
           />
@@ -95,7 +94,7 @@ export default function CarrierAgreementPage() {
             agreementData={agreementData}
           />
         )}
-        {step === 5 && (
+        {step === 5 && agreementData.carrierType === "new" && (
           <NewCarrierPaymentStep
             setStep={setStep}
             agreementData={agreementData}
@@ -111,8 +110,8 @@ export default function CarrierAgreementPage() {
         )}
         {step === 7 && (
           <AgreementSuccessStep
-            setStep={setStep}
-            onClose={handleClose}
+            onNewAgreement={resetAgreement}
+            onDone={handleDone}
           />
         )}
       </div>

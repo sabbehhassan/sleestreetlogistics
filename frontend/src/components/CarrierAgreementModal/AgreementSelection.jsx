@@ -1,8 +1,5 @@
-import { X } from "lucide-react";
-
 export default function AgreementSelection({
   setStep,
-  onClose,
   agreementData,
   setAgreementData,
 }) {
@@ -23,19 +20,11 @@ export default function AgreementSelection({
       <div className="absolute -top-16 -left-16 w-56 h-56 bg-[#ff1493]/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-16 -right-16 w-56 h-56 bg-[#1a1a4d]/10 rounded-full blur-3xl"></div>
 
-      {/* Close Button */}
-      <button
-        onClick={onClose}
-        className="absolute top-5 right-5 bg-white hover:bg-[#EEF3E8] border border-[#ff1493]/10 rounded-2xl p-2.5 shadow-md transition duration-300 hover:scale-105"
-      >
-        <X size={20} className="text-[#1a1a4d]" />
-      </button>
-
       <div className="relative w-full max-w-2xl text-center">
 
         {/* Badge */}
         <span className="inline-block bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10 mb-6">
-          Agreement Setup
+          Step 1: Agreement Selection
         </span>
 
         {/* Title */}

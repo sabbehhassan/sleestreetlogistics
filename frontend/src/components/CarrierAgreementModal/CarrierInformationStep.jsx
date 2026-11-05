@@ -56,9 +56,9 @@ export default function CarrierInformationStep({
   const labelClass = "block font-semibold text-[#02053D] mb-2";
 
   return (
-    <div className="flex justify-center items-center w-full px-4 py-4">
-      <div className="w-full max-w-5xl bg-white rounded-[30px] shadow-2xl overflow-hidden">
-        <div className="max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
+    <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-[30px] border border-gray-100 bg-white">
+        <div className="px-6 py-8 sm:px-10">
           {/* Back Button */}
           <button
             onClick={() => setStep(2)}

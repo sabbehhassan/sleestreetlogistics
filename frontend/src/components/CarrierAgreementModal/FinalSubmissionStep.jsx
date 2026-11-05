@@ -139,18 +139,18 @@ export default function FinalSubmissionStep({
     "w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300";
 
   return (
-    <div className="flex justify-center items-center w-full px-4 py-4 bg-gradient-to-br from-[#F8F5EE] to-[#EEF3E8]">
-      <div className="relative w-full max-w-5xl bg-white rounded-[36px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] overflow-hidden border border-[#ff1493]/10">
+    <div className="w-full bg-gradient-to-br from-[#F8F5EE] to-[#EEF3E8] px-4 py-8 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-7xl overflow-hidden rounded-[36px] border border-[#ff1493]/10 bg-white">
         {/* Background Glow */}
         <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#1a1a4d]/10 rounded-full blur-3xl"></div>
 
         {/* Accent Line */}
         <div className="h-1.5 bg-gradient-to-r from-[#1a1a4d] via-[#ff1493] to-[#1a1a4d]"></div>
 
-        <div className="relative max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
+        <div className="relative px-6 py-8 sm:px-10">
           {/* Back Button */}
           <button
-            onClick={() => setStep(5)}
+            onClick={() => setStep(isNewCarrier ? 5 : 4)}
             className="text-[#1a1a4d] text-sm font-semibold mb-8 hover:text-[#ff1493] transition duration-300"
           >
             ← Back
@@ -411,7 +411,7 @@ export default function FinalSubmissionStep({
           <div className="flex flex-col sm:flex-row gap-4 mt-12">
             {/* Previous */}
             <button
-              onClick={() => setStep(5)}
+              onClick={() => setStep(isNewCarrier ? 5 : 4)}
               className="w-full sm:w-1/2 bg-[#EEF3E8] hover:bg-[#e3ecdc] text-[#1a1a4d] font-semibold py-4 rounded-2xl transition duration-300 border border-[#ff1493]/10"
             >
               ← Previous

@@ -11,9 +11,9 @@ export default function ConditionsStep({ setStep, agreementData }) {
     "list-disc pl-6 space-y-3 text-[#183B64] text-sm sm:text-base leading-7 mb-6";
 
   return (
-    <div className="flex justify-center items-center w-full px-4 py-4">
-      <div className="w-full max-w-5xl bg-white rounded-[30px] shadow-2xl overflow-hidden">
-        <div className="max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
+    <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-[30px] border border-gray-100 bg-white">
+        <div className="px-6 py-8 sm:px-10">
           {/* Back Button */}
           <button
             onClick={() => setStep(3)}
@@ -239,7 +239,9 @@ export default function ConditionsStep({ setStep, agreementData }) {
             </button>
 
             <button
-              onClick={() => setStep(5)}
+              onClick={() =>
+                setStep(agreementData.carrierType === "new" ? 5 : 6)
+              }
               className="w-1/2 bg-emerald-500 text-white py-4 rounded-2xl font-semibold hover:bg-emerald-600 transition"
             >
               Next →

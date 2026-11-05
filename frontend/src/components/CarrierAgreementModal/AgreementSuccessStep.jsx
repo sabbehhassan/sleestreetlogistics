@@ -4,11 +4,10 @@ import {
   MailCheck,
 } from "lucide-react";
 
-export default function AgreementSuccessStep({ setStep, onClose }) {
+export default function AgreementSuccessStep({ onNewAgreement, onDone }) {
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center bg-[#1a1a4d]/50 backdrop-blur-sm px-4 py-4 overflow-y-auto">
-
-      <div className="relative w-full max-w-xl bg-gradient-to-br from-[#F8F5EE] to-white rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.18)] overflow-hidden max-h-[90vh] overflow-y-auto border border-[#ff1493]/10">
+    <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-4xl overflow-hidden rounded-[32px] border border-[#ff1493]/10 bg-gradient-to-br from-[#F8F5EE] to-white">
 
         {/* Background Glow */}
         <div className="absolute -top-20 -left-20 w-60 h-60 bg-[#ff1493]/10 rounded-full blur-3xl"></div>
@@ -53,7 +52,7 @@ export default function AgreementSuccessStep({ setStep, onClose }) {
 
           {/* Badge */}
           <span className="inline-block bg-[#1a1a4d]/10 text-[#1a1a4d] px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide border border-[#1a1a4d]/10 mb-6">
-            Agreement Completed
+            Step 7: Success
           </span>
 
           {/* Title */}
@@ -104,7 +103,7 @@ export default function AgreementSuccessStep({ setStep, onClose }) {
 
             {/* New Agreement */}
             <button
-              onClick={() => setStep(1)}
+              onClick={onNewAgreement}
               className="w-full sm:w-1/2 bg-[#EEF3E8] hover:bg-[#e3ecdc] text-[#1a1a4d] text-sm font-semibold py-4 rounded-2xl transition-all duration-300 border border-[#ff1493]/10"
             >
               New Agreement
@@ -112,7 +111,7 @@ export default function AgreementSuccessStep({ setStep, onClose }) {
 
             {/* Done */}
             <button
-              onClick={onClose}
+              onClick={onDone}
               className="w-full sm:w-1/2 bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] hover:scale-[1.02] text-white text-sm font-semibold py-4 rounded-2xl shadow-xl transition-all duration-300"
             >
               Done

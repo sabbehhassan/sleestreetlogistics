@@ -17,10 +17,10 @@ export default function TruckingAgreement({
   };
 
   return (
-    <div className="flex items-center justify-center w-full px-4 py-4">
-      <div className="w-full max-w-5xl bg-white rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden">
+    <div className="w-full px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-[32px] border border-gray-100 bg-white">
 
-        <div className="max-h-[88vh] overflow-y-auto">
+        <div>
 
           {/* Header */}
           <div className="bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] px-6 sm:px-10 py-8 text-white relative">

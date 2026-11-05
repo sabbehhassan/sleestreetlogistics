@@ -18,11 +18,6 @@ const withScrollToTop = (element) => (
 );
 
 const router = createBrowserRouter([
-  {
-    path: "/carrier-agreement",
-    element: <CarrierAgreementPage />,
-  },
-
   // New Carrier Application Form
   {
     path: "/carrier-form",
@@ -52,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "privacy-policy",
         element: <PrivacyPolicy />,
+      },
+      {
+        path: "carrier-agreement",
+        element: <CarrierAgreementPage />,
       },
     ],
   },
