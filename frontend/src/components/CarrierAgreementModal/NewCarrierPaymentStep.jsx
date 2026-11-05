@@ -26,22 +26,20 @@ export default function NewCarrierPaymentStep({
 
     setError("");
 
-    // ✅ ensure data is saved before moving next
-    setAgreementData({
-  ...agreementData,
-  paymentTermsMethod: paymentTermsMethod, // ✅ changed
-});
+    setAgreementData((prev) => ({
+      ...prev,
+      paymentTermsMethod,
+    }));
 
-    setStep(5);
+    // Payment Terms (Step 5) → Final Submission (Step 6)
+    setStep(6);
   };
 
   return (
     <div className="flex justify-center items-center w-full px-4 py-4">
       <div className="w-full max-w-5xl bg-white rounded-[30px] shadow-2xl overflow-hidden">
-
         {/* Scroll Area */}
         <div className="max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
-
           {/* Back */}
           <button
             onClick={() => setStep(3)}
@@ -111,19 +109,13 @@ export default function NewCarrierPaymentStep({
                     className="w-5 h-5 accent-emerald-500"
                   />
 
-                  <span className="text-gray-700 text-base">
-                    {option}
-                  </span>
+                  <span className="text-gray-700 text-base">{option}</span>
                 </label>
               ))}
             </div>
 
             {/* Error */}
-            {error && (
-              <p className="text-red-500 text-sm mt-4">
-                {error}
-              </p>
-            )}
+            {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
 
             <p className="text-gray-500 mt-8 leading-8">
               Payments may be processed via third-party accounts to enable
@@ -164,7 +156,8 @@ export default function NewCarrierPaymentStep({
             </h2>
 
             <p className="text-gray-600 leading-8">
-              This Agreement does not create an employment relationship. The Client is an independent carrier.
+              This Agreement does not create an employment relationship. The
+              Client is an independent carrier.
             </p>
           </div>
 
@@ -182,9 +175,8 @@ export default function NewCarrierPaymentStep({
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-10">
-
             <button
-              onClick={() => setStep(3)}
+              onClick={() => setStep(4)}
               className="w-full sm:w-1/2 bg-gray-200 hover:bg-gray-300 text-gray-700 py-4 rounded-2xl font-semibold transition"
             >
               ← Previous
@@ -196,9 +188,7 @@ export default function NewCarrierPaymentStep({
             >
               Next →
             </button>
-
           </div>
-
         </div>
       </div>
     </div>
