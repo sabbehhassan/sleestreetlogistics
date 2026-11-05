@@ -16,7 +16,7 @@ export default function FinalSubmissionStep({
   const services = [
     {
       name: "Dedicated Lane Setup",
-      fee: 485,
+      fee: 499,
       description: "Refundable after first delivery",
     },
     {

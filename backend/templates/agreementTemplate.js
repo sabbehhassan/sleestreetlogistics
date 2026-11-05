@@ -889,7 +889,7 @@ li{
 
     <p>
 
-        The term of this Agreement shall be 180 days, commencing on the date listed above. If not
+        The term of this Agreement shall be 120 days, commencing on the date listed above. If not
 cancelled by one of the Parties, the Agreement shall automatically renew itself for consecutive
 one-year terms.
 The Agreement can be terminated at any time by either of the Parties with thirty (30) days'
