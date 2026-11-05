@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AgreementSelection from "./AgreementSelection";
 import TruckingAgreement from "./TruckingAgreement";
@@ -34,6 +34,10 @@ export default function CarrierAgreementPage() {
     routingNumber: "",
     date: "",
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [step]);
 
   const resetAgreement = () => {
     setStep(1);
