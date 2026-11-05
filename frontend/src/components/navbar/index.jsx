@@ -82,7 +82,7 @@ const Navbar = () => {
                   to="/carrier-form"
                   className="inline-flex items-center bg-gradient-to-r from-[#1a1a4d] via-[#1a1a4d] to-[#ff1493] hover:scale-105 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-[0_10px_35px_rgba(217,70,239,.35)]"
                 >
-                  Carrier-Setup
+                  Carrier | Setup
                 </Link>
               </div>
 
