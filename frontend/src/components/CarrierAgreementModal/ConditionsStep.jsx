@@ -29,13 +29,13 @@ export default function ConditionsStep({ setStep, agreementData }) {
             </h1>
 
             <p className="text-gray-500 text-sm sm:text-base mt-2">
-              Step 3: Conditions
+              Step 4: Conditions
             </p>
           </div>
 
           {/* Progress Bar */}
           <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-10">
-            <div className="w-[70%] h-full bg-emerald-500 rounded-full"></div>
+            <div className="w-[57%] h-full bg-emerald-500 rounded-full"></div>
           </div>
 
           {/* Terms and Conditions */}
@@ -239,13 +239,7 @@ export default function ConditionsStep({ setStep, agreementData }) {
             </button>
 
             <button
-              onClick={() => {
-                if (agreementData.carrierType === "new") {
-                  setStep(5);
-                } else {
-                  setStep(6);
-                }
-              }}
+              onClick={() => setStep(5)}
               className="w-1/2 bg-emerald-500 text-white py-4 rounded-2xl font-semibold hover:bg-emerald-600 transition"
             >
               Next →

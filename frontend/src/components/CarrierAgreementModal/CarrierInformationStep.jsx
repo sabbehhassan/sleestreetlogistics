@@ -74,13 +74,13 @@ export default function CarrierInformationStep({
             </h1>
 
             <p className="text-gray-500 text-sm sm:text-base mt-2">
-              Carrier Information & Services Setup
+              Step 3: Carrier Information & Services Setup
             </p>
           </div>
 
           {/* Progress Bar */}
           <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-10">
-            <div className="w-[55%] h-full bg-emerald-500 rounded-full"></div>
+            <div className="w-[43%] h-full bg-emerald-500 rounded-full"></div>
           </div>
 
           {/* Carrier Information */}

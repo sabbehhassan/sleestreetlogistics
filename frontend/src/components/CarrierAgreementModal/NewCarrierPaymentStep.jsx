@@ -42,7 +42,7 @@ export default function NewCarrierPaymentStep({
         <div className="max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
           {/* Back */}
           <button
-            onClick={() => setStep(3)}
+            onClick={() => setStep(4)}
             className="text-blue-600 font-medium text-sm sm:text-base mb-6 hover:underline"
           >
             ← Back
@@ -61,13 +61,13 @@ export default function NewCarrierPaymentStep({
 
           {/* Progress */}
           <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-10">
-            <div className="w-[80%] h-full bg-emerald-500 rounded-full"></div>
+            <div className="w-[71%] h-full bg-emerald-500 rounded-full"></div>
           </div>
 
           {/* Step */}
           <div className="mb-10">
             <h2 className="text-2xl font-bold text-[#02053D] mb-4">
-              Step 3: Payment Terms
+              Step 5: Payment Terms
             </h2>
 
             <p className="text-gray-600 mb-6">
@@ -98,11 +98,10 @@ export default function NewCarrierPaymentStep({
 
                       setPaymentTermsMethod(value);
 
-                      // ✅ SAVE TO GLOBAL STATE
-                      setAgreementData({
-                        ...agreementData,
+                      setAgreementData((prev) => ({
+                        ...prev,
                         paymentTermsMethod: value,
-                      });
+                      }));
 
                       setError("");
                     }}

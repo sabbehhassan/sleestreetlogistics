@@ -150,7 +150,7 @@ export default function FinalSubmissionStep({
         <div className="relative max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
           {/* Back Button */}
           <button
-            onClick={() => setStep(isNewCarrier ? 5 : 4)}
+            onClick={() => setStep(5)}
             className="text-[#1a1a4d] text-sm font-semibold mb-8 hover:text-[#ff1493] transition duration-300"
           >
             ← Back
@@ -167,13 +167,13 @@ export default function FinalSubmissionStep({
             </h1>
 
             <p className="text-[#6d7a72] mt-4 text-base">
-              Final Agreement Submission
+              Step 6: Final Submission
             </p>
           </div>
 
           {/* Progress */}
           <div className="w-full h-3 bg-[#e6ece7] rounded-full mb-12 overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] rounded-full"></div>
+            <div className="w-[86%] h-full bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] rounded-full"></div>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a4d] mb-8">
@@ -411,7 +411,7 @@ export default function FinalSubmissionStep({
           <div className="flex flex-col sm:flex-row gap-4 mt-12">
             {/* Previous */}
             <button
-              onClick={() => setStep(isNewCarrier ? 5 : 4)}
+              onClick={() => setStep(5)}
               className="w-full sm:w-1/2 bg-[#EEF3E8] hover:bg-[#e3ecdc] text-[#1a1a4d] font-semibold py-4 rounded-2xl transition duration-300 border border-[#ff1493]/10"
             >
               ← Previous

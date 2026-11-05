@@ -36,6 +36,7 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
 
     // Payment
     paymentMethod: "",
+    paymentTermsMethod: "",
 
     // Final Step
     signature: "",
@@ -68,6 +69,7 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
       selectedServices: [],
 
       paymentMethod: "",
+      paymentTermsMethod: "",
 
       signature: "",
       printName: "",
@@ -119,8 +121,8 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
           <ConditionsStep setStep={setStep} agreementData={agreementData} />
         )}
 
-        {/* Step 5 - New Carrier Payment */}
-        {step === 5 && agreementData.carrierType === "new" && (
+        {/* Step 5 - Payment Terms */}
+        {step === 5 && (
           <NewCarrierPaymentStep
             setStep={setStep}
             agreementData={agreementData}

@@ -43,12 +43,13 @@ export default function TruckingAgreement({
             </div>
 
             <p className="text-center text-white/80 text-sm sm:text-base">
-              Dedicated Lanes, Dispatch, Trailer Rental & Setup Services
+              Step 2: Trucking Agreement - Dedicated Lanes, Dispatch, Trailer
+              Rental & Setup Services
             </p>
 
             <div className="mt-6">
               <div className="w-full h-2 bg-white/20 rounded-full overflow-hidden">
-                <div className="w-[25%] h-full bg-emerald-400 rounded-full"></div>
+                <div className="w-[29%] h-full bg-emerald-400 rounded-full"></div>
               </div>
             </div>
           </div>

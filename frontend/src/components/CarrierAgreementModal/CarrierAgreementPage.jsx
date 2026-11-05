@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AgreementSelection from "./AgreementSelection";
 import TruckingAgreement from "./TruckingAgreement";
 import CarrierInformationStep from "./CarrierInformationStep";
+import ConditionsStep from "./ConditionsStep";
 import NewCarrierPaymentStep from "./NewCarrierPaymentStep";
 import FinalSubmissionStep from "./FinalSubmissionStep";
 import AgreementSuccessStep from "./AgreementSuccessStep";
@@ -19,8 +20,12 @@ export default function CarrierAgreementPage() {
     mcDot: "",
     phone: "",
     carrierType: "",
+    driverName: "",
+    driverPhone: "",
+    licenseNumber: "",
     selectedServices: [],
     paymentMethod: "",
+    paymentTermsMethod: "",
     signature: "",
     printName: "",
     email: "",
@@ -41,8 +46,12 @@ export default function CarrierAgreementPage() {
       mcDot: "",
       phone: "",
       carrierType: "",
+      driverName: "",
+      driverPhone: "",
+      licenseNumber: "",
       selectedServices: [],
       paymentMethod: "",
+      paymentTermsMethod: "",
       signature: "",
       printName: "",
       email: "",
@@ -81,20 +90,26 @@ export default function CarrierAgreementPage() {
           />
         )}
         {step === 4 && (
+          <ConditionsStep
+            setStep={setStep}
+            agreementData={agreementData}
+          />
+        )}
+        {step === 5 && (
           <NewCarrierPaymentStep
             setStep={setStep}
             agreementData={agreementData}
             setAgreementData={setAgreementData}
           />
         )}
-        {step === 5 && (
+        {step === 6 && (
           <FinalSubmissionStep
             setStep={setStep}
             agreementData={agreementData}
             setAgreementData={setAgreementData}
           />
         )}
-        {step === 6 && (
+        {step === 7 && (
           <AgreementSuccessStep
             setStep={setStep}
             onClose={handleClose}

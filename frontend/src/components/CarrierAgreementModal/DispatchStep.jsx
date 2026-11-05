@@ -25,7 +25,7 @@ export default function DispatchStep({
 
       {/* Title */}
       <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a4d] mb-4 leading-tight">
-        Step 1: Dispatch Company
+        Dispatch Company
       </h2>
 
       {/* Description */}
