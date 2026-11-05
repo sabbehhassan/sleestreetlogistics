@@ -85,7 +85,7 @@ export default function ConditionsStep({ setStep, agreementData }) {
             {/* Security Deposit - New Carrier Only */}
             {isNewCarrier && (
               <section className="mb-10">
-                <h3 className={subTitle}>Security Deposit (Refundable)</h3>
+                <h3 className={subTitle}>Onboarding Lane Setup Fee</h3>
 
                 <p className={paragraph}>
                   The Carrier is required to submit a security deposit of{" "}
