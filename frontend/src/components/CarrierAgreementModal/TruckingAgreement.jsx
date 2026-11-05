@@ -1,5 +1,6 @@
 import DispatchStep from "./DispatchStep";
 import { Building2, Globe, Mail, Truck } from "lucide-react";
+import { useState } from "react";
 
 const today = new Date().toLocaleDateString("en-CA");
 
@@ -8,12 +9,24 @@ export default function TruckingAgreement({
   agreementData,
   setAgreementData,
 }) {
+  const [dispatchError, setDispatchError] = useState("");
+
   const handleDispatchChange = (value) => {
     setAgreementData({
       ...agreementData,
       selectedDispatch: value,
       agreementDate: today,
     });
+  };
+
+  const handleNext = () => {
+    if (!agreementData.selectedDispatch) {
+      setDispatchError("Please select a dispatch company to continue.");
+      return;
+    }
+
+    setDispatchError("");
+    setStep(3);
   };
 
   return (
@@ -111,6 +124,8 @@ export default function TruckingAgreement({
               <DispatchStep
                 selectedDispatch={agreementData.selectedDispatch}
                 setSelectedDispatch={handleDispatchChange}
+                error={dispatchError}
+                setError={setDispatchError}
               />
             </div>
 
@@ -125,7 +140,7 @@ export default function TruckingAgreement({
               </button>
 
               <button
-                onClick={() => setStep(3)}
+                onClick={handleNext}
                 className="w-full sm:w-1/2 bg-[#023d0f] hover:bg-[#0a7a62] text-white font-semibold py-3 rounded-2xl shadow-lg transition"
               >
                 Next →

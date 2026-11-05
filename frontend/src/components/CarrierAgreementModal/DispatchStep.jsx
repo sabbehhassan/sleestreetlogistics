@@ -1,12 +1,9 @@
-import { useState } from "react";
-
 export default function DispatchStep({
   selectedDispatch,
   setSelectedDispatch,
+  error,
+  setError,
 }) {
-
-  const [error, setError] = useState("");
-
   const dispatchCompanies = [
     "3D Dispatch",
     "GO Lane Dispatch",
@@ -50,6 +47,8 @@ export default function DispatchStep({
 
           <select
             value={selectedDispatch}
+            aria-invalid={Boolean(error)}
+            aria-describedby={error ? "dispatch-company-error" : undefined}
             onChange={(e) => {
               setSelectedDispatch(e.target.value);
               setError("");
@@ -94,7 +93,7 @@ export default function DispatchStep({
 
         {/* Error */}
         {error && (
-          <p className="text-red-500 text-sm mt-3">
+          <p id="dispatch-company-error" className="text-red-500 text-sm mt-3" role="alert">
             {error}
           </p>
         )}
