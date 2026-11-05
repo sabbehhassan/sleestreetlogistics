@@ -45,10 +45,6 @@ export default function CarrierInformationStep({
       newErrors.licenseNumber = "License Number is required";
     }
 
-    if (!agreementData.agreementDate) {
-      newErrors.agreementDate = "Agreement Date is required";
-    }
-
     setErrors(newErrors);
 
     return Object.keys(newErrors).length === 0;
@@ -291,39 +287,6 @@ export default function CarrierInformationStep({
                 Delivery: Available with backhaul service 24/7
               </li>
             </ul>
-          </div>
-
-          {/* Agreement Effective Date */}
-          <div className="mt-8">
-            <p className="text-gray-500 text-sm sm:text-base mb-7">
-              (Hereinafter referred to as "CARRIER") as outlined below,
-              effective on this date:
-            </p>
-
-            <label className="block font-semibold text-[#183B64] mb-3">
-              Agreement Date: <span className="text-red-500">*</span>
-            </label>
-
-            <input
-              type="date"
-              value={
-                agreementData.agreementDate ||
-                new Date().toISOString().split("T")[0]
-              }
-              onChange={(e) =>
-                setAgreementData({
-                  ...agreementData,
-                  agreementDate: e.target.value,
-                })
-              }
-              className={inputClass}
-            />
-
-            {errors.agreementDate && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.agreementDate}
-              </p>
-            )}
           </div>
 
           {/* Agreement Description */}
