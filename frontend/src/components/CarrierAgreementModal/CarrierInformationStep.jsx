@@ -5,42 +5,13 @@ export default function CarrierInformationStep({
   agreementData,
   setAgreementData,
 }) {
-  const [, setErrors] = useState({});
-
-  const services = [
-    "Dedicated Lane Setup - $485 (Refundable after first delivery)",
-    "TWIC Card Application - $360 (Same-day processing)",
-    "Trailer Rental (3 months) - $500",
-    "Factoring Setup - $250 (Same-day registration)",
-    "Insurance Assistance - $399",
-  ];
-
-  const toggleService = (service) => {
-    const currentServices = agreementData.selectedServices || [];
-
-    const updatedServices = currentServices.includes(service)
-      ? currentServices.filter((item) => item !== service)
-      : [...currentServices, service];
-
-    setAgreementData({
-      ...agreementData,
-      selectedServices: updatedServices,
-    });
-  };
+  const [errors, setErrors] = useState({});
 
   const handleCarrierTypeChange = (value) => {
-    if (value === "old") {
-      setAgreementData({
-        ...agreementData,
-        carrierType: "old",
-        selectedServices: [],
-      });
-    } else {
-      setAgreementData({
-        ...agreementData,
-        carrierType: "new",
-      });
-    }
+    setAgreementData({
+      ...agreementData,
+      carrierType: value,
+    });
   };
 
   const validateForm = () => {
@@ -62,7 +33,6 @@ export default function CarrierInformationStep({
       newErrors.carrierType = "Carrier Type is required";
     }
 
-    // ✅ NEW VALIDATIONS
     if (!agreementData.driverName?.trim()) {
       newErrors.driverName = "Driver Name is required";
     }
@@ -75,15 +45,25 @@ export default function CarrierInformationStep({
       newErrors.licenseNumber = "License Number is required";
     }
 
+    if (!agreementData.agreementDate) {
+      newErrors.agreementDate = "Agreement Date is required";
+    }
+
     setErrors(newErrors);
 
     return Object.keys(newErrors).length === 0;
   };
 
+  const inputClass =
+    "w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-500";
+
+  const labelClass = "block font-semibold text-[#02053D] mb-2";
+
   return (
     <div className="flex justify-center items-center w-full px-4 py-4">
       <div className="w-full max-w-5xl bg-white rounded-[30px] shadow-2xl overflow-hidden">
         <div className="max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
+          {/* Back Button */}
           <button
             onClick={() => setStep(2)}
             className="text-blue-600 text-sm sm:text-base font-medium mb-6 hover:underline"
@@ -91,6 +71,7 @@ export default function CarrierInformationStep({
             ← Back
           </button>
 
+          {/* Heading */}
           <div className="text-center mb-8">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#02053D] uppercase">
               Trucking Service Agreement
@@ -101,16 +82,16 @@ export default function CarrierInformationStep({
             </p>
           </div>
 
+          {/* Progress Bar */}
           <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-10">
             <div className="w-[55%] h-full bg-emerald-500 rounded-full"></div>
           </div>
 
+          {/* Carrier Information */}
           <div className="space-y-5">
             {/* Carrier Name */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                Carrier Full Name *
-              </label>
+              <label className={labelClass}>Carrier Full Name *</label>
 
               <input
                 type="text"
@@ -121,15 +102,18 @@ export default function CarrierInformationStep({
                     carrierName: e.target.value,
                   })
                 }
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               />
+              {errors.carrierName && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.carrierName}
+                </p>
+              )}
             </div>
 
             {/* Company Name */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                Company Name
-              </label>
+              <label className={labelClass}>Company Name</label>
 
               <input
                 type="text"
@@ -140,15 +124,13 @@ export default function CarrierInformationStep({
                     companyName: e.target.value,
                   })
                 }
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               />
             </div>
 
             {/* MC DOT */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                MC Number / DOT Number *
-              </label>
+              <label className={labelClass}>MC Number / DOT Number *</label>
 
               <input
                 type="text"
@@ -159,15 +141,16 @@ export default function CarrierInformationStep({
                     mcDot: e.target.value,
                   })
                 }
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               />
+              {errors.mcDot && (
+                <p className="text-red-500 text-sm mt-1">{errors.mcDot}</p>
+              )}
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                Phone Number *
-              </label>
+              <label className={labelClass}>Phone Number *</label>
 
               <input
                 type="text"
@@ -178,14 +161,16 @@ export default function CarrierInformationStep({
                     phone: e.target.value,
                   })
                 }
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               />
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+              )}
             </div>
+
             {/* Driver Name */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                Driver Name
-              </label>
+              <label className={labelClass}>Driver Name *</label>
 
               <input
                 type="text"
@@ -196,15 +181,16 @@ export default function CarrierInformationStep({
                     driverName: e.target.value,
                   })
                 }
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               />
+              {errors.driverName && (
+                <p className="text-red-500 text-sm mt-1">{errors.driverName}</p>
+              )}
             </div>
 
             {/* Driver Phone */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                Driver Phone Number
-              </label>
+              <label className={labelClass}>Driver Phone Number *</label>
 
               <input
                 type="text"
@@ -215,15 +201,18 @@ export default function CarrierInformationStep({
                     driverPhone: e.target.value,
                   })
                 }
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               />
+              {errors.driverPhone && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.driverPhone}
+                </p>
+              )}
             </div>
 
             {/* License Number */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                License Number
-              </label>
+              <label className={labelClass}>License Number *</label>
 
               <input
                 type="text"
@@ -234,72 +223,132 @@ export default function CarrierInformationStep({
                     licenseNumber: e.target.value,
                   })
                 }
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               />
+              {errors.licenseNumber && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.licenseNumber}
+                </p>
+              )}
             </div>
 
             {/* Carrier Type */}
             <div>
-              <label className="block font-semibold text-[#02053D] mb-2">
-                Carrier Type *
-              </label>
+              <label className={labelClass}>Carrier Type *</label>
 
               <select
                 value={agreementData.carrierType || ""}
                 onChange={(e) => handleCarrierTypeChange(e.target.value)}
-                className="w-full border border-gray-300 rounded-xl px-5 py-4"
+                className={inputClass}
               >
                 <option value="">Select Carrier Type</option>
                 <option value="new">New Carrier</option>
-                <option value="old"> 2 Year's Old</option>
+                <option value="old">2 Year's Old</option>
               </select>
+
+              {errors.carrierType && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.carrierType}
+                </p>
+              )}
             </div>
           </div>
 
-          {/* Services Selection - Show fees for old carrier except Dedicated Lane Setup */}
-          {agreementData.carrierType && (
-            <div className="mt-10">
-              <h2 className="text-2xl font-bold text-[#02053D] mb-6">
-                Select Services
-              </h2>
+          {/* Load Pickup Schedule */}
+          <div className="mt-10">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#02053D] mb-5">
+              Load Pickup Schedule:
+            </h2>
 
-              <div className="space-y-4">
-                {services.map((service, index) => {
-                  const [serviceName] = service.split(" - $");
-                  let displayText = service;
-                  if (agreementData.carrierType === "old") {
-                    if (serviceName.trim() === "Dedicated Lane Setup") {
-                      displayText = serviceName; // No fee for Dedicated Lane Setup for old carrier
-                    } else {
-                      displayText = service; // Show fee for all other services
-                    }
-                  }
-                  return (
-                    <label
-                      key={index}
-                      className="flex items-start gap-4 border border-gray-200 rounded-2xl p-4 cursor-pointer"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={
-                          agreementData.selectedServices?.includes(service) ||
-                          false
-                        }
-                        onChange={() => toggleService(service)}
-                      />
-                      <span>{displayText}</span>
-                    </label>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+            <ul className="list-disc pl-6 space-y-4 text-[#183B64] text-sm sm:text-base leading-relaxed">
+              <li>
+                1- Pickup on Monday between 7:00 AM - 10:00 AM &lt;&gt;
+                Delivery: Available with backhaul service 24/7
+              </li>
 
-          {/* Buttons */}
+              <li>
+                2- Pickup on Tuesday between 7:00 AM - 10:00 AM &lt;&gt;
+                Delivery: Available with backhaul service 24/7
+              </li>
+
+              <li>
+                3- Pickup on Wednesday between 7:00 AM - 10:00 AM &lt;&gt;
+                Delivery: Available with backhaul service 24/7
+              </li>
+
+              <li>
+                4- Pickup on Thursday between 7:00 AM - 10:00 AM &lt;&gt;
+                Delivery: Available with backhaul service 24/7
+              </li>
+
+              <li>
+                5- Pickup on Friday between 7:00 AM - 10:00 AM &lt;&gt;
+                Delivery: Available with backhaul service 24/7
+              </li>
+
+              <li>
+                6- Pickup on Saturday between 7:00 AM - 10:00 AM &lt;&gt;
+                Delivery: Available with backhaul service 24/7
+              </li>
+            </ul>
+          </div>
+
+          {/* Agreement Effective Date */}
+          <div className="mt-8">
+            <p className="text-gray-500 text-sm sm:text-base mb-7">
+              (Hereinafter referred to as "CARRIER") as outlined below,
+              effective on this date:
+            </p>
+
+            <label className="block font-semibold text-[#183B64] mb-3">
+              Agreement Date: <span className="text-red-500">*</span>
+            </label>
+
+            <input
+              type="date"
+              value={
+                agreementData.agreementDate ||
+                new Date().toISOString().split("T")[0]
+              }
+              onChange={(e) =>
+                setAgreementData({
+                  ...agreementData,
+                  agreementDate: e.target.value,
+                })
+              }
+              className={inputClass}
+            />
+
+            {errors.agreementDate && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.agreementDate}
+              </p>
+            )}
+          </div>
+
+          {/* Agreement Description */}
+          <div className="mt-7">
+            <p className="text-[#183B64] text-sm sm:text-base leading-8">
+              This CARRIER SETUP / AGREEMENT between{" "}
+              <strong>Slee Street Logistics LLC</strong> and the Carrier/Shipper aims
+              to strengthen mutual cooperation by enhancing transportation
+              security for cargo and equipment across all stages of the
+              commercial process. The Carrier/Shipper commits to establishing,
+              maintaining, and updating a traceable and documented security
+              program aligned with the listed guidelines to improve safety
+              throughout their supply chain. In cases where the Carrier/Shipper
+              does not oversee the manufacturing site, distribution point, or
+              other segments, it will promote these security practices to those
+              third-party entities. Carriers/Shippers, at a minimum, agree to
+              pursue the following standards:
+            </p>
+          </div>
+
+          {/* Navigation Buttons */}
           <div className="flex gap-4 mt-10">
             <button
               onClick={() => setStep(2)}
-              className="w-1/2 bg-gray-200 py-4 rounded-2xl"
+              className="w-1/2 bg-gray-200 text-gray-800 py-4 rounded-2xl font-semibold hover:bg-gray-300 transition"
             >
               ← Previous
             </button>
@@ -308,13 +357,9 @@ export default function CarrierInformationStep({
               onClick={() => {
                 if (!validateForm()) return;
 
-                if (agreementData.carrierType === "new") {
-                  setStep(4);
-                } else {
-                  setStep(5);
-                }
+                setStep(4);
               }}
-              className="w-1/2 bg-emerald-500 text-white py-4 rounded-2xl"
+              className="w-1/2 bg-emerald-500 text-white py-4 rounded-2xl font-semibold hover:bg-emerald-600 transition"
             >
               Next →
             </button>

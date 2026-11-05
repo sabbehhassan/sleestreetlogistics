@@ -7,11 +7,59 @@ export default function FinalSubmissionStep({
 }) {
   const today = new Date().toISOString().split("T")[0];
 
-  const [, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+
+  const isNewCarrier = agreementData.carrierType === "new";
+
+  // Services and Fees
+  const services = [
+    {
+      name: "Dedicated Lane Setup",
+      fee: 485,
+      description: "Refundable after first delivery",
+    },
+    {
+      name: "TWIC Card Application",
+      fee: 360,
+      description: "Same-day processing",
+    },
+    {
+      name: "Trailer Rental (3 months)",
+      fee: 500,
+      description: "",
+    },
+    {
+      name: "Factoring Setup",
+      fee: 250,
+      description: "Same-day registration",
+    },
+    {
+      name: "Insurance Assistance",
+      fee: 399,
+      description: "",
+    },
+  ];
+
+  const toggleService = (service) => {
+    const currentServices = agreementData.selectedServices || [];
+
+    const updatedServices = currentServices.includes(service)
+      ? currentServices.filter((item) => item !== service)
+      : [...currentServices, service];
+
+    setAgreementData({
+      ...agreementData,
+      selectedServices: updatedServices,
+    });
+  };
 
   const validateForm = () => {
     const newErrors = {};
+
+    if (!agreementData.selectedServices?.length) {
+      newErrors.selectedServices = "Please select at least one service";
+    }
 
     if (!agreementData.signature?.trim()) {
       newErrors.signature = "Signature is required";
@@ -29,7 +77,6 @@ export default function FinalSubmissionStep({
       newErrors.paymentMethod = "Select payment method";
     }
 
-    // Bank details sirf tab required hongi jab Cash On Delivery select na ho
     if (agreementData.paymentMethod !== "Cash On Delivery") {
       if (!agreementData.bankName?.trim()) {
         newErrors.bankName = "Bank Name required";
@@ -76,14 +123,20 @@ export default function FinalSubmissionStep({
       const data = await response.json();
 
       if (data.success) {
-        setStep(6);
+        setStep(7);
+      } else {
+        alert(data.message || "Agreement submission failed. Please try again.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Agreement submission error:", error);
+      alert("Something went wrong. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
+
+  const inputClass =
+    "w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300";
 
   return (
     <div className="flex justify-center items-center w-full px-4 py-4 bg-gradient-to-br from-[#F8F5EE] to-[#EEF3E8]">
@@ -94,10 +147,10 @@ export default function FinalSubmissionStep({
         {/* Accent Line */}
         <div className="h-1.5 bg-gradient-to-r from-[#1a1a4d] via-[#ff1493] to-[#1a1a4d]"></div>
 
-        <div className="max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
+        <div className="relative max-h-[88vh] overflow-y-auto px-6 sm:px-10 py-8">
           {/* Back Button */}
           <button
-            onClick={() => setStep(4)}
+            onClick={() => setStep(isNewCarrier ? 5 : 4)}
             className="text-[#1a1a4d] text-sm font-semibold mb-8 hover:text-[#ff1493] transition duration-300"
           >
             ← Back
@@ -123,28 +176,75 @@ export default function FinalSubmissionStep({
             <div className="w-full h-full bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] rounded-full"></div>
           </div>
 
-          {/* Step Title */}
-          <h2 className="text-3xl font-bold text-[#1a1a4d] mb-8">
-            Step 4: Final Submission
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a4d] mb-8">
+            Services & Fees
           </h2>
 
-          {/* Terms Box */}
-          <div className="bg-[#EEF3E8] border border-[#ff1493]/10 rounded-[28px] p-6 mb-10">
-            <h2 className="text-2xl font-bold text-[#1a1a4d] mb-4">Terms</h2>
+          {/* Services Selection */}
+          <div className="space-y-4 mb-12">
+            {services.map((service) => {
+              const serviceValue = `${service.name} - $${service.fee}${
+                service.description ? ` (${service.description})` : ""
+              }`;
 
-            <p className="text-[#5d6d63] leading-8">
-              The term of this Agreement shall be <strong>180 days</strong>,
-              commencing on the date listed above. If not cancelled, it will
-              automatically renew.
-            </p>
+              const isSelected =
+                agreementData.selectedServices?.includes(serviceValue) || false;
+
+              return (
+                <label
+                  key={service.name}
+                  className={`flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${
+                    isSelected
+                      ? "border-[#1a1a4d] bg-[#EEF3E8] shadow-sm"
+                      : "border-[#dce5df] hover:border-[#1a1a4d]/40 bg-white"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={isSelected}
+                    onChange={() => toggleService(serviceValue)}
+                    className="w-5 h-5 mt-1 accent-[#1a1a4d]"
+                  />
+
+                  <div className="flex-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                      <span className="font-semibold text-[#1a1a4d]">
+                        {service.name}
+                      </span>
+
+                      {(isNewCarrier ||
+                        service.name !== "Dedicated Lane Setup") && (
+                        <span className="font-bold text-[#1a1a4d] text-lg">
+                          ${service.fee}
+                        </span>
+                      )}
+                    </div>
+
+                    {service.description && (
+                      <p className="text-sm text-gray-500 mt-1">
+                        {service.description}
+                      </p>
+                    )}
+                  </div>
+                </label>
+              );
+            })}
+
+            {errors.selectedServices && (
+              <p className="text-red-500 text-sm">{errors.selectedServices}</p>
+            )}
           </div>
 
-          {/* Form */}
+          {/* Signature and Information */}
+          <h2 className="text-2xl font-bold text-[#1a1a4d] mb-6">
+            Final Information
+          </h2>
+
           <div className="space-y-6">
             {/* Signature */}
             <div>
               <label className="block mb-3 font-semibold text-[#1a1a4d]">
-                Signature
+                Signature *
               </label>
 
               <input
@@ -157,14 +257,18 @@ export default function FinalSubmissionStep({
                     signature: e.target.value,
                   })
                 }
-                className="w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300"
+                className={inputClass}
               />
+
+              {errors.signature && (
+                <p className="text-red-500 text-sm mt-1">{errors.signature}</p>
+              )}
             </div>
 
             {/* Print Name */}
             <div>
               <label className="block mb-3 font-semibold text-[#1a1a4d]">
-                Print Name
+                Print Name *
               </label>
 
               <input
@@ -177,14 +281,18 @@ export default function FinalSubmissionStep({
                     printName: e.target.value,
                   })
                 }
-                className="w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300"
+                className={inputClass}
               />
+
+              {errors.printName && (
+                <p className="text-red-500 text-sm mt-1">{errors.printName}</p>
+              )}
             </div>
 
             {/* Email */}
             <div>
               <label className="block mb-3 font-semibold text-[#1a1a4d]">
-                Email
+                Email *
               </label>
 
               <input
@@ -197,14 +305,18 @@ export default function FinalSubmissionStep({
                     email: e.target.value,
                   })
                 }
-                className="w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300"
+                className={inputClass}
               />
+
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
 
             {/* Payment Method */}
             <div>
               <label className="block mb-4 font-semibold text-[#1a1a4d]">
-                Payment Method
+                Payment Method *
               </label>
 
               <div className="space-y-4">
@@ -216,13 +328,11 @@ export default function FinalSubmissionStep({
                 ].map((method) => (
                   <label
                     key={method}
-                    className={`flex items-center gap-4 p-4 rounded-2xl border cursor-pointer transition-all duration-300
-                      ${
-                        agreementData.paymentMethod === method
-                          ? "border-[#1a1a4d] bg-[#EEF3E8]"
-                          : "border-[#dce5df] hover:border-[#1a1a4d]/40"
-                      }
-                    `}
+                    className={`flex items-center gap-4 p-4 rounded-2xl border cursor-pointer transition-all duration-300 ${
+                      agreementData.paymentMethod === method
+                        ? "border-[#1a1a4d] bg-[#EEF3E8]"
+                        : "border-[#dce5df] hover:border-[#1a1a4d]/40"
+                    }`}
                   >
                     <input
                       type="radio"
@@ -240,11 +350,17 @@ export default function FinalSubmissionStep({
                   </label>
                 ))}
               </div>
+
+              {errors.paymentMethod && (
+                <p className="text-red-500 text-sm mt-2">
+                  {errors.paymentMethod}
+                </p>
+              )}
             </div>
 
-            {/* Bank Info */}
+            {/* Bank Information */}
             {agreementData.paymentMethod !== "Cash On Delivery" && (
-              <>
+              <div className="space-y-6">
                 {[
                   {
                     label: "Bank Name",
@@ -264,7 +380,7 @@ export default function FinalSubmissionStep({
                 ].map((field) => (
                   <div key={field.key}>
                     <label className="block mb-3 font-semibold text-[#1a1a4d]">
-                      {field.label}
+                      {field.label} *
                     </label>
 
                     <input
@@ -277,61 +393,25 @@ export default function FinalSubmissionStep({
                           [field.key]: e.target.value,
                         })
                       }
-                      className="w-full border border-[#dce5df] rounded-2xl px-5 py-4 bg-[#fafbf9] focus:border-[#1a1a4d] focus:ring-4 focus:ring-[#1a1a4d]/10 outline-none transition duration-300"
+                      className={inputClass}
                     />
+
+                    {errors[field.key] && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors[field.key]}
+                      </p>
+                    )}
                   </div>
                 ))}
-              </>
-            )}
-          </div>
-
-          {/* TERMS */}
-          <div className="mt-14 space-y-8 text-[#5d6d63] leading-8">
-            <div className="bg-white border border-[#ff1493]/10 rounded-[28px] p-6 shadow-md">
-              <h2 className="text-2xl font-bold text-[#1a1a4d] mb-4">
-                Broker Obligations
-              </h2>
-
-              <p>
-                Broker shall pay CARRIER for services rendered in accordance
-                with agreed rates in Load Confirmations.
-              </p>
-            </div>
-
-            {/* Slot Fee */}
-            {agreementData.carrierType !== "old" && (
-              <div className="bg-[#FFF8E6] border border-[#ff1493]/20 rounded-[28px] p-6">
-                <h2 className="text-2xl font-bold text-[#1a1a4d] mb-4">
-                  Slot Fee (Refundable)
-                </h2>
-
-                <p>
-                  Carrier shall pay a refundable security deposit of $485 via
-                  instant payment.
-                </p>
               </div>
             )}
-
-            {/* Carrier Obligations */}
-            <div className="bg-white border border-[#ff1493]/10 rounded-[28px] p-6 shadow-md">
-              <h2 className="text-2xl font-bold text-[#1a1a4d] mb-4">
-                Carrier Obligations
-              </h2>
-
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Carrier must check-in on time at shipper/receiver</li>
-                <li>Submit documents within 24 hours</li>
-                <li>Notify broker after 60 minutes delay</li>
-                <li>Provide signed BOL and Rate confirmation</li>
-              </ul>
-            </div>
           </div>
 
           {/* Footer Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-12">
             {/* Previous */}
             <button
-              onClick={() => setStep(4)}
+              onClick={() => setStep(isNewCarrier ? 5 : 4)}
               className="w-full sm:w-1/2 bg-[#EEF3E8] hover:bg-[#e3ecdc] text-[#1a1a4d] font-semibold py-4 rounded-2xl transition duration-300 border border-[#ff1493]/10"
             >
               ← Previous
@@ -341,17 +421,11 @@ export default function FinalSubmissionStep({
             <button
               onClick={handleSubmit}
               disabled={isLoading}
-              className={`
-                w-full sm:w-1/2 py-4 rounded-2xl font-semibold
-                flex items-center justify-center gap-3
-                transition-all duration-300 shadow-xl
-
-                ${
-                  isLoading
-                    ? "bg-[#7ea789] cursor-not-allowed text-white"
-                    : "bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] hover:scale-[1.02] text-white"
-                }
-              `}
+              className={`w-full sm:w-1/2 py-4 rounded-2xl font-semibold flex items-center justify-center gap-3 transition-all duration-300 shadow-xl ${
+                isLoading
+                  ? "bg-[#7ea789] cursor-not-allowed text-white"
+                  : "bg-gradient-to-r from-[#1a1a4d] to-[#1a1a4d] hover:scale-[1.02] text-white"
+              }`}
             >
               {isLoading ? (
                 <>

@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 import AgreementSelection from "./AgreementSelection";
 import TruckingAgreement from "./TruckingAgreement";
 import CarrierInformationStep from "./CarrierInformationStep";
+import ConditionsStep from "./ConditionsStep";
 import NewCarrierPaymentStep from "./NewCarrierPaymentStep";
 import FinalSubmissionStep from "./FinalSubmissionStep";
 import AgreementSuccessStep from "./AgreementSuccessStep";
@@ -23,9 +25,16 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
     mcDot: "",
     phone: "",
     carrierType: "",
+
+    // Driver Information
+    driverName: "",
+    driverPhone: "",
+    licenseNumber: "",
+
+    // Services
     selectedServices: [],
 
-    // Step 3 / Step 4
+    // Payment
     paymentMethod: "",
 
     // Final Step
@@ -41,7 +50,6 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
   const handleClose = () => {
     setStep(1);
 
-    // Reset complete form
     setAgreementData({
       agreementType: "",
       selectedDispatch: "",
@@ -52,6 +60,11 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
       mcDot: "",
       phone: "",
       carrierType: "",
+
+      driverName: "",
+      driverPhone: "",
+      licenseNumber: "",
+
       selectedServices: [],
 
       paymentMethod: "",
@@ -72,9 +85,7 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-
       <div className="relative w-full max-w-5xl rounded-3xl bg-white shadow-2xl overflow-hidden">
-
         {/* Step 1 */}
         {step === 1 && (
           <AgreementSelection
@@ -94,7 +105,7 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
           />
         )}
 
-        {/* Step 3 */}
+        {/* Step 3 - Carrier Information */}
         {step === 3 && (
           <CarrierInformationStep
             setStep={setStep}
@@ -103,8 +114,13 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
           />
         )}
 
-        {/* Step 4 */}
+        {/* Step 4 - Conditions */}
         {step === 4 && (
+          <ConditionsStep setStep={setStep} agreementData={agreementData} />
+        )}
+
+        {/* Step 5 - New Carrier Payment */}
+        {step === 5 && agreementData.carrierType === "new" && (
           <NewCarrierPaymentStep
             setStep={setStep}
             agreementData={agreementData}
@@ -112,8 +128,8 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
           />
         )}
 
-        {/* Step 5 */}
-        {step === 5 && (
+        {/* Step 6 - Final Submission */}
+        {step === 6 && (
           <FinalSubmissionStep
             setStep={setStep}
             agreementData={agreementData}
@@ -121,14 +137,10 @@ export default function CarrierAgreementModal({ isOpen, onClose }) {
           />
         )}
 
-        {/* Step 6 */}
-        {step === 6 && (
-          <AgreementSuccessStep
-            setStep={setStep}
-            onClose={handleClose}
-          />
+        {/* Step 7 - Success */}
+        {step === 7 && (
+          <AgreementSuccessStep setStep={setStep} onClose={handleClose} />
         )}
-
       </div>
     </div>
   );
