@@ -6,12 +6,13 @@ export default function CarrierInformationStep({
   setAgreementData,
 }) {
   const [errors, setErrors] = useState({});
+  const hasCarrierType = ["new", "old"].includes(agreementData.carrierType);
 
   const handleCarrierTypeChange = (value) => {
-    setAgreementData({
-      ...agreementData,
+    setAgreementData((prev) => ({
+      ...prev,
       carrierType: value,
-    });
+    }));
   };
 
   const validateForm = () => {
@@ -60,12 +61,14 @@ export default function CarrierInformationStep({
       <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-[30px] border border-gray-100 bg-white">
         <div className="px-6 py-8 sm:px-10">
           {/* Back Button */}
-          <button
-            onClick={() => setStep(2)}
-            className="text-blue-600 text-sm sm:text-base font-medium mb-6 hover:underline"
-          >
-            ← Back
-          </button>
+          {hasCarrierType && (
+            <button
+              onClick={() => setStep(2)}
+              className="text-blue-600 text-sm sm:text-base font-medium mb-6 hover:underline"
+            >
+              ← Back
+            </button>
+          )}
 
           {/* Heading */}
           <div className="text-center mb-8">
@@ -250,6 +253,8 @@ export default function CarrierInformationStep({
             </div>
           </div>
 
+          {hasCarrierType && (
+            <>
           {/* Load Pickup Schedule */}
           <div className="mt-10">
             <h2 className="text-xl sm:text-2xl font-bold text-[#02053D] mb-5">
@@ -327,6 +332,8 @@ export default function CarrierInformationStep({
               Next →
             </button>
           </div>
+            </>
+          )}
         </div>
       </div>
     </div>

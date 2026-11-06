@@ -58,7 +58,7 @@ export default function AgreementSelection({
 
             {/* Title */}
             <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a4d] mt-6">
-              Trucking Service Agreement
+              BROKER / CARRIER AGREEMENT
             </h3>
 
             {/* Description */}

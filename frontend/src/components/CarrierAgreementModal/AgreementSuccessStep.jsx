@@ -62,7 +62,7 @@ export default function AgreementSuccessStep({ onNewAgreement, onDone }) {
 
           {/* Description */}
           <p className="text-[#5d6d63] leading-8 text-sm sm:text-base max-w-md mx-auto">
-            Your trucking agreement has been submitted successfully.
+            Your Broker & Carrier Agreement has been submitted successfully.
             The agreement PDF has been sent to your email address.
           </p>
 

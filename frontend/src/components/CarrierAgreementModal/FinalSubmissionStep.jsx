@@ -15,28 +15,28 @@ export default function FinalSubmissionStep({
   // Services and Fees
   const services = [
     {
-      name: "Dedicated Lane Setup",
-      fee: 499,
+      name: "ONBOARDING LANE SETUP FEE",
+      fee: 425,
       description: "Refundable after first delivery",
     },
     {
-      name: "TWIC Card Application",
-      fee: 360,
+      name: "TWIC CARD REGISTRATION",
+      fee: 399,
       description: "Same-day processing",
     },
     {
-      name: "Trailer Rental (3 months)",
-      fee: 500,
+      name: "TRAILER RENTAL (3 MONTHS)",
+      fee: 485,
       description: "",
     },
     {
-      name: "Factoring Setup",
+      name: "FACTORING SERVICES",
       fee: 250,
       description: "Same-day registration",
     },
     {
-      name: "Insurance Assistance",
-      fee: 399,
+      name: "INSURANCE REGISTRATION",
+      fee: 699,
       description: "",
     },
   ];
@@ -213,7 +213,7 @@ export default function FinalSubmissionStep({
                       </span>
 
                       {(isNewCarrier ||
-                        service.name !== "Dedicated Lane Setup") && (
+                        service.name !== "ONBOARDING LANE SETUP FEE") && (
                         <span className="font-bold text-[#1a1a4d] text-lg">
                           ${service.fee}
                         </span>
@@ -237,14 +237,14 @@ export default function FinalSubmissionStep({
 
           {/* Signature and Information */}
           <h2 className="text-2xl font-bold text-[#1a1a4d] mb-6">
-            Final Information
+            FINAL INFORMATION
           </h2>
 
           <div className="space-y-6">
             {/* Signature */}
             <div>
               <label className="block mb-3 font-semibold text-[#1a1a4d]">
-                Signature *
+                SIGNATURE *
               </label>
 
               <input
@@ -268,7 +268,7 @@ export default function FinalSubmissionStep({
             {/* Print Name */}
             <div>
               <label className="block mb-3 font-semibold text-[#1a1a4d]">
-                Print Name *
+                PRINTER NAME *
               </label>
 
               <input
@@ -292,7 +292,7 @@ export default function FinalSubmissionStep({
             {/* Email */}
             <div>
               <label className="block mb-3 font-semibold text-[#1a1a4d]">
-                Email *
+                EMAIL *
               </label>
 
               <input
@@ -316,7 +316,7 @@ export default function FinalSubmissionStep({
             {/* Payment Method */}
             <div>
               <label className="block mb-4 font-semibold text-[#1a1a4d]">
-                Payment Method *
+                HOW DO YOU GET PAID *
               </label>
 
               <div className="space-y-4">
@@ -324,7 +324,6 @@ export default function FinalSubmissionStep({
                   "Factoring",
                   "ACH Direct Deposit Method",
                   "Cash On Delivery",
-                  "No Fees for 24 Hours Deposit",
                 ].map((method) => (
                   <label
                     key={method}
@@ -363,17 +362,17 @@ export default function FinalSubmissionStep({
               <div className="space-y-6">
                 {[
                   {
-                    label: "Bank Name",
+                    label: "BANK NAME",
                     key: "bankName",
                     placeholder: "Bank Name",
                   },
                   {
-                    label: "Account Number",
+                    label: "ACCOUNT NUMBER",
                     key: "accountNumber",
                     placeholder: "Account Number",
                   },
                   {
-                    label: "Routing Number",
+                    label: "ROUTING NUMBER",
                     key: "routingNumber",
                     placeholder: "Routing Number",
                   },

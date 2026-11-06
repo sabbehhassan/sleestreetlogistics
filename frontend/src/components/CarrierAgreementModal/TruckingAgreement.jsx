@@ -51,13 +51,13 @@ export default function TruckingAgreement({
               </div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-center">
-                Trucking Agreement
+                Broker & Carrier Agreement
               </h1>
             </div>
 
             <p className="text-center text-white/80 text-sm sm:text-base">
-              Step 2: Trucking Agreement - Dedicated Lanes, Dispatch, Trailer
-              Rental & Setup Services
+              Step 2: THIS BROKER & CARRIER AGREEMENT - DEDICATED LANES, DISPATCH, TRAILER
+              RENTAL & SETUP SERVICES
             </p>
 
             <div className="mt-6">

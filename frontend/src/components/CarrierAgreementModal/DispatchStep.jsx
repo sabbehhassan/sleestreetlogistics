@@ -28,7 +28,7 @@ export default function DispatchStep({
       {/* Description */}
       <p className="text-[#5d6d63] text-sm sm:text-base mb-8 leading-8 max-w-2xl">
         Select your preferred dispatch company from the list below
-        to continue your trucking agreement setup process.
+        to continue your Broker & Carrier Agreement setup process.
       </p>
 
       {/* Selection Card */}

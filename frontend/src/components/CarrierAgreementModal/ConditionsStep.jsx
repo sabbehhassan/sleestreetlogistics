@@ -25,7 +25,7 @@ export default function ConditionsStep({ setStep, agreementData }) {
           {/* Heading */}
           <div className="text-center mb-8">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#02053D] uppercase">
-              Trucking Service Agreement
+              TRUCKING SERVICE AGREEMENT
             </h1>
 
             <p className="text-gray-500 text-sm sm:text-base mt-2">
@@ -40,11 +40,11 @@ export default function ConditionsStep({ setStep, agreementData }) {
 
           {/* Terms and Conditions */}
           <div>
-            <h2 className={sectionTitle}>Terms and Conditions</h2>
+            <h2 className={sectionTitle}>TERMS AND CONDITIONS</h2>
 
             {/* Shipper Responsibilities */}
             <section className="mb-10">
-              <h3 className={subTitle}>Shipper Responsibilities:</h3>
+              <h3 className={subTitle}>SHIPPER RESPONSIBILITIES:</h3>
 
               <p className={paragraph}>
                 The Shipper agrees to compensate{" "}
@@ -85,15 +85,15 @@ export default function ConditionsStep({ setStep, agreementData }) {
             {/* Security Deposit - New Carrier Only */}
             {isNewCarrier && (
               <section className="mb-10">
-                <h3 className={subTitle}>Onboarding Lane Setup Fee</h3>
+                <h3 className={subTitle}>ONBOARDING LANE SETUP FEE</h3>
 
                 <p className={paragraph}>
                   The Carrier is required to submit a security deposit of{" "}
-                  <strong>$490</strong> via direct or instant payment to{" "}
+                  <strong>$425</strong> via direct or instant payment to{" "}
                   <strong>Slee Street Logistics LLC</strong>. This deposit is
                   refundable after the Carrier completes their first delivery
                   and receives payment for the corresponding load. Upon payment
-                  of the $490, the Carrier must obtain a receipt for the deposit
+                  of the $425, the Carrier must obtain a receipt for the deposit
                   from a company representative.
                 </p>
 
@@ -110,7 +110,7 @@ export default function ConditionsStep({ setStep, agreementData }) {
 
             {/* Payment Terms */}
             <section className="mb-10">
-              <h3 className={subTitle}>Payment Terms</h3>
+              <h3 className={subTitle}>PAYMENT TERMS</h3>
 
               <p className={paragraph}>
                 To receive payment, the Carrier must submit a signed copy of the
@@ -136,7 +136,7 @@ export default function ConditionsStep({ setStep, agreementData }) {
 
             {/* Carrier Obligations */}
             <section className="mb-10">
-              <h3 className={subTitle}>Carrier Obligations</h3>
+              <h3 className={subTitle}>CARRIER OBLIGATIONS:</h3>
 
               <p className={paragraph}>
                 To qualify for accessorial or incidental charges, the Carrier
@@ -169,22 +169,22 @@ export default function ConditionsStep({ setStep, agreementData }) {
 
               {/* Detention Compensation */}
               <h4 className="text-base sm:text-lg font-bold text-[#02053D] mb-3">
-                Detention Compensation:
+                DETENTION COMPENSATION:
               </h4>
 
               <ul className={list}>
-                <li>$40/hour after 2 hours</li>
-                <li>Maximum of $200 per stop</li>
+                <li>$60/hour after 2 hours</li>
+                <li>Maximum of $300 per stop</li>
               </ul>
 
               {/* Other Fees */}
               <h4 className="text-base sm:text-lg font-bold text-[#02053D] mb-3">
-                Other Fees:
+                OTHER FEES:
               </h4>
 
               <ul className={list}>
                 <li>
-                  <strong>Layover:</strong> $200 for Dry Van, $250 for Running
+                  <strong>Layover:</strong> $250 for Dry Van, $350 for Running
                   Reefer
                 </li>
 
@@ -201,16 +201,17 @@ export default function ConditionsStep({ setStep, agreementData }) {
 
             {/* Terms */}
             <section className="mb-10">
-              <h3 className={subTitle}>Terms</h3>
+              <h3 className={subTitle}>TERMS OF AGREEMENT
+              </h3>
 
               <p className={paragraph}>
                 This CARRIER SETUP / AGREEMENT shall remain in effect for a
-                period of <strong>90 days</strong>, starting from the date
+                period of <strong>120 days</strong>, starting from the date
                 stated above. Unless either party chooses to cancel, the CARRIER
                 SETUP / AGREEMENT will automatically renew for successive
                 one-year terms. Either party may terminate the CARRIER SETUP /
                 AGREEMENT at any time by providing{" "}
-                <strong>thirty (30) days'</strong> written or electronic notice,
+                <strong>Fifteen (15) days'</strong> written or electronic notice,
                 provided that all outstanding balances have been settled.
               </p>
 

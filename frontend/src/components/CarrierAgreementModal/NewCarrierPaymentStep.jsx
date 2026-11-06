@@ -67,7 +67,7 @@ export default function NewCarrierPaymentStep({
           {/* Step */}
           <div className="mb-10">
             <h2 className="text-2xl font-bold text-[#02053D] mb-4">
-              Step 5: Payment Terms
+              Step 5: PAYMENT TERMS
             </h2>
 
             <p className="text-gray-600 mb-6">
@@ -75,7 +75,7 @@ export default function NewCarrierPaymentStep({
             </p>
 
             <h3 className="font-semibold text-lg text-[#02053D] mb-5">
-              Select Payment Option: *
+              SELECT PAYMENT OPTION: *
             </h3>
 
             <div className="space-y-5">
@@ -125,11 +125,11 @@ export default function NewCarrierPaymentStep({
           {/* Refund Policy */}
           <div className="mb-10">
             <h2 className="text-2xl font-bold text-[#02053D] mb-4">
-              Refund Policy
+              ONBOARDING LANE SETUP REFUND POLICY
             </h2>
 
             <p className="text-gray-600 leading-8">
-              The $485 dedicated lane setup fee is refundable after the client
+              The $425 dedicated lane setup fee is refundable after the client
               completes their first delivery arranged by the company.
             </p>
           </div>
@@ -137,12 +137,12 @@ export default function NewCarrierPaymentStep({
           {/* Responsibilities */}
           <div className="mb-10">
             <h2 className="text-2xl font-bold text-[#02053D] mb-4">
-              Client Responsibilities
+              CLIENT RESPONSIBILITIES
             </h2>
 
             <ul className="list-disc pl-6 text-gray-600 space-y-3 leading-8">
               <li>Provide accurate legal business information</li>
-              <li>Maintain active authority and insurance</li>
+              <li>Maintain active authority</li>
               <li>Professional communication</li>
               <li>No fraud or chargebacks</li>
             </ul>
@@ -151,7 +151,7 @@ export default function NewCarrierPaymentStep({
           {/* No Employer-Employee Relationship */}
           <div className="mb-10">
             <h2 className="text-2xl font-bold text-[#02053D] mb-4">
-              No Employer-Employee Relationship
+              NO EMPLOYER-EMPLOYEE RELATIONSHIP
             </h2>
 
             <p className="text-gray-600 leading-8">
@@ -163,7 +163,7 @@ export default function NewCarrierPaymentStep({
           {/* Liability */}
           <div className="mb-10">
             <h2 className="text-2xl font-bold text-[#02053D] mb-4">
-              Limitation of Liability
+              LIMITATION OF LIABILITY
             </h2>
 
             <p className="text-gray-600 leading-8">
