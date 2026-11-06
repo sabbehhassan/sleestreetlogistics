@@ -101,6 +101,9 @@ export default function NewCarrierPaymentStep({
               {agreementServices.map((service) => {
                 const serviceValue = getAgreementServiceValue(service);
                 const isSelected = selectedServices.includes(serviceValue);
+                const showOnboardingDetails =
+                  isNewCarrier ||
+                  serviceValue !== ONBOARDING_LANE_SETUP_SERVICE_VALUE;
 
                 return (
                   <label
@@ -123,14 +126,13 @@ export default function NewCarrierPaymentStep({
                         <span className="font-semibold text-[#1a1a4d]">
                           {service.name}
                         </span>
-                        {(isNewCarrier ||
-                          service.name !== "ONBOARDING LANE SETUP FEE") && (
+                        {showOnboardingDetails && (
                           <span className="font-bold text-[#1a1a4d] text-lg">
                             ${service.fee}
                           </span>
                         )}
                       </div>
-                      {service.description && (
+                      {service.description && showOnboardingDetails && (
                         <p className="text-sm text-gray-500 mt-1">
                           {service.description}
                         </p>
