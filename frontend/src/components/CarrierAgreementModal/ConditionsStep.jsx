@@ -1,6 +1,5 @@
 export default function ConditionsStep({ setStep, agreementData }) {
   const isNewCarrier = agreementData.carrierType === "new";
-
   const sectionTitle = "text-xl sm:text-2xl font-bold text-[#02053D] mb-5";
 
   const subTitle = "text-lg sm:text-xl font-bold text-[#02053D] mb-3";
@@ -82,7 +81,6 @@ export default function ConditionsStep({ setStep, agreementData }) {
               </p>
             </section>
 
-            {/* Security Deposit - New Carrier Only */}
             {isNewCarrier && (
               <section className="mb-10">
                 <h3 className={subTitle}>ONBOARDING LANE SETUP FEE</h3>
@@ -240,9 +238,7 @@ export default function ConditionsStep({ setStep, agreementData }) {
             </button>
 
             <button
-              onClick={() =>
-                setStep(agreementData.carrierType === "new" ? 5 : 6)
-              }
+              onClick={() => setStep(5)}
               className="w-1/2 bg-emerald-500 text-white py-4 rounded-2xl font-semibold hover:bg-emerald-600 transition"
             >
               Next →

@@ -10,50 +10,6 @@ export default function FinalSubmissionStep({
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  const isNewCarrier = agreementData.carrierType === "new";
-
-  // Services and Fees
-  const services = [
-    {
-      name: "ONBOARDING LANE SETUP FEE",
-      fee: 425,
-      description: "Refundable after first delivery",
-    },
-    {
-      name: "TWIC CARD REGISTRATION",
-      fee: 399,
-      description: "Same-day processing",
-    },
-    {
-      name: "TRAILER RENTAL (3 MONTHS)",
-      fee: 485,
-      description: "",
-    },
-    {
-      name: "FACTORING SERVICES",
-      fee: 250,
-      description: "Same-day registration",
-    },
-    {
-      name: "INSURANCE REGISTRATION",
-      fee: 699,
-      description: "",
-    },
-  ];
-
-  const toggleService = (service) => {
-    const currentServices = agreementData.selectedServices || [];
-
-    const updatedServices = currentServices.includes(service)
-      ? currentServices.filter((item) => item !== service)
-      : [...currentServices, service];
-
-    setAgreementData({
-      ...agreementData,
-      selectedServices: updatedServices,
-    });
-  };
-
   const validateForm = () => {
     const newErrors = {};
 
@@ -150,7 +106,7 @@ export default function FinalSubmissionStep({
         <div className="relative px-6 py-8 sm:px-10">
           {/* Back Button */}
           <button
-            onClick={() => setStep(isNewCarrier ? 5 : 4)}
+            onClick={() => setStep(5)}
             className="text-[#1a1a4d] text-sm font-semibold mb-8 hover:text-[#ff1493] transition duration-300"
           >
             ← Back
@@ -174,65 +130,6 @@ export default function FinalSubmissionStep({
           {/* Progress */}
           <div className="w-full h-3 bg-[#e6ece7] rounded-full mb-12 overflow-hidden">
             <div className="w-[86%] h-full bg-gradient-to-r from-[#1a1a4d] to-[#ff1493] rounded-full"></div>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a4d] mb-8">
-            Services & Fees
-          </h2>
-
-          {/* Services Selection */}
-          <div className="space-y-4 mb-12">
-            {services.map((service) => {
-              const serviceValue = `${service.name} - $${service.fee}${
-                service.description ? ` (${service.description})` : ""
-              }`;
-
-              const isSelected =
-                agreementData.selectedServices?.includes(serviceValue) || false;
-
-              return (
-                <label
-                  key={service.name}
-                  className={`flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${
-                    isSelected
-                      ? "border-[#1a1a4d] bg-[#EEF3E8] shadow-sm"
-                      : "border-[#dce5df] hover:border-[#1a1a4d]/40 bg-white"
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={isSelected}
-                    onChange={() => toggleService(serviceValue)}
-                    className="w-5 h-5 mt-1 accent-[#1a1a4d]"
-                  />
-
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                      <span className="font-semibold text-[#1a1a4d]">
-                        {service.name}
-                      </span>
-
-                      {(isNewCarrier ||
-                        service.name !== "ONBOARDING LANE SETUP FEE") && (
-                        <span className="font-bold text-[#1a1a4d] text-lg">
-                          ${service.fee}
-                        </span>
-                      )}
-                    </div>
-
-                    {service.description && (
-                      <p className="text-sm text-gray-500 mt-1">
-                        {service.description}
-                      </p>
-                    )}
-                  </div>
-                </label>
-              );
-            })}
-
-            {errors.selectedServices && (
-              <p className="text-red-500 text-sm">{errors.selectedServices}</p>
-            )}
           </div>
 
           {/* Signature and Information */}
@@ -357,6 +254,31 @@ export default function FinalSubmissionStep({
               )}
             </div>
 
+            <section className="space-y-3">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a4d]">
+                Entire Contract
+              </h3>
+              <p className="text-gray-600 leading-8 text-sm sm:text-base">
+                This CARRIER SETUP / AGREEMENT contains all the terms and
+                conditions that fully represent the mutual understanding and
+                CARRIER SETUP / AGREEMENT between the parties. It supersedes all
+                prior CARRIER SETUP / AGREEMENT, whether verbal or written, and
+                no other understandings - express or implied - exist between
+                the parties, except as expressly stated in this document.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a4d]">
+                Notices
+              </h3>
+              <p className="text-gray-600 leading-8 text-sm sm:text-base">
+                If the Carrier intends to terminate the contract or change
+                jobs, the Carrier must provide at least 15 days&apos; prior
+                notice before ending the contract.
+              </p>
+            </section>
+
             {/* Bank Information */}
             {agreementData.paymentMethod !== "Cash On Delivery" && (
               <div className="space-y-6">
@@ -410,7 +332,7 @@ export default function FinalSubmissionStep({
           <div className="flex flex-col sm:flex-row gap-4 mt-12">
             {/* Previous */}
             <button
-              onClick={() => setStep(isNewCarrier ? 5 : 4)}
+              onClick={() => setStep(5)}
               className="w-full sm:w-1/2 bg-[#EEF3E8] hover:bg-[#e3ecdc] text-[#1a1a4d] font-semibold py-4 rounded-2xl transition duration-300 border border-[#ff1493]/10"
             >
               ← Previous

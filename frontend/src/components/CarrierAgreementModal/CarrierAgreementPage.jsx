@@ -98,7 +98,7 @@ export default function CarrierAgreementPage() {
             agreementData={agreementData}
           />
         )}
-        {step === 5 && agreementData.carrierType === "new" && (
+        {step === 5 && (
           <NewCarrierPaymentStep
             setStep={setStep}
             agreementData={agreementData}
