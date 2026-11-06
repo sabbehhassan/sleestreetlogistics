@@ -19,6 +19,12 @@ export default function NewCarrierPaymentStep({
   );
   const showRemainingContent = isNewCarrier || hasAdditionalServices;
   const paymentTermsMethod = agreementData.paymentTermsMethod || "";
+  const paymentExplanation =
+    agreementData.carrierType === "new"
+      ? "Shipper's use fast and reliable methods such as Zelle, Venmo, or Chime because it allows them to instantly verify your refundable deposit and process your BOL, Pickup Number, Scheduling, and documents without delay. If slower methods are used like wire or other transfers, it can take 5-7 business days to verify, may involve additional fees or taxes, and can delay your load assignment. By selecting a quick option, you help ensure your load is scheduled smoothly and your deposit is refunded promptly after your first delivery."
+      : agreementData.carrierType === "old"
+        ? "Shipper's use fast and reliable methods such as Zelle, Venmo, or Chime because it allows them to instantly verify your deposit and process your BOL, Pickup Number, Scheduling, and documents without delay. If slower methods are used like wire or other transfers, it can take 5-7 business days to verify, may involve additional fees or taxes, and can delay your load assignment. By selecting a quick option, you help ensure your load is scheduled smoothly"
+        : "";
   const paymentOptions = [
     "Zelle Transfer",
     "Chime",
@@ -188,18 +194,9 @@ export default function NewCarrierPaymentStep({
                   ))}
                 </div>
 
-                {paymentTermsMethod && (
+                {paymentTermsMethod && paymentExplanation && (
                   <p className="text-gray-500 mt-6 leading-8">
-                    Shipper&apos;s use fast and reliable methods such as Zelle,
-                    Venmo, or Chime because it allows them to instantly verify
-                    your refundable deposit and process your BOL, Pickup
-                    Number, Scheduling, and documents without delay. If slower
-                    methods are used like wire or other transfers, it can take
-                    5-7 business days to verify, may involve additional fees or
-                    taxes, and can delay your load assignment. By selecting a
-                    quick option, you help ensure your load is scheduled
-                    smoothly and your deposit is refunded promptly after your
-                    first delivery.
+                    {paymentExplanation}
                   </p>
                 )}
 

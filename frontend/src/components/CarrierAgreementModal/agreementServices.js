@@ -1,6 +1,6 @@
 export const agreementServices = [
   {
-    name: "ONBOARDING LANE SETUP FEE",
+    name: "ONBOARDING LANE SETUP",
     fee: 425,
     description: "Refundable after first delivery",
   },
