@@ -163,7 +163,7 @@ export default function FinalSubmissionStep({
             </span>
 
             <h1 className="text-3xl sm:text-4xl font-bold text-[#1a1a4d] uppercase leading-tight">
-              Trucking Service Agreement
+              BROKER / CARRIER AGREEMENT
             </h1>
 
             <p className="text-[#6d7a72] mt-4 text-base">

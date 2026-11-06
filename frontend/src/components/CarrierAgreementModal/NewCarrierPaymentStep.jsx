@@ -51,7 +51,7 @@ export default function NewCarrierPaymentStep({
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#02053D] uppercase">
-              Trucking Service Agreement
+              BROKER / CARRIER AGREEMENT
             </h1>
 
             <p className="text-gray-500 text-sm sm:text-base mt-2">

@@ -90,7 +90,7 @@ export default function TruckingAgreement({
 
                 <div>
                   <h3 className="text-xl font-bold text-[#02053D]">
-                    SLEE STREET LOGISTICS
+                    SLEE STREET LOGISTICS LLC
                   </h3>
 
                   <p className="text-sm text-gray-500">
@@ -114,7 +114,7 @@ export default function TruckingAgreement({
 
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="mt-1 text-[#02053D]" />
-                  <span>contact@sleestreetlogisticsllc.com</span>
+                  <span>michael@sleestreetlogisticsllc.com</span>
                 </div>
               </div>
             </div>

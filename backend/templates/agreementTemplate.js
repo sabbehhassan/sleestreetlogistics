@@ -49,7 +49,7 @@ module.exports = function agreementTemplate(formData) {
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trucking Service Agreement</title>
+<title>BROKER / CARRIER AGREEMENT</title>
 
 <style>
 
@@ -377,7 +377,7 @@ li{
 
     <div class="title">
 
-        <h1>TRUCKING SERVICE AGREEMENT</h1>
+        <h1>BROKER / CARRIER AGREEMENT</h1>
 
         <div class="subtitle">
             (Dedicated Lanes, Dispatch, Trailer Rental &
@@ -1104,7 +1104,7 @@ Canadian and United States law, including Customs Regulations.
 
     <span>
 
-        Trucking Service Agreement
+        BROKER / CARRIER AGREEMENT
 
     </span>
 

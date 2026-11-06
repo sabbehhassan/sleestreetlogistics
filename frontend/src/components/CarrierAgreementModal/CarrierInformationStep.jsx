@@ -73,7 +73,7 @@ export default function CarrierInformationStep({
           {/* Heading */}
           <div className="text-center mb-8">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#02053D] uppercase">
-              Trucking Service Agreement
+              BROKER / CARRIER AGREEMENT
             </h1>
 
             <p className="text-gray-500 text-sm sm:text-base mt-2">
@@ -90,7 +90,7 @@ export default function CarrierInformationStep({
           <div className="space-y-5">
             {/* Carrier Name */}
             <div>
-              <label className={labelClass}>Carrier Full Name *</label>
+              <label className={labelClass}>CARRIER FULL NAME *</label>
 
               <input
                 type="text"
@@ -112,7 +112,7 @@ export default function CarrierInformationStep({
 
             {/* Company Name */}
             <div>
-              <label className={labelClass}>Company Name</label>
+              <label className={labelClass}>TRUCK TYPE</label>
 
               <input
                 type="text"
@@ -129,7 +129,7 @@ export default function CarrierInformationStep({
 
             {/* MC DOT */}
             <div>
-              <label className={labelClass}>MC Number / DOT Number *</label>
+              <label className={labelClass}>MC / DOT NUMBER *</label>
 
               <input
                 type="text"
@@ -149,7 +149,7 @@ export default function CarrierInformationStep({
 
             {/* Phone */}
             <div>
-              <label className={labelClass}>Phone Number *</label>
+              <label className={labelClass}>PHONE NUMBER *</label>
 
               <input
                 type="text"
@@ -169,7 +169,7 @@ export default function CarrierInformationStep({
 
             {/* Driver Name */}
             <div>
-              <label className={labelClass}>Driver Name *</label>
+              <label className={labelClass}>DRIVER NAME *</label>
 
               <input
                 type="text"
@@ -189,7 +189,7 @@ export default function CarrierInformationStep({
 
             {/* Driver Phone */}
             <div>
-              <label className={labelClass}>Driver Phone Number *</label>
+              <label className={labelClass}>DRIVER PHONE NUMBER *</label>
 
               <input
                 type="text"
@@ -211,7 +211,7 @@ export default function CarrierInformationStep({
 
             {/* License Number */}
             <div>
-              <label className={labelClass}>License Number *</label>
+              <label className={labelClass}>LICENSE NUMBER *</label>
 
               <input
                 type="text"
@@ -233,7 +233,7 @@ export default function CarrierInformationStep({
 
             {/* Carrier Type */}
             <div>
-              <label className={labelClass}>Carrier Type *</label>
+              <label className={labelClass}>CARRIER TYPE *</label>
 
               <select
                 value={agreementData.carrierType || ""}
@@ -258,7 +258,7 @@ export default function CarrierInformationStep({
           {/* Load Pickup Schedule */}
           <div className="mt-10">
             <h2 className="text-xl sm:text-2xl font-bold text-[#02053D] mb-5">
-              Load Pickup Schedule:
+              LOAD PICKUP AND DELIVERY SCHEDULE:
             </h2>
 
             <ul className="list-disc pl-6 space-y-4 text-[#183B64] text-sm sm:text-base leading-relaxed">

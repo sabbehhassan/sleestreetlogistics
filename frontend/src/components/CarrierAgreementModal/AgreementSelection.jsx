@@ -7,7 +7,7 @@ export default function AgreementSelection({
   const handleSelectAgreement = () => {
     setAgreementData({
       ...agreementData,
-      agreementType: "Trucking Service Agreement",
+      agreementType: "BROKER / CARRIER AGREEMENT",
     });
 
     setStep(2);
